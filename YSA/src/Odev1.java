@@ -17,6 +17,13 @@ public class Odev1 {
 		araKatmanSayisi = okunanDeger.nextInt();
 		System.out.print("Çıkış Sayısı: ");
 		cikisSayisi = okunanDeger.nextInt();
+		System.out.print("\nlambda değeri: ");
+		double lambda = okunanDeger.nextDouble();
+		System.out.print("alfa değeri: ");
+		double alfa = okunanDeger.nextDouble();
+		System.out.print("Hata değeri: ");
+		double hataDegeri = okunanDeger.nextDouble();
+	
 		
 		double girisler[] = new double[girisSayisi];
 		double girisArakatmanAgirliklar[][] = new double[girisSayisi][araKatmanSayisi];
@@ -30,6 +37,8 @@ public class Odev1 {
 			System.out.print(i+1 + ". Giriş Değeri = ");
 			girisler[i] = okunanDeger.nextDouble();
 		}
+		System.out.print("Girişler için beklenen değer: ");
+		double beklenenDeger = okunanDeger.nextDouble();
 		//////////////////
 		// AĞIRLIKLAR   //
 		//////////////////
@@ -103,14 +112,6 @@ public class Odev1 {
 		//////////////////
 		// GERİ YAYILIM //
 		//////////////////
-		System.out.print("lambda değeri: ");
-		double lambda = okunanDeger.nextDouble();
-		System.out.print("alfa değeri: ");
-		double alfa = okunanDeger.nextDouble();
-		System.out.print("Hata değeri: ");
-		double hataDegeri = okunanDeger.nextDouble();
-		System.out.print("Girişler için beklenen değer: ");
-		double beklenenDeger = okunanDeger.nextDouble();
 		
 		double hataMiktari = 0;
 
@@ -123,7 +124,7 @@ public class Odev1 {
 		//   GÜNCELLE   //
 		//////////////////
 		int a = 0;
-		while(beklenenDeger-cikisFNetler[0] > hataDegeri) {
+		while(beklenenDeger-cikisFNetler[0] > hataDegeri && a<50000) {
 			System.out.println("\n\n*************ITERASYON " + (++a) + "**************");
 			for (int i = 0; i < cikisSayisi; i++) {
 				hataMiktari = cikisFNetler[i] * (1-cikisFNetler[i]) * (beklenenDeger-cikisFNetler[i]);
@@ -149,7 +150,18 @@ public class Odev1 {
 				arakatmanBiasDegisim[i] = lambda*hataMiktari + alfa*arakatmanBiasDegisim[i];
 				arakatmanBias[i] += arakatmanBiasDegisim[i];
 			}
-			
+									
+			//////////////////
+			//   GİRİŞLER   //
+			//////////////////
+			System.out.println("\nGiriş Değerleri");
+			for (int i = 0; i < girisSayisi; i++) {
+				System.out.print(i+1 + ". Giriş Değeri = ");
+				girisler[i] = okunanDeger.nextDouble();
+			}
+			System.out.print("Girişler için beklenen değer: ");
+			beklenenDeger = okunanDeger.nextDouble();
+					
 			geciciNet = 0;
 			System.out.println("\nArakatman Net ve FNet Değerleri");
 			for (int i = 0; i < araKatmanSayisi; i++) {
