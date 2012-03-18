@@ -1,0 +1,27 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:agent1="http://www.semanticweb.org/ontologies/2011/11/Agent1.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Class rdf:ID="Agent"/>
+  <owl:Class rdf:ID="AgentDirectoryService"/>
+  <owl:ObjectProperty rdf:ID="matchService">
+    <rdfs:domain rdf:resource="#Agent"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="agentAddress">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="agentName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <agent1:Agent rdf:ID="agent1">
+    <agent1:matchService rdf:resource="Service1.owl#"/>
+    <agent1:agentAddress rdf:resource="rmi://192.168.2.23/Service1"/>
+    <agent1:agentName rdf:resource="Agent1"/>
+  </agent1:Agent>
+</rdf:RDF>

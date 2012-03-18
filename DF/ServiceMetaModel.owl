@@ -1,0 +1,81 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:service="http://www.semanticweb.org/ontologies/2011/11/ServiceMetaModel.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Class rdf:ID="Parameter"/>
+  <owl:Class rdf:ID="CompositProcess">
+    <owl:equivalentClass>
+      <owl:Class rdf:ID="Service"/>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Input">
+    <rdfs:subClassOf rdf:resource="#Parameter"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AtomicProcess"/>
+  <owl:Class rdf:ID="Output">
+    <rdfs:subClassOf rdf:resource="#Parameter"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ServiceDirectoryService"/>
+  <owl:ObjectProperty rdf:ID="composedOf">
+    <rdfs:range rdf:resource="#AtomicProcess"/>
+    <rdfs:domain rdf:resource="#CompositProcess"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasParameter">
+    <rdfs:range rdf:resource="#Parameter"/>
+    <rdfs:domain rdf:resource="#Service"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="discoveringService">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#ServiceDirectoryService"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="registeringService">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#ServiceDirectoryService"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInput">
+    <rdfs:subPropertyOf rdf:resource="#hasParameter"/>
+    <rdfs:range rdf:resource="#Input"/>
+    <rdfs:domain rdf:resource="#Service"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOutput">
+    <rdfs:subPropertyOf rdf:resource="#hasParameter"/>
+    <rdfs:range rdf:resource="#Output"/>
+    <rdfs:domain rdf:resource="#Service"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="parametreType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#Parameter"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="serviceCategory">
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="serviceName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="serviceId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="serviceTextDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="parametreValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Parameter"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="serviceAddress">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>
