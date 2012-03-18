@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Odev1 {
 	
 	//0 manuel, 1 random
-	static int secim = 1; 
+	static int secim = 0; 
 	
 	static double Ai[][] = {{.123,-.546}, {-.255,.342}};
 	static double Aa[][] = {{-.258,.445}, {.135,-.375}};
@@ -189,6 +189,7 @@ public class Odev1 {
 					cikisAgirlikDegisim[i][j] = lambda*sigmaCikis[j]*araKatmanFNetler[i] + alfa*cikisAgirlikDegisim[i][j];
 					yedekArakatmanCikisAgirliklar[i][j] = arakatmanCikisAgirliklar[i][j];
 					arakatmanCikisAgirliklar[i][j] += cikisAgirlikDegisim[i][j];
+					Aa[i][j] += cikisAgirlikDegisim[i][j];
 					System.out.print("[" + (i+1) + "," + (j+1) + "] = " + arakatmanCikisAgirliklar[i][j] + "  \t");
 				}
 				System.out.println();
@@ -198,6 +199,7 @@ public class Odev1 {
 			for (int i = 0; i < cikisSayisi; i++) {
 				cikisBiasDegisim[i] = lambda*sigmaCikis[i] + alfa*cikisBiasDegisim[i];	
 				cikisBias[i] += cikisBiasDegisim[i];
+				Ba[i] += cikisBiasDegisim[i];
 				System.out.println((i+1) + ". Çýkýþ Bias Deðeri = " + cikisBias[i]);	
 			}
 			
@@ -216,6 +218,7 @@ public class Odev1 {
 				for (int j = 0; j < araKatmanSayisi; j++) {
 					arakatmanAgirlikDegisim[i][j] = lambda*sigmaArakatman[j]*girisler[i] + alfa*arakatmanAgirlikDegisim[i][j];	
 					girisArakatmanAgirliklar[i][j] += arakatmanAgirlikDegisim[i][j];
+					Ai[i][j] += arakatmanAgirlikDegisim[i][j];
 					System.out.print("[" + (i+1) + "," + (j+1) + "] = " + girisArakatmanAgirliklar[i][j] + "  \t");
 				}
 				System.out.println();
@@ -225,6 +228,7 @@ public class Odev1 {
 			for (int i = 0; i < araKatmanSayisi; i++) {
 				arakatmanBiasDegisim[i] = lambda*sigmaArakatman[i] + alfa*arakatmanBiasDegisim[i];	
 				arakatmanBias[i] += arakatmanBiasDegisim[i];
+				Bi[i] += arakatmanBiasDegisim[i];
 				System.out.println((i+1) + ". Arakatman Bias Deðeri = " + arakatmanBias[i]);	
 			}
 		}
