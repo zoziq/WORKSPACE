@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,15 +15,13 @@ import javax.swing.RepaintManager;
 
 public class Konsol extends JFrame{
 	
-	public static int taslarX1[] = {420,480,540,540,600,210,210,330,30, 30, 30,90,270,720,420};
-	public static int taslarY1[] = {630,630,630,570,630,630,570,630,45,105,165,45, 45, 45,45};
+	public static int taslarX1[] = {420,480,540,540,600,210,210,330,30, 30, 30,90,270,720,720};
+	public static int taslarY1[] = {630,630,630,570,630,630,570,630,45,105,165,45, 45, 45,105};
 	public static int taslarX2[] = {600,540,540,540,540,330,150,150, 30, 90, 90,270,90,660,720};
 	public static int taslarY2[] = {45,225,165,105, 45, 45, 45,105,630,630,570,630,510,630,630 };
 	
 	public static int kirikSayisi1 = 0;
 	public static int kirikSayisi2 = 0;
-	public JLabel kirik1 = new JLabel("0");
-	public JLabel kirik2 = new JLabel("0");
 	
 	public static int cikanSayisi1 = 0;
 	public static int cikanSayisi2 = 0;
@@ -86,7 +85,38 @@ public class Konsol extends JFrame{
 			g.fillOval(taslarX2[i], taslarY2[i], 60, 60);
 		}
 		
-
+		//////////////////
+		//  NUMARALAR   //
+		//////////////////
+		if (kirikSayisi1!=0) {
+			g.setColor(Color.white);
+			g.drawString(""+kirikSayisi1, 401, 335);
+		}
+		if (kirikSayisi2!=0) {
+			g.setColor(Color.white);
+			g.drawString(""+kirikSayisi2, 401, 395);
+		}
+		
+		for (int i = 0; i < 6; i++) {
+			g.setColor(Color.white);
+			g.drawString(""+(i+1), 747-i*60, 703);
+		}
+		for (int i = 0; i < 3; i++) {
+			g.setColor(Color.white);
+			g.drawString(""+(i+7), 357-i*60, 703);
+		}
+		for (int i = 0; i < 3; i++) {
+			g.setColor(Color.white);
+			g.drawString(""+(i+10), 173-i*60, 703);
+		}
+		for (int i = 0; i < 6; i++) {
+			g.setColor(Color.white);
+			g.drawString(""+(i+13), 53+i*60, 42);
+		}
+		for (int i = 0; i < 6; i++) {
+			g.setColor(Color.white);
+			g.drawString(""+(i+19), 443+i*60, 42);
+		}
 		//////////////////
 		//    GEÇÝCÝ    //
 		//////////////////
@@ -122,6 +152,8 @@ public class Konsol extends JFrame{
 		//  BÝLEÞENLER  //
 		//////////////////
 		
+		
+		
 	}
 	
 	public boolean kontrol(int bolge,int gidecegiYer,int hangiTas) {
@@ -138,14 +170,11 @@ public class Konsol extends JFrame{
 			}
 			else if (sayac==1) {
 				kirikSayisi2++;
-				remove(kirik2);
 				for (int i = 0; i < 15; i++) {
 					if (taslarX2[i]==gidecegiYer) {
-						kirik2 = new JLabel(""+kirikSayisi2);
-						kirik2.setBounds(800,640,60,60);
-						add(kirik2);
-						taslarX2[i]=780;
-						taslarY2[i]=630;
+						taslarX2[i]=375;
+						taslarY2[i]=360;
+						repaint();
 					}
 				}
 				return true;
@@ -202,10 +231,10 @@ public class Konsol extends JFrame{
 				System.out.println("sag alttan cikis 1");
 				cikanSayisi1++;
 				remove(cikan1);
-				taslarX1[tasNumarasi]=855;
+				taslarX1[tasNumarasi]=795;
 				taslarY1[tasNumarasi]=630;
 				cikan1 = new JLabel(""+cikanSayisi1);
-				cikan1.setBounds(875,640,60,60);
+				cikan1.setBounds(815,640,60,60);
 				add(cikan1);
 				repaint();
 			}
