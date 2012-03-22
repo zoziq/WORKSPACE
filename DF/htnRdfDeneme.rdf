@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:htn="http://www.htn.org/htn#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	<!-- Behaviour -->
+	<rdf:Description rdf:nodeID="Behaviour">
+		<htn:taskID>1</htn:taskID>
+		<htn:behName>BiletAl</htn:behName>
+		<htn:planNum>13</htn:planNum>
+		<htn:provision>Guzergah</htn:provision>
+		<htn:Outcome>Ok</htn:Outcome>
+		<htn:Outcome>Fail</htn:Outcome>
+	</rdf:Description>
+	<!-- Action -->
+	<rdf:Description rdf:nodeID="Action1">
+		<htn:taskID>2</htn:taskID>
+		<htn:actName>TarihSec</htn:actName>
+		<htn:planNum>14</htn:planNum>
+		<htn:provision>Guzergah</htn:provision>
+		<htn:Outcome>Ok</htn:Outcome>
+	</rdf:Description>
+	<!-- Action -->
+	<rdf:Description rdf:nodeID="Action2">
+		<htn:taskID>3</htn:taskID>
+		<htn:actName>KoltukSec</htn:actName>
+		<htn:planNum>15</htn:planNum>
+		<htn:provision>Sefer</htn:provision>
+		<htn:Outcome>Fail</htn:Outcome>
+		<htn:Outcome>Ok</htn:Outcome>
+	</rdf:Description>
+	<!-- Action -->
+	<rdf:Description rdf:nodeID="Action3">
+		<htn:taskID>4</htn:taskID>
+		<htn:actName>OdemeYap</htn:actName>
+		<htn:planNum>16</htn:planNum>
+		<htn:provision>Bilet</htn:provision>
+		<htn:Outcome>Ok</htn:Outcome>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="InheritanceLink">
+		<htn:provName>Guzergah</htn:provName>
+		<htn:kimden>BiletAl</htn:kimden>
+		<htn:Kime>TarihSec</htn:Kime>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ProvisionLink1">
+		<htn:provName>OkSefer</htn:provName>
+		<htn:kimden>TarihSec</htn:kimden>
+		<htn:Kime>KoltukSec</htn:Kime>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ProvisionLink2">
+		<htn:provName>OkBilet</htn:provName>
+		<htn:kimden>KoltukSec</htn:kimden>
+		<htn:Kime>OdemeYap</htn:Kime>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="DisInheritanceLink1">
+		<htn:provName>FailFail</htn:provName>
+		<htn:kimden>KoltukSec</htn:kimden>
+		<htn:Kime>BiletAl</htn:Kime>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="DisInheritanceLink2">
+		<htn:provName>OkOk</htn:provName>
+		<htn:kimden>OdemeYap</htn:kimden>
+		<htn:Kime>BiletAl</htn:Kime>
+	</rdf:Description>
+</rdf:RDF>

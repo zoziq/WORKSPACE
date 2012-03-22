@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:etkinlik="http://www.etkinlik.org/etkinlik#">
+	<rdf:Description rdf:nodeID="musteri1">
+		<etkinlik:Ad>Mustafa</etkinlik:Ad>
+		<etkinlik:Soyad>Top</etkinlik:Soyad>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="musteri2">
+		<etkinlik:Ad>Birgul</etkinlik:Ad>
+		<etkinlik:Soyad>Top</etkinlik:Soyad>
+	</rdf:Description>
+</rdf:RDF>

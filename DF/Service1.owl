@@ -4,103 +4,23 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:service1="http://www.semanticweb.org/ontologies/2011/11/Service1.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-  <owl:Class rdf:ID="Input">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Parameter"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="ServiceDirectoryService"/>
-  <owl:Class rdf:ID="AtomicProcess"/>
-  <owl:Class rdf:ID="CompositProcess">
-    <owl:equivalentClass>
-      <owl:Class rdf:ID="Service"/>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:ID="Output">
-    <rdfs:subClassOf rdf:resource="#Parameter"/>
-  </owl:Class>
-  <owl:ObjectProperty rdf:ID="discoveringService">
-    <rdfs:range rdf:resource="#Service"/>
-    <rdfs:domain rdf:resource="#ServiceDirectoryService"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="composedOf">
-    <rdfs:range rdf:resource="#AtomicProcess"/>
-    <rdfs:domain rdf:resource="#CompositProcess"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasParameter">
-    <rdfs:range rdf:resource="#Parameter"/>
-    <rdfs:domain rdf:resource="#Service"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasOutput">
-    <rdfs:subPropertyOf rdf:resource="#hasParameter"/>
-    <rdfs:range rdf:resource="#Output"/>
-    <rdfs:domain rdf:resource="#Service"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasInput">
-    <rdfs:subPropertyOf rdf:resource="#hasParameter"/>
-    <rdfs:range rdf:resource="#Input"/>
-    <rdfs:domain rdf:resource="#Service"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="registeringService">
-    <rdfs:range rdf:resource="#Service"/>
-    <rdfs:domain rdf:resource="#ServiceDirectoryService"/>
-  </owl:ObjectProperty>
-  <owl:FunctionalProperty rdf:ID="serviceAddress">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:domain rdf:resource="#Service"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="serviceName">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Service"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="parametreValue">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Parameter"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="serviceTextDescription">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Service"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="parametreType">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:domain rdf:resource="#Parameter"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="serviceId">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Service"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-  </owl:FunctionalProperty>
-  <owl:FunctionalProperty rdf:ID="serviceCategory">
-    <rdfs:domain rdf:resource="#Service"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </owl:FunctionalProperty>
-  <service1:Service rdf:ID="service1">
+  <service1:Service rdf:nodeID="service1">
     <service1:composedOf>
-      <service1:AtomicProcess rdf:ID="atomicProcess1">
-        <service1:hasOutput>
-          <service1:Output rdf:ID="output1">
-            <service1:parametreType rdf:resource="integer"/>
-          </service1:Output>
-        </service1:hasOutput>
+      <service1:AtomicProcess rdf:nodeID="atomicProcess1">
         <service1:hasInput>
-          <service1:Input rdf:ID="input2">
-            <service1:parametreType rdf:resource="integer"/>
+          <service1:Input rdf:nodeID="input2">
+            <service1:parametreType>integer<service1:parametreType/>
           </service1:Input>
         </service1:hasInput>
         <service1:hasInput>
-          <service1:Input rdf:ID="input1">
-            <service1:parametreType rdf:resource="integer"/>
+          <service1:Input rdf:nodeID="input1">
+            <service1:parametreType>integer<service1:parametreType/>
           </service1:Input>
         </service1:hasInput>
       </service1:AtomicProcess>
     </service1:composedOf>
-    <service1:serviceTextDescription rdf:resource="Toplama_islemi_yapan_servis"/>
-    <service1:serviceAddress rdf:resource="rmi://192.168.2.23/Service1"/>
-    <service1:serviceName rdf:resource="Toplama_Islemi"/>
+    <service1:serviceTextDescription>Toplama_islemi_yapan_servis<service1:serviceTextDescription/>
+    <service1:serviceAddress>rmi://192.168.2.23/Service1<service1:serviceAddress/>
+    <service1:serviceName>Toplama_Islemi<service1:serviceName/>
   </service1:Service>
 </rdf:RDF>

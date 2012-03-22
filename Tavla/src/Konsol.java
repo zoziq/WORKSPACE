@@ -143,8 +143,10 @@ public class Konsol extends JFrame{
 		oynat.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				oynat(g,1,1,1);
-				oynat(g,4,1,1);
+			//	oynat(g,1,1,1);
+				oynat(g,14,2,2);
+			//	oynat(g,4,1,1);
+				
 			}
 		});
 		
@@ -180,6 +182,29 @@ public class Konsol extends JFrame{
 				return true;
 			}
 		}
+		else if (hangiTas==2) {
+			int sayac = 0;
+			for (int i = 0; i < 15; i++) {
+				if (taslarX1[i]==gidecegiYer && taslarY1[i]%30==bolge%30) {
+					sayac++;
+				}
+			}
+			if (sayac>1) {
+				System.out.println("oynamaz");
+				return false;
+			}
+			else if (sayac==1) {
+				kirikSayisi1++;
+				for (int i = 0; i < 15; i++) {
+					if (taslarX1[i]==gidecegiYer) {
+						taslarX1[i]=375;
+						taslarY1[i]=300;
+						repaint();
+					}
+				}
+				return true;
+			}
+		}
 		return true;
 	}
 	
@@ -188,9 +213,64 @@ public class Konsol extends JFrame{
 			if(taslarX1[tasNumarasi]<=720 && taslarX1[tasNumarasi]>=420 && taslarX1[tasNumarasi]-zar*60>=420 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60, 1)) {
 				System.out.println("sag ustten sag uste 1");
 				int gidecegiYer = taslarX1[tasNumarasi]-zar*60;
-				haraket1(tasNumarasi, gidecegiYer);
+				haraket11(tasNumarasi, gidecegiYer);
 			}
 			else if(taslarX1[tasNumarasi]<=720 && taslarX1[tasNumarasi]>=420 && taslarX1[tasNumarasi]-zar*60<=420 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60-30, 1)) {
+				System.out.println("sag ustten sol uste 1");
+				int gidecegiYer = taslarX1[tasNumarasi]-zar*60-30;
+				haraket11(tasNumarasi, gidecegiYer);
+			}
+			else if(taslarX1[tasNumarasi]<=390 && taslarX1[tasNumarasi]>=30 && taslarX1[tasNumarasi]-zar*60>=30 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60, 1)) {
+				System.out.println("sol ustten sol uste 1");
+				int gidecegiYer = taslarX1[tasNumarasi]-zar*60;
+				haraket11(tasNumarasi, gidecegiYer);
+			}
+			else if(taslarX1[tasNumarasi]<=390 && taslarX1[tasNumarasi]>=30 && taslarX1[tasNumarasi]-zar*60<=30 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(60, -(taslarX1[tasNumarasi]-zar*60), 1)) {
+				System.out.println("sol ustten sol alta 1");
+				int gidecegiYer =  -(taslarX1[tasNumarasi]-zar*60);
+				taslarX1[tasNumarasi]=gidecegiYer;
+				taslarY1[tasNumarasi]=690;
+				for (int i = 0; i < 15; i++) {
+					if (taslarY1[i]%30==0 && taslarX1[i]==taslarX1[tasNumarasi]) {
+						taslarY1[tasNumarasi]-=60;
+					}
+				}
+				repaint();
+			}
+			else if(taslarX1[tasNumarasi]<=390 && taslarX1[tasNumarasi]>=30 && taslarX1[tasNumarasi]+zar*60<390 && Math.abs(taslarY1[tasNumarasi]%30)==0 && kontrol(60, taslarX1[tasNumarasi]+zar*60, 1)) {
+				System.out.println("sol alttan sol alta 1");
+				int gidecegiYer = taslarX1[tasNumarasi]+zar*60;
+				haraket12(tasNumarasi, gidecegiYer);
+			}
+			else if(taslarX1[tasNumarasi]<=390 && taslarX1[tasNumarasi]>=30 && taslarX1[tasNumarasi]+zar*60+30<=780 && taslarX1[tasNumarasi]+zar*60+30>=390 && Math.abs(taslarY1[tasNumarasi]%30)==0 && kontrol(60, taslarX1[tasNumarasi]+zar*60+30, 1)) {
+				System.out.println("sol alttan sag alta 1");
+				int gidecegiYer = taslarX1[tasNumarasi]+zar*60+30;
+				haraket12(tasNumarasi, gidecegiYer);
+			}
+			else if(taslarX1[tasNumarasi]>=390 && taslarX1[tasNumarasi]<=780 && taslarX1[tasNumarasi]+zar*60<780 && Math.abs(taslarY1[tasNumarasi]%30)==0 && kontrol(60, taslarX1[tasNumarasi]+zar*60, 1)) {
+				System.out.println("sag alttan sag alta 1");
+				int gidecegiYer = taslarX1[tasNumarasi]+zar*60;
+				haraket12(tasNumarasi, gidecegiYer);
+			}
+			else if(taslarX1[tasNumarasi]>=390 && taslarX1[tasNumarasi]<=780 && taslarX1[tasNumarasi]+zar*60>=780 && Math.abs(taslarY1[tasNumarasi]%30)==0) {
+				System.out.println("sag alttan cikis 1");
+				cikanSayisi1++;
+				remove(cikan1);
+				taslarX1[tasNumarasi]=795;
+				taslarY1[tasNumarasi]=630;
+				cikan1 = new JLabel(""+cikanSayisi1);
+				cikan1.setBounds(815,640,60,60);
+				add(cikan1);
+				repaint();
+			}
+		}
+		else if (hangiTas==2) {
+			if(taslarX2[tasNumarasi]<=720 && taslarX2[tasNumarasi]>=420 && taslarX2[tasNumarasi]-zar*60>=420 && taslarY2[tasNumarasi]%30==0 && kontrol(60, taslarX2[tasNumarasi]-zar*60, 2)) {
+				System.out.println("sag alttan sag alta 2");
+				int gidecegiYer = taslarX2[tasNumarasi]-zar*60;
+				haraket21(tasNumarasi, gidecegiYer);
+			}
+/*			else if(taslarX1[tasNumarasi]<=720 && taslarX1[tasNumarasi]>=420 && taslarX1[tasNumarasi]-zar*60<=420 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60-30, 1)) {
 				System.out.println("sag ustten sol uste 1");
 				int gidecegiYer = taslarX1[tasNumarasi]-zar*60-30;
 				haraket1(tasNumarasi, gidecegiYer);
@@ -237,14 +317,13 @@ public class Konsol extends JFrame{
 				cikan1.setBounds(815,640,60,60);
 				add(cikan1);
 				repaint();
-			}
+			}*/
 		}
-		
 		
 		
 	}
 
-	private void haraket1(int tasNumarasi, int gidecegiYer) {
+	private void haraket11(int tasNumarasi, int gidecegiYer) {
 		for (int i = 0; i < 15; i++) {
 			if (Math.abs(taslarY1[i]%30)==15 && taslarX1[i]==taslarX1[tasNumarasi]) {
 				taslarY1[tasNumarasi]-=60;
@@ -259,7 +338,7 @@ public class Konsol extends JFrame{
 		repaint();
 	}
 	
-	private void haraket2(int tasNumarasi, int gidecegiYer) {
+	private void haraket12(int tasNumarasi, int gidecegiYer) {
 		for (int i = 0; i < 15; i++) {
 			if (taslarY1[i]%30==0 && taslarX1[i]==taslarX1[tasNumarasi]) {
 				taslarY1[tasNumarasi]+=60;
@@ -269,6 +348,36 @@ public class Konsol extends JFrame{
 		for (int i = 0; i < 15; i++) {
 			if (taslarY1[i]%30==0 && taslarX1[i]==taslarX1[tasNumarasi]) {
 				taslarY1[tasNumarasi]-=60;
+			}
+		}
+		repaint();
+	}
+	
+	private void haraket21(int tasNumarasi, int gidecegiYer) {
+		for (int i = 0; i < 15; i++) {
+			if (taslarY2[i]%30==0 && taslarX2[i]==taslarX2[tasNumarasi]) {
+				taslarY2[tasNumarasi]+=60;
+			}
+		}
+		taslarX2[tasNumarasi] = gidecegiYer;
+		for (int i = 0; i < 15; i++) {
+			if (taslarY2[i]%30==0 && taslarX2[i]==taslarX2[tasNumarasi]) {
+				taslarY2[tasNumarasi]-=60;
+			}
+		}
+		repaint();
+	}
+	
+	private void haraket22(int tasNumarasi, int gidecegiYer) {
+		for (int i = 0; i < 15; i++) {
+			if (Math.abs(taslarY2[i]%30)==15 && taslarX2[i]==taslarX2[tasNumarasi]) {
+				taslarY2[tasNumarasi]-=60;
+			}
+		}
+		taslarX2[tasNumarasi] = gidecegiYer;
+		for (int i = 0; i < 15; i++) {
+			if (Math.abs(taslarY2[i]%30)==15 && taslarX2[i]==taslarX2[tasNumarasi]) {
+				taslarY2[tasNumarasi]+=60;
 			}
 		}
 		repaint();

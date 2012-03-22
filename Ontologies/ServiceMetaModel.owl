@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#composedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#composedOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#discoveringService -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#discoveringService">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#ServiceDirectoryService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasInput">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasOutput">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#hasParameter">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#matchAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#matchAgent">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Agent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#registeringService -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#registeringService">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#ServiceDirectoryService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#category">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#parameterType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#parameterType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#parameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#parameterValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Agent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#AtomicProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#AtomicProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#CompositProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#CompositProcess">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Parameter">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Process">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#AtomicProcess"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#CompositProcess"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#ServiceDirectoryService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#ServiceDirectoryService"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookDescription -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookDescription">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output"/>
+        <parameterType>string</parameterType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookRequest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookRequest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#AtomicProcess"/>
+        <hasOutput rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookDescription"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#isbn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#compositProcess1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#compositProcess1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#CompositProcess"/>
+        <composedOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#bookRequest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input"/>
+        <parameterType>integer</parameterType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input"/>
+        <parameterType>integer</parameterType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#isbn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#isbn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Input"/>
+        <parameterType>integer</parameterType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#multiplication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#multiplication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#AtomicProcess"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor1"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#factor2"/>
+        <hasOutput rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#resultOfMultiplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#resultOfMultiplication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#resultOfMultiplication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Output"/>
+        <parameterType>integer</parameterType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#service1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#service1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <category>Math</category>
+        <description>multiplies_two_numbers_and_returns_result</description>
+        <id>1</id>
+        <name>multiplication</name>
+        <address>rmi://192.168.2.23/Service01</address>
+        <matchAgent rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent1"/>
+        <composedOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#multiplication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#service2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#service2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#Service"/>
+        <address>rmi://192.168.2.23/Service02</address>
+        <name>bookRequest</name>
+        <id>2</id>
+        <category>Query</category>
+        <description>Returns_to_book_description_by_isbn_number</description>
+        <matchAgent rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#agent2"/>
+        <composedOf rdf:resource="http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#compositProcess1"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY AgentMetaModel "http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:AgentMetaModel="http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#discoveringAgent -->
+
+    <owl:ObjectProperty rdf:about="&AgentMetaModel;discoveringAgent">
+        <rdfs:range rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:domain rdf:resource="&AgentMetaModel;AgentDirectoryService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#matchService -->
+
+    <owl:ObjectProperty rdf:about="&AgentMetaModel;matchService">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&AgentMetaModel;Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#registeringAgent -->
+
+    <owl:ObjectProperty rdf:about="&AgentMetaModel;registeringAgent">
+        <rdfs:range rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:domain rdf:resource="&AgentMetaModel;AgentDirectoryService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="&AgentMetaModel;address">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&AgentMetaModel;id">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&AgentMetaModel;name">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#ownership -->
+
+    <owl:DatatypeProperty rdf:about="&AgentMetaModel;ownership">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#state -->
+
+    <owl:DatatypeProperty rdf:about="&AgentMetaModel;state">
+        <rdfs:domain rdf:resource="&AgentMetaModel;Agent"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#Agent -->
+
+    <owl:Class rdf:about="&AgentMetaModel;Agent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#AgentDirectoryService -->
+
+    <owl:Class rdf:about="&AgentMetaModel;AgentDirectoryService"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#Service -->
+
+    <owl:Class rdf:about="&AgentMetaModel;Service"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#agent1 -->
+
+    <owl:NamedIndividual rdf:about="&AgentMetaModel;agent1">
+        <rdf:type rdf:resource="&AgentMetaModel;Agent"/>
+        <id>1</id>
+        <name>agent1</name>
+        <state>active</state>
+        <ownership>ownership1</ownership>
+        <address>rmi://192.168.2.23/Agent01</address>
+        <matchService rdf:resource="&AgentMetaModel;service1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#agent2 -->
+
+    <owl:NamedIndividual rdf:about="&AgentMetaModel;agent2">
+        <rdf:type rdf:resource="&AgentMetaModel;Agent"/>
+        <address>rmi://192.168.2.23/Agent02</address>
+        <ownership>ownership2</ownership>
+        <id>2</id>
+        <name>agent2</name>
+        <state>active</state>
+        <matchService rdf:resource="&AgentMetaModel;service2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#service1 -->
+
+    <owl:NamedIndividual rdf:about="&AgentMetaModel;service1">
+        <rdf:type rdf:resource="&AgentMetaModel;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2012/2/AgentMetaModel.owl#service2 -->
+
+    <owl:NamedIndividual rdf:about="&AgentMetaModel;service2">
+        <rdf:type rdf:resource="&AgentMetaModel;Service"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
