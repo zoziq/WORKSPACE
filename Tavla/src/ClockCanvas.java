@@ -67,7 +67,7 @@ public class ClockCanvas extends Canvas {
 		frame.setTitle("Clock Canvas");
 		frame.setLayout(new BorderLayout());
 		frame.add(BorderLayout.CENTER, new ClockCanvas());
-		frame.setBounds(0, 0, 220, 220);
+		frame.setBounds(100, 10, 420, 420);
 		frame.setVisible(true);
 	}
 }
