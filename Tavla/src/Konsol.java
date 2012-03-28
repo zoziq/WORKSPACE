@@ -147,34 +147,41 @@ public class Konsol extends JFrame{
 			public void mouseDragged(MouseEvent arg0) {}
 		});
 		
-		final JButton oynat = new JButton("oynat2");
-		oynat.setBounds(950,575,111,25);
-		add(oynat);
-		oynat.addActionListener(new ActionListener() {		
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			//  oynat(g,tasNO,zar,hangiTas)
-				oynat(g,0,2,2);
-
-				
-			}
-		});
+		final JTextField tas1 = new JTextField();
+		tas1.setBounds(850,550,35,25);
+		add(tas1);
+		final JTextField zar1 = new JTextField();
+		zar1.setBounds(900,550,35,25);
+		add(zar1);
+		final JTextField tas2 = new JTextField();
+		tas2.setBounds(850,575,35,25);
+		add(tas2);
+		final JTextField zar2 = new JTextField();
+		zar2.setBounds(900,575,35,25);
+		add(zar2);
+		
 		final JButton oynat2 = new JButton("oynat1");
 		oynat2.setBounds(950,550,111,25);
 		add(oynat2);
 		oynat2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-			//  oynat(g,tasNO,zar,hangiTas)
-				oynat(g,14,1,1);
-
-				
+				oynat(g,Integer.parseInt(tas1.getText()),Integer.parseInt(zar1.getText()),1);
 			}
 		});
+		final JButton oynat = new JButton("oynat2");
+		oynat.setBounds(950,575,111,25);
+		add(oynat);
+		oynat.addActionListener(new ActionListener() {		
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				oynat(g,Integer.parseInt(tas2.getText()),Integer.parseInt(zar2.getText()),2);
+			}
+		});
+		
 		//////////////////
 		//  BÝLEÞENLER  //
 		//////////////////
-		
 	
 	}
 	
@@ -254,7 +261,7 @@ public class Konsol extends JFrame{
 			}
 		}
 		else if (hangiTas==2) {
-			if(taslarX2[tasNumarasi]==375 && taslarY2[tasNumarasi]==360 && kontrol(60, taslarX2[tasNumarasi]+405-zar*60, 1)) {
+			if(taslarX2[tasNumarasi]==375 && taslarY2[tasNumarasi]==360 && kontrol(60, taslarX2[tasNumarasi]+405-zar*60, 2)) {
 				System.out.println("kiriktan giris 2");
 				golgeX = taslarX2[tasNumarasi];
 		        golgeY = taslarY2[tasNumarasi];
@@ -278,7 +285,7 @@ public class Konsol extends JFrame{
 				int gidecegiYer = taslarX2[tasNumarasi]-zar*60-30;
 				haraket21(tasNumarasi, gidecegiYer);
 			}
-			else if(taslarX2[tasNumarasi]<=390 && taslarX2[tasNumarasi]>=30 && taslarX2[tasNumarasi]-zar*60>=30 && taslarY2[tasNumarasi]%30==0 && kontrol(60, taslarX2[tasNumarasi]-zar*60, 2)) {
+			else if(taslarX2[tasNumarasi]<=390 && taslarX2[tasNumarasi]>=30 && taslarX2[tasNumarasi]-zar*60>=30 && taslarY2[tasNumarasi]%30==0 && kontrol(60, taslarX2[tasNumarasi]-zar*60, 2) && taslarX2[tasNumarasi]!=375 && taslarY2[tasNumarasi]!=360) {
 				System.out.println("sol alttan sol alta 2");
 				int gidecegiYer = taslarX2[tasNumarasi]-zar*60;
 				haraket21(tasNumarasi, gidecegiYer);
@@ -302,7 +309,7 @@ public class Konsol extends JFrame{
 				int gidecegiYer = taslarX2[tasNumarasi]+zar*60;
 				haraket22(tasNumarasi, gidecegiYer);
 			}
-			else if(taslarX2[tasNumarasi]<=390 && taslarX2[tasNumarasi]>=30 && taslarX2[tasNumarasi]+zar*60+30<=780 && taslarX2[tasNumarasi]+zar*60+30>=390 && Math.abs(taslarY2[tasNumarasi]%30)==15 && kontrol(45, taslarX2[tasNumarasi]+zar*60+30, 2) && taslarX2[tasNumarasi]!=375 && taslarY2[tasNumarasi]!=360) {
+			else if(taslarX2[tasNumarasi]<=390 && taslarX2[tasNumarasi]>=30 && taslarX2[tasNumarasi]+zar*60+30<=780 && taslarX2[tasNumarasi]+zar*60+30>=390 && Math.abs(taslarY2[tasNumarasi]%30)==15 && kontrol(45, taslarX2[tasNumarasi]+zar*60+30, 2)) {
 				System.out.println("sol ustten sag uste 2");
 				int gidecegiYer = taslarX2[tasNumarasi]+zar*60+30;
 				haraket22(tasNumarasi, gidecegiYer);
