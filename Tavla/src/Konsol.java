@@ -15,10 +15,18 @@ import javax.swing.RepaintManager;
 
 public class Konsol extends JFrame{
 	
-	public static int taslarX1[] = {420,660,540,540,600,210,150,330,30, 30, 30,90,270,720,720};
-	public static int taslarY1[] = {630,630,630,570,630,630,630,630,45,105,165,45, 45, 45,105};
-	public static int taslarX2[] = {600,540,540,540,540,330,150,150, 30, 90, 90,270,90,480,720};
-	public static int taslarY2[] = {45,225,165,105, 45, 45, 45,105,630,630,570,630,510,630,630 };
+	//////////////////
+	//NORMAL DIZILIM//
+	//////////////////
+	public static int taslarX1[] = {420,420,420,420,420,270,270,270,30, 30, 30, 30, 30,720,720};
+	public static int taslarY1[] = {630,570,510,450,390,630,570,510,45,105,165,225,285, 45,105};
+	public static int taslarX2[] = {420,420,420,420,420,270,270,270, 30, 30, 30, 30, 30,720,720};
+	public static int taslarY2[] = { 45,105,165,225,285, 45,105,165,630,570,510,450,390,630,570};
+	
+//	public static int taslarX1[] = {420,660,540,540,600,210,150,330,30, 30, 30,90,270,720,720};
+//	public static int taslarY1[] = {630,630,630,570,630,630,630,630,45,105,165,45, 45, 45,105};
+//	public static int taslarX2[] = {600,540,540,540,540,330,150,150, 30, 90, 90,270, 90,480,720};
+//	public static int taslarY2[] = { 45,225,165,105, 45, 45, 45,105,630,630,570,630,510,630,630 };
 	
 	public static int kirikSayisi1 = 0;
 	public static int kirikSayisi2 = 0;
@@ -41,7 +49,7 @@ public class Konsol extends JFrame{
 	public void paint(final Graphics g) {
 		super.paint(g);
 		//////////////////
-		//  TAHTA ÇÝZ   //
+		//  TAHTA CIZ   //
 		//////////////////
 		g.setColor(new Color(130,60,20));
 		g.fillRect(15, 30, 780, 15);
@@ -77,7 +85,7 @@ public class Konsol extends JFrame{
 			}
 		}
 		//////////////////
-		// TAÞLARI ÇÝZ  //
+		// TASLARI CIZ  //
 		//////////////////
 		for (int i = 0; i < 15; i++) {
 			g.setColor(new Color(222,188,153));
@@ -122,13 +130,13 @@ public class Konsol extends JFrame{
 		}
 		
 		//////////////////
-		//    GÖLGE     //
+		//    GOLGE     //
 		//////////////////
 		g.setColor(Color.black);
 		g.drawOval(golgeX, golgeY, 60, 60);
 		
 		//////////////////
-		//    GEÇÝCÝ    //
+		//    GECÝCÝ    //
 		//////////////////
 		final JTextField xx = new JTextField();
 		xx.setBounds(950,600,111,25);
@@ -180,7 +188,7 @@ public class Konsol extends JFrame{
 		});
 		
 		//////////////////
-		//  BÝLEÞENLER  //
+		//  BILESENLER  //
 		//////////////////
 	
 	}
@@ -465,7 +473,7 @@ public class Konsol extends JFrame{
 }
 
 
-//Math.abs(taslarY1[i])%30==15 durumuna dikkat et -15 çýkabiliyor
+//Math.abs(taslarY1[i])%30==15 durumuna dikkat et -15 cikabiliyor
 //koseyi donmek icin haraket metotlarini kullanma
 //haraket metotlarini kullanmiyorken repaint fonksiyonunu cagirmayi unutma
 

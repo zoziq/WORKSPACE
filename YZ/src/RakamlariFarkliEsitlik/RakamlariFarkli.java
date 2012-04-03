@@ -29,7 +29,7 @@ public class RakamlariFarkli {
 	public static void main(String[] args) {
 		
 		int kontrol = 0;
-		for (long i = 123456789L; i < 9876543210L; i++) {
+		for (long i = 102345678L; i < 9876543210L; i++) {
 			for (int j = 0; j < 10; j++) {
 				for (int k = j+1; k < 10; k++) {
 					if(rakamlar(i)[j]==rakamlar(i)[k]) {
