@@ -9,6 +9,7 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.RepaintManager;
 
@@ -39,9 +40,12 @@ public class Konsol extends JFrame{
 	public int golgeX = -60; 
 	public int golgeY = -60;
 	
+	public JTextArea taslarinKonumu1;
+	public JTextArea taslarinKonumu2;
+	
 	public Konsol() {
 		setLayout(null);
-		setBounds(0,0,1100,720);
+		setBounds(0,0,1200,720);
 		setVisible(true);
 		setBackground(Color.black);
 	}
@@ -136,7 +140,7 @@ public class Konsol extends JFrame{
 		g.drawOval(golgeX, golgeY, 60, 60);
 		
 		//////////////////
-		//    GECÝCÝ    //
+		// KOORDINAT    //
 		//////////////////
 		final JTextField xx = new JTextField();
 		xx.setBounds(950,600,111,25);
@@ -154,7 +158,36 @@ public class Konsol extends JFrame{
 			@Override
 			public void mouseDragged(MouseEvent arg0) {}
 		});
+
+		//////////////////
+		//TASLARIN KONUMU//
+		//////////////////
+		JLabel oyuncu = new JLabel("oyuncu1     oyuncu2");
+		oyuncu.setBounds(800,25,180,25);
+		add(oyuncu);
+		JLabel t = new JLabel("tas1 knm1 tas2 knm2");
+		t.setBounds(795,45,180,25);
+		add(t);
+
+		String s1[] = konumHesapla(taslarX1, taslarY1);
+		String s2[] = konumHesapla(taslarX2, taslarY2);
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 15; j++) {
+				if (i==1) {
+					JTextField tt = new JTextField(s2[j]);
+					tt.setBounds(795+i*65,75+j*20,60,20);
+					add(tt);
+				}else {
+					JTextField tt = new JTextField(s1[j]);
+					tt.setBounds(795+i*65,75+j*20,60,20);
+					add(tt);
+				}
+			}
+		}
 		
+		//////////////////
+		//     ACTION   //
+		//////////////////
 		final JTextField tas1 = new JTextField();
 		tas1.setBounds(850,550,35,25);
 		add(tas1);
@@ -168,19 +201,19 @@ public class Konsol extends JFrame{
 		zar2.setBounds(900,575,35,25);
 		add(zar2);
 		
-		final JButton oynat2 = new JButton("oynat1");
-		oynat2.setBounds(950,550,111,25);
-		add(oynat2);
-		oynat2.addActionListener(new ActionListener() {		
+		final JButton oynat1 = new JButton("oynat1");
+		oynat1.setBounds(950,550,111,25);
+		add(oynat1);
+		oynat1.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				oynat(g,Integer.parseInt(tas1.getText()),Integer.parseInt(zar1.getText()),1);
 			}
 		});
-		final JButton oynat = new JButton("oynat2");
-		oynat.setBounds(950,575,111,25);
-		add(oynat);
-		oynat.addActionListener(new ActionListener() {		
+		final JButton oynat2 = new JButton("oynat2");
+		oynat2.setBounds(950,575,111,25);
+		add(oynat2);
+		oynat2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				oynat(g,Integer.parseInt(tas2.getText()),Integer.parseInt(zar2.getText()),2);
@@ -215,7 +248,7 @@ public class Konsol extends JFrame{
 				int gidecegiYer = taslarX1[tasNumarasi]-zar*60;
 				haraket11(tasNumarasi, gidecegiYer);
 			}
-			else if(taslarX1[tasNumarasi]<=720 && taslarX1[tasNumarasi]>=420 && taslarX1[tasNumarasi]-zar*60<=420 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60-30, 1)) {
+			else if(taslarX1[tasNumarasi]<=720 && taslarX1[tasNumarasi]>=420 && taslarX1[tasNumarasi]-zar*60<420 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(45, taslarX1[tasNumarasi]-zar*60-30, 1)) {
 				System.out.println("sag ustten sol uste 1");
 				int gidecegiYer = taslarX1[tasNumarasi]-zar*60-30;
 				haraket11(tasNumarasi, gidecegiYer);
@@ -465,6 +498,33 @@ public class Konsol extends JFrame{
 			}
 		}
 		return true;
+	}
+	
+	public String[] konumHesapla(int[] x, int[] y) {
+		String dizi[] = new String[15];
+		String s = "";
+		for (int i = 0; i < x.length; i++) {
+			int konum = 0;
+			if (y[i]%30==15) {
+				konum = (x[i]+30)/60+12;
+			}else {
+				konum = 13-(x[i]+30)/60;
+			}
+			if (x[i]==375 && y[i]==300) {
+				konum = 0;
+			}
+			if (x[i]==375 && y[i]==360) {
+				konum = 25;
+			}
+			if (i/10>=1) {
+				s += i + "    -   " + konum + "\n";
+			}else {
+				s += i + "     -    " + konum + "\n";;
+			}
+			dizi[i] = s;
+			s = "";
+		}
+		return dizi;
 	}
 	
 	public static void main(String[] args) {
