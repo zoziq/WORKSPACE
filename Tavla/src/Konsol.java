@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,12 +24,12 @@ public class Konsol extends JFrame{
 	public static int taslarY1[] = {630,570,510,450,390,630,570,510,45,105,165,225,285, 45,105};
 	public static int taslarX2[] = {420,420,420,420,420,270,270,270, 30, 30, 30, 30, 30,720,720};
 	public static int taslarY2[] = { 45,105,165,225,285, 45,105,165,630,570,510,450,390,630,570};
-	
-//	public static int taslarX1[] = {420,660,540,540,600,210,150,330,30, 30, 30,90,270,720,720};
-//	public static int taslarY1[] = {630,630,630,570,630,630,630,630,45,105,165,45, 45, 45,105};
-//	public static int taslarX2[] = {600,540,540,540,540,330,150,150, 30, 90, 90,270, 90,480,720};
-//	public static int taslarY2[] = { 45,225,165,105, 45, 45, 45,105,630,630,570,630,510,630,630 };
-	
+	/*
+	public static int taslarX1[] = {420,660,540,540,600,210,150,330,30, 30, 30,90,270,720,720};
+	public static int taslarY1[] = {630,630,630,570,630,630,630,630,45,105,165,45, 45, 45,105};
+	public static int taslarX2[] = {600,540,540,540,540,330,150,150, 30, 90, 90,270, 90,480,720};
+	public static int taslarY2[] = { 45,225,165,105, 45, 45, 45,105,630,630,570,630,510,630,630 };
+	*/
 	public static int kirikSayisi1 = 0;
 	public static int kirikSayisi2 = 0;
 	
@@ -163,10 +164,10 @@ public class Konsol extends JFrame{
 		//TASLARIN KONUMU//
 		//////////////////
 		JLabel oyuncu = new JLabel("oyuncu1     oyuncu2");
-		oyuncu.setBounds(800,25,180,25);
+		oyuncu.setBounds(860,25,180,25);
 		add(oyuncu);
 		JLabel t = new JLabel("tas1 knm1 tas2 knm2");
-		t.setBounds(795,45,180,25);
+		t.setBounds(855,45,180,25);
 		add(t);
 
 		String s1[] = konumHesapla(taslarX1, taslarY1);
@@ -175,11 +176,11 @@ public class Konsol extends JFrame{
 			for (int j = 0; j < 15; j++) {
 				if (i==1) {
 					JTextField tt = new JTextField(s2[j]);
-					tt.setBounds(795+i*65,75+j*20,60,20);
+					tt.setBounds(855+i*65,75+j*18,60,18);
 					add(tt);
 				}else {
 					JTextField tt = new JTextField(s1[j]);
-					tt.setBounds(795+i*65,75+j*20,60,20);
+					tt.setBounds(855+i*65,75+j*18,60,18);
 					add(tt);
 				}
 			}
@@ -375,11 +376,6 @@ public class Konsol extends JFrame{
 			}
 		}
 
-			
-
-
-		
-		
 	}
 
 	private void haraket11(int tasNumarasi, int gidecegiYer) {
@@ -504,18 +500,7 @@ public class Konsol extends JFrame{
 		String dizi[] = new String[15];
 		String s = "";
 		for (int i = 0; i < x.length; i++) {
-			int konum = 0;
-			if (y[i]%30==15) {
-				konum = (x[i]+30)/60+12;
-			}else {
-				konum = 13-(x[i]+30)/60;
-			}
-			if (x[i]==375 && y[i]==300) {
-				konum = 0;
-			}
-			if (x[i]==375 && y[i]==360) {
-				konum = 25;
-			}
+			int konum = konumBul(x, y, i);
 			if (i/10>=1) {
 				s += i + "    -   " + konum + "\n";
 			}else {
@@ -526,9 +511,110 @@ public class Konsol extends JFrame{
 		}
 		return dizi;
 	}
+
+	private int konumBul(int[] x, int[] y, int i) {
+		int konum = 0;
+		if (y[i]%30==15) {
+			konum = (x[i]+30)/60+12;
+		}else {
+			konum = 13-(x[i]+30)/60;
+		}
+		if (x[i]==375 && y[i]==300) {
+			konum = 0;
+		}
+		if (x[i]==375 && y[i]==360) {
+			konum = 25;
+		}
+		return konum;
+	}
+	
+	public int max(ArrayList<Integer> a) {
+		int b = 0;
+		for (int i = 0; i < a.size(); i++) {
+			if (a.get(i) > b) {
+				b = a.get(i);
+			}	
+		}
+		return b;
+	}
+	/*
+	x{420,660,540,540,600,210,150,330,30, 30, 30,90,270,720,720};
+	y{630,630,630,570,630,630,630,630,45,105,165,45, 45, 45,105};
+	
+			
+	 */
+	public String[] oynayabilirTaslariHesapla(int[] x, int[] y) {
+		String s = "";
+		String dizi[] = null;
+		ArrayList<Integer> uygunTasX = new ArrayList<Integer>();
+		ArrayList<Integer> uygunTasY = new ArrayList<Integer>();
+		
+		
+		for (int i = 0; i < 15; i++) {
+			int a = x[i];
+			ArrayList<Integer> temp = new ArrayList<Integer>();
+			for (int j = i+1; j < 15; j++) {
+				if (a==x[j]) {
+					temp.add(j);
+				}
+			}
+			int uygunTas = 0;
+			int uygunIndis = i;
+			for (int k = 0; k < temp.size(); k++) {
+				if (y[i] > y[temp.get(k)]) {
+					uygunTas = y[i];
+					uygunIndis = i;
+				}
+				if(uygunTas < y[temp.get(k)]) {
+					uygunTas = y[temp.get(k)];
+					uygunIndis = i+k+1;
+				}
+			}
+			i+=temp.size();	
+			
+			uygunTasX.add(x[uygunIndis]);
+			uygunTasY.add(y[uygunIndis]);
+		}
+			
+			
+		System.out.println(uygunTasX);
+		System.out.println(uygunTasY);
+
+		return dizi;
+	}
+	
+	public ArrayList<Integer> listeyeEkle (ArrayList<Integer> a, int sayi){
+		int s = 0;
+		if (a.isEmpty()) {
+			a.add(sayi);
+		}
+		else {
+			for (int i = 0; i < a.size(); i++) {
+				if (a.get(i)==sayi) {
+					return a;
+				}
+				else{
+					s = 1;
+				}
+			}
+			if (s==1) {
+				s=0;
+				a.add(sayi);
+				return a;
+			}
+		}
+		return null;
+	}
+	
+
 	
 	public static void main(String[] args) {
-		new Konsol();
+		Konsol k = new Konsol();
+		
+	
+		
+			System.out.println(k.oynayabilirTaslariHesapla(taslarX2, taslarY2));
+			
 	}
 }
 
