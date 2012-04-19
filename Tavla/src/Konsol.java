@@ -50,11 +50,48 @@ public class Konsol extends JFrame{
 	public int oynamaz1 = 0;
 	public int oynamaz2 = 0;
 	
+	public JTextField sureoync1;
+	public JTextField sureoync2;
+	public JTextField toplamsureoync1;
+	public JTextField toplamsureoync2;
+	
+	public static int kontrol = 0;
+	
 	public Konsol() {
 		setLayout(null);
 		setBounds(0,0,1360,720);
 		setVisible(true);
 		setBackground(Color.black);
+	}
+	
+	public void randomZar() {
+		for (int j = 0; j < 20; j++) {
+			for (int i = 0; i < 2; i++) {
+				zarListesi[j][i] = (int)(Math.random()*6)+1;			
+			}
+		}
+	}
+	
+	public int listedenZarSec(int sira) {
+		int secilenZar = zarListesi[sira][0]*10+zarListesi[sira][1];
+		int liste[][] = new int[zarListesi.length - 1][2];
+		for (int j = 0; j < zarListesi.length -1; j++) {
+			for (int i = 0; i < 2; i++) {
+				liste[j][i] = zarListesi[j][i];
+			}
+		}
+		for (int j = sira; j < zarListesi.length -1; j++) {
+			for (int i = 0; i < 2; i++) {
+				liste[j][i] = zarListesi[j+1][i];
+			}
+		}
+		zarListesi = new int[zarListesi.length -1][2];
+		for (int j = 0; j < zarListesi.length; j++) {
+			for (int i = 0; i < 2; i++) {
+				zarListesi[j][i] = liste[j][i];
+			}
+		}
+		return secilenZar;
 	}
 	
 	public void paint(final Graphics g) {
@@ -101,10 +138,14 @@ public class Konsol extends JFrame{
 		for (int i = 0; i < 15; i++) {
 			g.setColor(new Color(222,188,153));
 			g.fillOval(taslarX1[i], taslarY1[i], 60, 60);
+			g.setColor(Color.black);
+			g.drawString(i + "", taslarX1[i]+25, taslarY1[i]+30);
 		}
 		for (int i = 0; i < 15; i++) {
 			g.setColor(new Color(107,77,57));
 			g.fillOval(taslarX2[i], taslarY2[i], 60, 60);
+			g.setColor(Color.white);
+			g.drawString(i + "", taslarX2[i]+25, taslarY2[i]+30);
 		}
 		
 		//////////////////
@@ -112,11 +153,11 @@ public class Konsol extends JFrame{
 		//////////////////
 		if (kirikSayisi1!=0) {
 			g.setColor(Color.white);
-			g.drawString(""+kirikSayisi1, 401, 335);
+			g.drawString(""+kirikSayisi1, 401, 290);
 		}
 		if (kirikSayisi2!=0) {
 			g.setColor(Color.white);
-			g.drawString(""+kirikSayisi2, 401, 395);
+			g.drawString(""+kirikSayisi2, 401, 440);
 		}
 		
 		for (int i = 0; i < 6; i++) {
@@ -217,13 +258,15 @@ public class Konsol extends JFrame{
 		JLabel o2 = new JLabel("Zar Listesi");
 		o2.setBounds(1185,45,180,25);
 		add(o2);
-		for (int j = 0; j < 20; j++) {
-			for (int i = 0; i < 2; i++) {
-				zarListesi[j][i] = (int)(Math.random()*6)+1;
-			}
+		
+		for (int j = 0; j < zarListesi.length; j++) {
 			JTextField tt = new JTextField("    " + zarListesi[j][0] + " - " + zarListesi[j][1]);
 			tt.setBounds(1185,75+j*18,60,18);
 			add(tt);
+		}
+		if(kontrol==0){
+			randomZar();
+			kontrol ++;
 		}
 		//////////////////
 		// UYARI MESAJI //
@@ -232,8 +275,36 @@ public class Konsol extends JFrame{
 		durumlar.setBounds(850,500,212,25);
 		add(durumlar);
 		//////////////////
+		//    SURE      //
+		//////////////////
+		JLabel sure = new JLabel("Son hamle süre");
+		sure.setBounds(1080, 520, 100, 20);
+		add(sure);
+		JLabel toplamsure = new JLabel("Toplam süre");
+		toplamsure.setBounds(1180, 520, 100, 20);
+		add(toplamsure);
+		sureoync1 = new JTextField();
+		sureoync1.setBounds(1080, 550, 80, 25);
+		add(sureoync1);
+		sureoync2 = new JTextField();
+		sureoync2.setBounds(1080, 575, 80, 25);
+		add(sureoync2);
+		toplamsureoync1 = new JTextField();
+		toplamsureoync1.setBounds(1180, 550, 80, 25);
+		add(toplamsureoync1);
+		toplamsureoync2 = new JTextField();
+		toplamsureoync2.setBounds(1180, 575, 80, 25);
+		add(toplamsureoync2);
+		
+		//////////////////
 		//     ACTION   //
 		//////////////////
+		JLabel oync1 = new JLabel("oyuncu1");
+		oync1.setBounds(800, 550, 50, 20);
+		add(oync1);
+		JLabel oync2 = new JLabel("oyuncu2");
+		oync2.setBounds(800, 575, 50, 20);
+		add(oync2);
 		final JTextField tas1 = new JTextField();
 		tas1.setBounds(850,550,35,25);
 		add(tas1);
@@ -253,7 +324,9 @@ public class Konsol extends JFrame{
 		oynat1.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				oynat(g,Integer.parseInt(tas1.getText()),Integer.parseInt(zar1.getText()),1);
+				int secilen = listedenZarSec(0);
+				oynat(g,Integer.parseInt(tas1.getText()),secilen/10,1);
+				oynat(g,Integer.parseInt(zar1.getText()),secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
 				ts1 = tas1.getText();
 				if (oynamaz1 == 0) {
 					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
@@ -267,16 +340,18 @@ public class Konsol extends JFrame{
 		oynat2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				oynat(g,Integer.parseInt(tas2.getText()),Integer.parseInt(zar2.getText()),2);
-				ts2 = tas2.getText();
+			int secilen = listedenZarSec(0);
+			oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
+			oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
 				if (oynamaz2 == 0) {
 					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
 				}
 				oynamaz2 = 0;
 			}
 		});
-			
 	}
+	
+	
 	
 	
 	public void oynat(Graphics g, int tasNumarasi, int zar, int hangiTas) {
@@ -682,7 +757,7 @@ public class Konsol extends JFrame{
 		dizi = new String[indis.size()];
 		for (int i = 0; i < indis.size(); i++) {
 			dizi[i] = indis.get(i) + "";
-			System.out.println(dizi[i]);
+//			System.out.println(dizi[i]);
 		}
 
 		return dizi;
