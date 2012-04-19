@@ -1,0 +1,36 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:AID="http://www.semanticweb.org/ontologies/2011/3/AID.owl#">
+    
+  <owl:Class rdf:ID="AgentIdentifier"/>
+  
+    <owl:Class rdf:ID="AgentDescription"/>
+ 
+  <owl:Class rdf:ID="Thing"/>
+ 
+  <owl:DatatypeProperty rdf:ID="name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#AgentIdentifier"/>
+        <rdfs:domain rdf:resource="#AgentDescription"/>
+ </owl:DatatypeProperty>
+ 
+  <owl:DatatypeProperty rdf:ID="address">
+     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#AgentIdentifier"/>
+  </owl:DatatypeProperty>
+  
+    <owl:DatatypeProperty rdf:ID="ownership">
+     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#AgentDescription"/>
+    </owl:DatatypeProperty>
+  
+  <owl:DatatypeProperty rdf:ID="state">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#AgentDescription"/>
+ </owl:DatatypeProperty> 
+
+  
+</rdf:RDF>

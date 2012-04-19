@@ -1,0 +1,10 @@
+package service;
+
+public class Service{
+
+	private String name;
+	private String id;
+	private String textDesciption;
+	private String address;
+	private String matchAgentUri;
+}

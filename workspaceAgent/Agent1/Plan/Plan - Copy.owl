@@ -1,0 +1,17 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:Plan="http://www.semanticweb.org/ontologies/2011/3/Plan.owl#">
+  <owl:Class rdf:ID="Plan"/>
+  <owl:Class rdf:ID="Thing"/>
+  <owl:DatatypeProperty rdf:ID="name"/>
+  <owl:DatatypeProperty rdf:ID="language"/>
+  <owl:DatatypeProperty rdf:ID="action"/>
+  <Plan:Plan rdf:about="Plan1">
+    <Plan:name>beh2000</Plan:name>
+    <Plan:language>ontoloji</Plan:language>
+    <Plan:action>sorgu</Plan:action>
+  </Plan:Plan>
+</rdf:RDF>

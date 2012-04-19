@@ -1,0 +1,57 @@
+<rdf:RDF
+    xmlns:agentdata="c://agentdata.owl/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="file:/C:/Users/E-Hero/ontologies/AgentInd/AgentInd.owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:Agent="http://www.semanticweb.org/ontologies/2010/11/Agent.owl#">
+  <owl:Ontology rdf:about="file:/C:/Users/E-Hero/ontologies/AgentInd/AgentInd.owl">
+    <owl:imports rdf:resource=""/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="AgentIdentifier"/>
+  <owl:Class rdf:ID="AgentDescription"/>
+  <owl:DatatypeProperty rdf:ID="state"/>
+  <owl:DatatypeProperty rdf:ID="id"/>
+  <owl:DatatypeProperty rdf:ID="name"/>
+  <owl:DatatypeProperty rdf:ID="ownership"/>
+  <owl:DatatypeProperty rdf:ID="address"/>
+  
+  <Agent:AgentIdentifier rdf:about="AID01">
+    <Agent:address>rmi://192.168.2.23/Agent01</Agent:address>
+    <Agent:name>df@hero.com</Agent:name>
+  </Agent:AgentIdentifier>
+  
+  <Agent:AgentIdentifier rdf:about="AID02">
+    <Agent:address>rmi://192.168.2.23/Agent02</Agent:address>
+    <Agent:name>kullanici@hero.com</Agent:name>
+  </Agent:AgentIdentifier>
+  
+    <Agent:AgentIdentifier rdf:about="AID03">
+    <Agent:address>rmi://192.168.2.23/Agent03</Agent:address>
+    <Agent:name>hilton@hero.com</Agent:name>
+  </Agent:AgentIdentifier>
+  
+  
+  <Agent:AgentDescription rdf:about="AGD01">
+    <Agent:state>active</Agent:state>
+    <Agent:ownership>Directory Facilitator</Agent:ownership>
+    <Agent:name>df@hero.com</Agent:name>
+  </Agent:AgentDescription>
+  
+  
+  <Agent:AgentDescription rdf:about="AGD02">
+    <Agent:ownership>Emrah</Agent:ownership>
+    <Agent:name>kullanici@hero.com</Agent:name>
+    <Agent:state>active</Agent:state>
+  </Agent:AgentDescription>
+  
+    <Agent:AgentDescription rdf:about="AGD03">
+    <Agent:ownership>Hilton</Agent:ownership>
+    <Agent:name>hilton@hero.com</Agent:name>
+    <Agent:state>active</Agent:state>
+  </Agent:AgentDescription>
+  
+  
+</rdf:RDF>

@@ -1,0 +1,66 @@
+package CalisanSorgu;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.query.ResultSetFormatter;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.vocabulary.VCARD;
+
+public class ilksorgu {
+
+	public static void main(String[] args) throws IOException {
+		
+		InputStream in = new FileInputStream(new File("D:/Workspaces/Ontologies/ServiceMetaModel.owl"));
+
+		Model model = ModelFactory.createOntologyModel();
+		model.read(in,null);
+		in.close();
+
+		String queryString = 
+			"PREFIX ServiceMetaModel: <http://www.semanticweb.org/ontologies/2012/2/ServiceMetaModel.owl#> " +
+			"SELECT ?p ?e ?i " +
+			"WHERE {" +
+			"      ?s ServiceMetaModel:matchAgent ?e . " +
+			"      ?s ServiceMetaModel:name \"bookRequest\" . " +
+			"      ?s ServiceMetaModel:composedOf ?c . " +
+			"      ?c ServiceMetaModel:composedOf ?a . " +
+			"      ?a ServiceMetaModel:hasInput ?i . " +
+			"      ?i ServiceMetaModel:parameterType ?p . " +
+			"      }";
+
+		
+		
+		Query query = QueryFactory.create(queryString);
+
+		QueryExecution qe = QueryExecutionFactory.create(query, model);
+		ResultSet results = qe.execSelect();
+		while (results.hasNext()) {
+			QuerySolution s = results.next();
+			RDFNode p = s.get("p");
+			RDFNode e = s.get("e");
+			RDFNode i = s.get("i");
+			System.out.println(e+"\n"+i+"\n"+p+"\n");
+		}
+
+		qe.close();
+
+	}
+	
+}

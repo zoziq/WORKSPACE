@@ -1,0 +1,166 @@
+<rdf:RDF
+    xmlns:Otel="http://www.semanticweb.org/ontologies/2011/3/Otel.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Class rdf:ID="Kara_Sporu">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Spor_Aktiviteleri"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Voleybol">
+    <rdfs:subClassOf rdf:resource="#Kara_Sporu"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Golf">
+    <rdfs:subClassOf rdf:resource="#Kara_Sporu"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Thing"/>
+  <owl:Class rdf:ID="Geziler">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Aktivite"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Acik_Havuz">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Havuz"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Otel"/>
+  <owl:Class rdf:ID="Animasyon">
+    <rdfs:subClassOf rdf:resource="#Aktivite"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Spor_Aktiviteleri">
+    <rdfs:subClassOf rdf:resource="#Aktivite"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AID"/>
+  <owl:Class rdf:ID="Aerobik">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Salon_Sporu"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Salon_Sporu">
+    <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Oda"/>
+  <owl:Class rdf:ID="Plaj_Futbolu">
+    <rdfs:subClassOf rdf:resource="#Kara_Sporu"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Su_Sporu">
+    <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Kapali_Havuz">
+    <rdfs:subClassOf rdf:resource="#Havuz"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Takim_Sporu">
+    <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Yamac_Parasutu">
+    <rdfs:subClassOf rdf:resource="#Aktivite"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Bilimsel_Toplantilar">
+    <rdfs:subClassOf rdf:resource="#Aktivite"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Bireysel_Spor">
+    <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ToplantiSalonu"/>
+  <owl:Class rdf:ID="Futbol">
+    <rdfs:subClassOf rdf:resource="#Kara_Sporu"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Rafting">
+    <rdfs:subClassOf rdf:resource="#Su_Sporu"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="vardir">
+    <rdfs:range>
+      <Otel:Havuz rdf:about="Havuz1"/>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Otel"/>
+    <rdfs:range rdf:resource="#Aktivite"/>
+    <rdfs:range rdf:resource="#Havuz"/>
+    <rdfs:range>
+      <Otel:Havuz rdf:about="Havuz1"/>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sahiptir">
+    <rdfs:domain rdf:resource="#Otel"/>
+    <rdfs:range rdf:resource="#AID"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="ad">
+    <rdfs:domain rdf:resource="#AID"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="yildiz">
+    <rdfs:domain rdf:resource="#Otel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="adres">
+    <rdfs:domain rdf:resource="#AID"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="yeri">
+    <rdfs:domain rdf:resource="#Otel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Otel:Otel rdf:about="Otel1">
+    <Otel:vardir rdf:resource="Havuz1"/>
+    <Otel:vardir>
+      <Otel:Aktivite rdf:about="Aktivite1"/>
+    </Otel:vardir>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID1">
+        <Otel:adres>SA</Otel:adres>
+        <Otel:ad>DDD</Otel:ad>
+      </Otel:AID>
+    </Otel:sahiptir>
+    <Otel:yeri>dsaSDA</Otel:yeri>
+  </Otel:Otel>
+  <Otel:Spor_Aktiviteleri rdf:about="Spor_Aktiviteleri1"/>
+  <Otel:Su_Sporu rdf:about="Su_Sporu1"/>
+  <Otel:Golf rdf:about="Futbol1"/>
+  <Otel:Spor_Aktiviteleri rdf:about="Spor_Aktiviteleri1"/>
+  <Otel:Otel rdf:about="Otel1">
+    <Otel:yeri>sss</Otel:yeri>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID1">
+        <Otel:ad>adsad</Otel:ad>
+        <Otel:adres>sadsadas</Otel:adres>
+      </Otel:AID>
+    </Otel:sahiptir>
+    <Otel:vardir>
+      <Otel:Aktivite rdf:about="Aktivite1"/>
+    </Otel:vardir>
+    <Otel:vardir rdf:resource="Havuz1"/>
+  </Otel:Otel>
+  <Otel:Otel rdf:about="Otel3">
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID3">
+        <Otel:adres>rmi://192.168.2.23:1099/Agent02</Otel:adres>
+        <Otel:ad>hilton@hero.com</Otel:ad>
+      </Otel:AID>
+    </Otel:sahiptir>
+    <Otel:yer>antalya</Otel:yer>
+  </Otel:Otel>
+  <Otel:Otel rdf:about="Otel4">
+    <Otel:yer>antalya</Otel:yer>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID4">
+        <Otel:ad>rixos</Otel:ad>
+        <Otel:adres>rmi://192.168.2.23:1099/Agent02</Otel:adres>
+      </Otel:AID>
+    </Otel:sahiptir>
+  </Otel:Otel>
+  <Otel:Otel rdf:about="Otel2">
+    <Otel:yer>konya</Otel:yer>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID2">
+        <Otel:ad>dedeman</Otel:ad>
+        <Otel:adres>192.168.2.25</Otel:adres>
+      </Otel:AID>
+    </Otel:sahiptir>
+  </Otel:Otel>
+  <Otel:Golf rdf:about="Futbol1"/>
+  <Otel:Kara_Sporu rdf:about="Kara_Sporu1"/>
+  <Otel:Kara_Sporu rdf:about="Kara_Sporu1"/>
+  <Otel:Golf rdf:about="Golf1"/>
+  <Otel:Golf rdf:about="Golf1"/>
+  <Otel:Su_Sporu rdf:about="Su_Sporu1"/>
+</rdf:RDF>

@@ -1,0 +1,73 @@
+<rdf:RDF
+    xmlns:Otel="http://www.semanticweb.org/ontologies/2011/3/Otel.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Class rdf:ID="Thing"/>
+  <owl:Class rdf:ID="Otel"/>
+  <owl:Class rdf:ID="AID"/>
+  <owl:ObjectProperty rdf:ID="sahiptir">
+    <rdfs:domain rdf:resource="#Otel"/>
+    <rdfs:range rdf:resource="#AID"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="ad">
+    <rdfs:domain rdf:resource="#AID"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="yildiz">
+    <rdfs:domain rdf:resource="#Otel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="adres">
+    <rdfs:domain rdf:resource="#AID"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="yer">
+    <rdfs:domain rdf:resource="#Otel"/>
+  </owl:DatatypeProperty>
+  
+  <Otel:Otel rdf:about="Otel4">
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID4">
+        <Otel:adres>rmi://192.682.1542:1099/Agent01</Otel:adres>
+        <Otel:ad>rixos@hero.com</Otel:ad>
+      </Otel:AID>
+    </Otel:sahiptir>
+    <Otel:yildiz>7</Otel:yildiz>
+    <Otel:yer>antalya</Otel:yer>
+  </Otel:Otel>
+  
+  <Otel:Otel rdf:about="Otel3">
+    <Otel:yer>izmir</Otel:yer>
+    <Otel:yildiz>4</Otel:yildiz>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID3">
+        <Otel:ad>swiss@hero.com</Otel:ad>
+        <Otel:adres>rmi://192.682.1542:1099/Agent01</Otel:adres>
+      </Otel:AID>
+    </Otel:sahiptir>
+  </Otel:Otel>
+  
+  <Otel:Otel rdf:about="Otel1">
+    <Otel:yer>kayseri</Otel:yer>
+    <Otel:yildiz>5</Otel:yildiz>
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID1">
+        <Otel:ad>hilton@hero.com</Otel:ad>
+        <Otel:adres>rmi://192.168.107.47/Agent03</Otel:adres>
+      </Otel:AID>
+    </Otel:sahiptir>
+  </Otel:Otel>
+  
+
+
+  <Otel:Otel rdf:about="Otel2">
+    <Otel:sahiptir>
+      <Otel:AID rdf:about="AID2">
+        <Otel:adres>192.168.2.22</Otel:adres>
+        <Otel:ad>rmi://192.682.154:1099/Agent01</Otel:ad>
+      </Otel:AID>
+    </Otel:sahiptir>
+    <Otel:yildiz>4</Otel:yildiz>
+    <Otel:yer>konya</Otel:yer>
+  </Otel:Otel>
+  
+</rdf:RDF>

@@ -1,0 +1,147 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:Oda="http://www.semanticweb.org/ontologies/2011/3/Oda.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    
+  <owl:Class rdf:ID="Oda"/>
+    
+    <owl:Class rdf:ID="Otel"/>
+    
+        <owl:Class rdf:ID="Havuz"/>
+  
+    <owl:Class rdf:ID="Aktivite"/>
+    
+        <owl:Class rdf:ID="Spor_Aktiviteleri">
+                <rdfs:subClassOf rdf:resource="#Aktivite"/>
+    </owl:Class>
+    
+    
+            <owl:Class rdf:ID="Kara_Sporu">
+                <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+    </owl:Class>
+    
+    
+            <owl:Class rdf:ID="Su_Spor">
+                <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+    </owl:Class>
+    
+    
+            <owl:Class rdf:ID="Takim_Sporu">
+                <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+    </owl:Class>
+    
+            <owl:Class rdf:ID="Bireysel_Spor">
+                <rdfs:subClassOf rdf:resource="#Spor_Aktiviteleri"/>
+    </owl:Class>
+    
+        
+        <owl:Class rdf:ID="Bilimsel_Toplantilar">
+                <rdfs:subClassOf rdf:resource="#Aktivite"/>
+    </owl:Class>
+    
+
+<owl:Class rdf:ID="Geziler">
+        <rdfs:subClassOf rdf:resource="#Aktivite"/>
+    </owl:Class>
+
+<owl:Class rdf:ID="Yamac_Parasutu">
+        <rdfs:subClassOf rdf:resource="#Aktivite"/>
+    </owl:Class>
+    
+<owl:Class rdf:ID="Animasyon">
+        <rdfs:subClassOf rdf:resource="#Aktivite"/>
+    </owl:Class>
+        
+        <owl:Class rdf:ID="ToplantiSalonu"/>
+        
+  <owl:Class rdf:ID="Thing"/>
+  
+  
+    <owl:DatatypeProperty rdf:ID="ad">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Otel"/>
+  </owl:DatatypeProperty>
+  
+      <owl:DatatypeProperty rdf:ID="yeri">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Otel"/>
+  </owl:DatatypeProperty>
+  
+    <owl:DatatypeProperty rdf:ID="yildiz">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Otel"/>
+  </owl:DatatypeProperty>
+  
+  
+  <owl:DatatypeProperty rdf:ID="tip">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+  <owl:DatatypeProperty rdf:ID="ucret">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+    <owl:DatatypeProperty rdf:ID="kat">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+      <owl:DatatypeProperty rdf:ID="kapasite">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+  
+  <owl:DatatypeProperty rdf:ID="Durum">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+  
+  <owl:DatatypeProperty rdf:ID="odaNo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Oda"/>
+  </owl:DatatypeProperty>
+  
+  
+  <Oda:Oda rdf:about="Oda5">
+    <Oda:ucret>8</Oda:ucret>
+    <Oda:Durum>Boş</Oda:Durum>
+    <Oda:odaNo>6</Oda:odaNo>
+    <Oda:tip>ciftkisi</Oda:tip>
+  </Oda:Oda>
+  
+  <Oda:Oda rdf:about="Oda2">
+    <Oda:tip>suit</Oda:tip>
+    <Oda:odaNo>2</Oda:odaNo>
+    <Oda:Durum>Boş</Oda:Durum>
+    <Oda:ucret>10</Oda:ucret>
+  </Oda:Oda>
+  
+  <Oda:Oda rdf:about="Oda1">
+    <Oda:ucret>10</Oda:ucret>
+    <Oda:Durum>Boş</Oda:Durum>
+    <Oda:odaNo>1</Oda:odaNo>
+    <Oda:tip>suit</Oda:tip>
+  </Oda:Oda>
+  
+  <Oda:Oda rdf:about="Oda4">
+    <Oda:tip>tekkisi</Oda:tip>
+    <Oda:odaNo>5</Oda:odaNo>
+    <Oda:Durum>Boş</Oda:Durum>
+    <Oda:ucret>5</Oda:ucret>
+  </Oda:Oda>
+  
+  <Oda:Oda rdf:about="Oda3">
+    <Oda:ucret>30</Oda:ucret>
+    <Oda:Durum>Boş</Oda:Durum>
+    <Oda:odaNo>3</Oda:odaNo>
+    <Oda:tip>kral</Oda:tip>
+  </Oda:Oda>
+  
+  
+</rdf:RDF>

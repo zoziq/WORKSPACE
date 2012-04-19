@@ -1,0 +1,572 @@
+<?xml version='1.0' encoding='UTF-8'?><?xml-stylesheet type='text/xsl' href='http://rss.feedsportal.com/xsl/eng/rss.xsl'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:media="http://search.yahoo.com/mrss/"
+	version="2.0">
+	<channel>
+		<title>Hürriyet ANASAYFA</title>
+		<link>http://www.hurriyet.com.tr/anasayfa/</link>
+		<description>TÜRKİYE'NİN AÇILIŞ SAYFASI</description>
+		<language>en</language>
+		<pubDate>Tue, 07 Feb 2012 07:19:07 GMT</pubDate>
+		<lastBuildDate>Tue, 07 Feb 2012 07:19:07 GMT</lastBuildDate>
+		<ttl>2</ttl>
+		<image>
+			<title>Hürriyet ANASAYFA</title>
+			<url>http://rss.hurriyet.com.tr/msn/images/hurriyetcomtrlogo.jpg</url>
+			<link>http://www.hurriyet.com.tr/anasayfa/</link>
+		</image>
+		<item>
+			<title>Hayatını kaybetti</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c740c2b/l/0L0Shurriyet0N0Btr0Cgundem0C198617960Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/gundem/19861796.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/8885/15738885_116x70.jpg"
+				alt="Hayatını kaybetti" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;Ağrı'nın
+				Doğubayazıt ilçesinde silahlı saldırıya uğrayan Cumhuriyet Savcısı
+				Hakan Kılıç, tedavi gördüğü Yıldırım Beyazıt Üniversitesi Atatürk
+				Eğitim ve Araştırma Hastanesinde vefat etti.&lt;img width='1'
+				height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c740c2b/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126177942913/u/0/f/507115/c/32714/s/1c740c2b/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126177942913/u/0/f/507115/c/32714/s/1c740c2b/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c740c2b/l/0L0Shurriyet0N0Btr0C0Inp0C88850C157388850I116x70A0Bjpg/15738885_116x70.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 07:03:48 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/gundem/19861796.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/8885/15738885_116x70.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/8885/15738885_116x70.jpg" />
+		</item>
+		<item>
+			<title>Soğuk hava geri döndü</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c740c2a/l/0L0Shurriyet0N0Btr0Cgundem0C198617610Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/gundem/19861761.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/8856/15738856.jpg" alt="Soğuk
+				hava geri döndü" align="left" style="padding-right:5px;" border="0"
+				width="80" height="80" /&gt;&lt;/a&gt;Türkiye dün akşam Orta Akdeniz
+				üzerinden gelen yeni bir yağışlı havanın etkisine girdi. Yağış ve
+				fırtına nedeniyle Antalya ve Isparta kent merkezinde okullar tatil
+				edildi.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c740c2a/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126177942912/u/0/f/507115/c/32714/s/1c740c2a/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126177942912/u/0/f/507115/c/32714/s/1c740c2a/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c740c2a/l/0L0Shurriyet0N0Btr0C0Inp0C88560C157388560Bjpg/15738856.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 06:35:11 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/gundem/19861761.asp</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/8856/15738856.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/8856/15738856.jpg" />
+		</item>
+		<item>
+			<title>Eğitimde tablet dönemi</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ba/l/0L0Shurriyet0N0Btr0Cekonomi0C198597710Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/ekonomi/19859771.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/5950/15735950_178x107.jpg"
+				alt="Eğitimde tablet dönemi" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;Erdoğan, Türkiye’de
+				Fatih Projesi’yle eğitimin etkilediği her alanda bir çağın
+				kapatıldığını belirtti.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ba/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126177942911/u/0/f/507115/c/32714/s/1c72d7ba/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126177942911/u/0/f/507115/c/32714/s/1c72d7ba/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7ba/l/0L0Shurriyet0N0Btr0C0Inp0C5950A0C15735950A0I178x10A70Bjpg/15735950_178x107.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 06:26:46 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/ekonomi/19859771.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/5950/15735950_178x107.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/5950/15735950_178x107.jpg" />
+		</item>
+		<item>
+			<title>Onu güzel bir selvi gölgesi bekliyor</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c6d2c54/l/0L0Shurriyet0N0Btr0Cmagazin0Cmagazinhatti0C198550A910Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/magazin/magazinhatti/19855091.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/2469/15732469_138x83.jpg"
+				alt="Onu güzel bir selvi gölgesi bekliyor" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c6d2c54/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/123996138732/u/0/f/507115/c/32714/s/1c6d2c54/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/123996138732/u/0/f/507115/c/32714/s/1c6d2c54/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c6d2c54/l/0L0Shurriyet0N0Btr0C0Inp0C24690C157324690I138x830Bjpg/15732469_138x83.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 06:25:54 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/magazin/magazinhatti/19855091.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/2469/15732469_138x83.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/2469/15732469_138x83.jpg" />
+		</item>
+		<item>
+			<title>'Gerekirse yine söylerim'</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7b1/l/0L0Shurriyet0N0Btr0Cplanet0C19860A7850Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/planet/19860785.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/8813/15738813_116x70.jpg"
+				alt="'Gerekirse yine söylerim'" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;AB Bakanı ve Başmüzakereci Egemen Bağış için Zürih
+				Savcılığı ön soruşturma başlattı. Neue Zürcher Zeitung gazetesinin
+				haberine göre, soruşturma İsviçre Ermeni topluluğunun şikayeti
+				üzerine açıldı. Bakan Bağış, ön soruşturma açılmasıyla ilgili ''Bu
+				tür girişimler bizim için yok hükmündedir. Türkiye Cumhuriyeti'nin
+				herhangi bir bakanını tutuklayacak bir güç tanımıyorum. Gerekirse
+				Davos'a gider, aynısını yine söyleriz'' dedi.&lt;img width='1'
+				height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7b1/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7b1/l/0L0Shurriyet0N0Btr0C0Inp0C88130C157388130I116x70A0Bjpg/15738813_116x70.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 05:55:07 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/planet/19860785.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/8813/15738813_116x70.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/8813/15738813_116x70.jpg" />
+		</item>
+		<item>
+			<title>Spor Toto Süper Lig'de görünüm - SPOR</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c71b772/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C19860A4480Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19860448.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/6459/14756459.jpg" alt="Spor
+				Toto Süper Lig'de görünüm - SPOR" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;İşte Spor Toto Süper Lig'den alınan sonuçlar, puan
+				durumu ve maç programı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c71b772/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/123996123288/u/0/f/507115/c/32714/s/1c71b772/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/123996123288/u/0/f/507115/c/32714/s/1c71b772/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c71b772/l/0L0Shurriyet0N0Btr0C0Inp0C64590C147564590Bjpg/14756459.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 05:26:56 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19860448.asp</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/6459/14756459.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/6459/14756459.jpg" />
+		</item>
+		<item>
+			<title>Bizimkisi aşktan öte bir bağ</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1ad744c2/l/0L0Shurriyet0N0Btr0Cmagazin0Canasayfa0C/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/magazin/anasayfa/"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/5042/15735042_138x83.jpg"
+				alt="Bizimkisi aşktan öte bir bağ" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Ahmet ile Berrin merak edilen o soruyu
+				cevapladı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1ad744c2/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/121217113301/u/0/f/507115/c/32714/s/1ad744c2/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/121217113301/u/0/f/507115/c/32714/s/1ad744c2/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1ad744c2/l/0L0Shurriyet0N0Btr0C0Inp0C50A420C157350A420I138x830Bjpg/15735042_138x83.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 05:19:43 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/magazin/anasayfa/</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/5042/15735042_138x83.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/5042/15735042_138x83.jpg" />
+		</item>
+		<item>
+			<title>Ben sevdim kime ne</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c740c28/l/0Lkelebekgaleri0Bhurriyet0N0Btr0Cgaleridetay0Baspx0Dcid0F474880Grid0F23690Ghid0F19522657/story01.htm</link>
+			<description>'Sınır' tanımayan aşklar.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c740c28/mf.gif'
+				border='0'/&gt;</description>
+			<pubDate>Tue, 07 Feb 2012 05:16:01 GMT</pubDate>
+			<guid isPermaLink="false">http://kelebekgaleri.hurriyet.com.tr/galeridetay.aspx?cid=47488&amp;rid=2369&amp;hid=19522657</guid>
+		</item>
+		<item>
+			<title>Buna cahil cesareti denir</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7a2/l/0Lkelebekgaleri0Bhurriyet0N0Btr0Cgaleridetay0Baspx0Dcid0F449550Grid0F23690Gp0F10Ghid0F1985790A5/story01.htm</link>
+			<description>Bir senaryoyla hayatı değişti.&lt;img width='1'
+				height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7a2/mf.gif'
+				border='0'/&gt;</description>
+			<pubDate>Tue, 07 Feb 2012 05:14:42 GMT</pubDate>
+			<guid isPermaLink="false">http://kelebekgaleri.hurriyet.com.tr/galeridetay.aspx?cid=44955&amp;rid=2369&amp;p=1&amp;hid=19857905</guid>
+		</item>
+		<item>
+			<title>Bu topraklar zehirlendi</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c712198/l/0L0Shurriyet0N0Btr0Cplanet0C198595830Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/planet/19859583.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/5858/15735858_178x107.jpg"
+				alt="Bu topraklar zehirlendi" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Avrupa Komisyonu Kosova topraklarıyla ilgili bir
+				rapor yayınladı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c712198/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112487/u/0/f/507115/c/32714/s/1c712198/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112487/u/0/f/507115/c/32714/s/1c712198/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c712198/l/0L0Shurriyet0N0Btr0C0Inp0C58580C157358580I178x10A70Bjpg/15735858_178x107.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 00:18:23 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/planet/19859583.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/5858/15735858_178x107.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/5858/15735858_178x107.jpg" />
+		</item>
+		<item>
+			<title>Ruslar 30 yıl sonra Vostok’ta</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d7/l/0L0Shurriyet0N0Btr0Cplanet0C19860A7660Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/planet/19860766.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7396/15737396_178x107.jpg"
+				alt="Ruslar 30 yıl sonra Vostok’ta" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Rus ekibi Antartika’nın altındaki 15-20 milyon yıllık
+				buzul gölü Vostok’a ulaştı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d7/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112486/u/0/f/507115/c/32714/s/1c72d7d7/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112486/u/0/f/507115/c/32714/s/1c72d7d7/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d7/l/0L0Shurriyet0N0Btr0C0Inp0C73960C157373960I178x10A70Bjpg/15737396_178x107.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 00:16:08 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/planet/19860766.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7396/15737396_178x107.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7396/15737396_178x107.jpg" />
+		</item>
+		<item>
+			<title>Şov böyle yapılır</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d6/l/0L0Shurriyet0N0Btr0Cspor0Cdigersporlar0C19860A9280Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/digersporlar/19860928.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7572/15737572_178x107.jpg"
+				alt="Şov böyle yapılır" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;ABD’deki Super Bowl
+				maçı tam 11 milyar dolarlık ekonomik değer yarattı.&lt;img width='1'
+				height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d6/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112485/u/0/f/507115/c/32714/s/1c72d7d6/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112485/u/0/f/507115/c/32714/s/1c72d7d6/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d6/l/0L0Shurriyet0N0Btr0C0Inp0C75720C157375720I178x10A70Bjpg/15737572_178x107.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 00:14:46 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/digersporlar/19860928.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7572/15737572_178x107.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7572/15737572_178x107.jpg" />
+		</item>
+		<item>
+			<title>Kırmızı mı siyah mı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d5/l/0Lwebtv0Bhurriyet0N0Btr0C30C279110C19860A750A0C10Ckirmizi0Emi0Esiyah0Emi0Enefesler0Etutuldu0Baspx/story01.htm</link>
+			<description>&lt;a
+				href="http://webtv.hurriyet.com.tr/3/27911/19860750/1/kirmizi-mi-siyah-mi-nefesler-tutuldu.aspx"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7995/15737995_178x107.jpg"
+				alt="Kırmızı mı siyah mı" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;'Yetenek
+				Sizsiniz'de illüzyonist yarışmacı 20 ünlü ismi masaya
+				yatırdı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d5/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112484/u/0/f/507115/c/32714/s/1c72d7d5/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112484/u/0/f/507115/c/32714/s/1c72d7d5/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d5/l/0L0Shurriyet0N0Btr0C0Inp0C79950C157379950I178x10A70Bjpg/15737995_178x107.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 00:12:56 GMT</pubDate>
+			<guid isPermaLink="false">http://webtv.hurriyet.com.tr/3/27911/19860750/1/kirmizi-mi-siyah-mi-nefesler-tutuldu.aspx</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7995/15737995_178x107.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7995/15737995_178x107.jpg" />
+		</item>
+		<item>
+			<title>Ford'un acı kaybı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d4/l/0L0Shurriyet0N0Btr0Cekonomi0C19860A860A0Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/ekonomi/19860860.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7496/15737496.jpg" alt="Ford'un
+				acı kaybı" align="left" style="padding-right:5px;" border="0"
+				width="80" height="80" /&gt;&lt;/a&gt;Ford Otosan'ın Genel Müdürü
+				Nuri Otay yaşamını yitirdi.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d4/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112483/u/0/f/507115/c/32714/s/1c72d7d4/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112483/u/0/f/507115/c/32714/s/1c72d7d4/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d4/l/0L0Shurriyet0N0Btr0C0Inp0C74960C157374960Bjpg/15737496.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Tue, 07 Feb 2012 00:08:34 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/ekonomi/19860860.asp</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/7496/15737496.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7496/15737496.jpg" />
+		</item>
+		<item>
+			<title>Aziz Yıldırım dedi ki</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d3/l/0L0Shurriyet0N0Btr0Cyazarlar0C19860A8770Basp0Dyazarid0F1740Ghid0F1984370A2/story01.htm</link>
+			<description>&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d3/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/126178112482/u/0/f/507115/c/32714/s/1c72d7d3/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/126178112482/u/0/f/507115/c/32714/s/1c72d7d3/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<pubDate>Tue, 07 Feb 2012 00:02:20 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/yazarlar/19860877.asp?yazarid=174&amp;hid=19843702</guid>
+		</item>
+		<item>
+			<title>Babası Kurtlar Vadisi'ne özenmiş</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d2/l/0L0Shurriyet0N0Btr0Cyazarlar0C19860A6220Basp0Dyazarid0F120Ghid0F19853585/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/yazarlar/19860622.asp?yazarid=12&amp;hid=19853585"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7937/15737937_116x70.jpg"
+				alt="Babası Kurtlar Vadisi'ne özenmiş" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d2/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d2/l/0L0Shurriyet0N0Btr0C0Inp0C79370C157379370I116x70A0Bjpg/15737937_116x70.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:54:02 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/yazarlar/19860622.asp?yazarid=12&amp;hid=19853585</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7937/15737937_116x70.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7937/15737937_116x70.jpg" />
+		</item>
+		<item>
+			<title>Bunlar tesadüf mü</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c6e2346/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C198565640Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19856564.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/3432/15733432_138x83.gif"
+				alt="Bunlar tesadüf mü" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;F.Bahçe Asbaşkanı
+				Cihan Kamer çarpıcı açıklamalar yaptı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c6e2346/mf.gif'
+				border='0'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;a
+				href="http://da.feedsportal.com/r/123996091476/u/0/f/507115/c/32714/s/1c6e2346/a2.htm"&gt;&lt;img
+				src="http://da.feedsportal.com/r/123996091476/u/0/f/507115/c/32714/s/1c6e2346/a2.img"
+				border="0"/&gt;&lt;/a&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c6e2346/l/0L0Shurriyet0N0Btr0C0Inp0C34320C157334320I138x830Bgif/15733432_138x83.gif"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:52:19 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19856564.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/3432/15733432_138x83.gif" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/3432/15733432_138x83.gif" />
+		</item>
+		<item>
+			<title>İzini kaybettireceğiz</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d1/l/0L0Shurriyet0N0Btr0Cgundem0C19860A70A20Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/gundem/19860702.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7367/15737367_138x83.jpg"
+				alt="İzini kaybettireceğiz" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;Bakan Şahin 13
+				yaşındayken satıldığı iddia edilen E.Y. için konuştu.&lt;img
+				width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d1/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d1/l/0L0Shurriyet0N0Btr0C0Inp0C73670C157373670I138x830Bjpg/15737367_138x83.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:51:20 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/gundem/19860702.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7367/15737367_138x83.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7367/15737367_138x83.jpg" />
+		</item>
+		<item>
+			<title>Türk öğrenciler bu üniversiteleri tercih ediyor</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d0/l/0Lfotoanaliz0Bhurriyet0N0Btr0Cgaleridetay0Baspx0Dcid0F53650A0Grid0F43690Gp0F10Ghid0F19857919/story01.htm</link>
+			<description>&lt;a
+				href="http://fotoanaliz.hurriyet.com.tr/galeridetay.aspx?cid=53650&amp;rid=4369&amp;p=1&amp;hid=19857919"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/4402/15734402.jpg" alt="Türk
+				öğrenciler bu üniversiteleri tercih ediyor" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Türk öğrencilerin yurtdışında en çok tercih ettiği
+				üniversiteleri araştırıldı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7d0/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7d0/l/0L0Shurriyet0N0Btr0C0Inp0C440A20C1573440A20Bjpg/15734402.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:43:36 GMT</pubDate>
+			<guid isPermaLink="false">http://fotoanaliz.hurriyet.com.tr/galeridetay.aspx?cid=53650&amp;rid=4369&amp;p=1&amp;hid=19857919</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/4402/15734402.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/4402/15734402.jpg" />
+		</item>
+		<item>
+			<title>Bu videolar İspanya'yı ayağa kaldırdı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cf/l/0L0Shurriyet0N0Btr0Cplanet0C198591250Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/planet/19859125.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/5243/15735243.jpg" alt="Bu
+				videolar İspanya'yı ayağa kaldırdı" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;İspanya’da Bask bölgesel hükümetinin, gençleri yerel
+				dil ‘Euskera’yı kullanmaya teşvik etmek için hazırlattığı videolar
+				olay yarattı.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cf/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7cf/l/0L0Shurriyet0N0Btr0C0Inp0C52430C157352430Bjpg/15735243.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:42:51 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/planet/19859125.asp</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/5243/15735243.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/5243/15735243.jpg" />
+		</item>
+		<item>
+			<title>Dia ilk 11’e Alex kulübeye</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ce/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C198611540Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19861154.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7854/15737854_116x70.jpg"
+				alt="Dia ilk 11’e Alex kulübeye" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Aykut Kocaman, sezon başından bu yana sakatlıklarla
+				boğuşan Issiar Dia’yı hazırlıyor.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ce/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7ce/l/0L0Shurriyet0N0Btr0C0Inp0C78540C157378540I116x70A0Bjpg/15737854_116x70.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:32:54 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19861154.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7854/15737854_116x70.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7854/15737854_116x70.jpg" />
+		</item>
+		<item>
+			<title>Cimbom’a ihtar mektubu</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cd/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C198611350Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19861135.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7827/15737827_200x120.jpg"
+				alt="Cimbom’a ihtar mektubu" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;3 taraftar
+				gönderdikleri mektuplarla G.Saray’ı TFF’ye şikayet etti.&lt;img
+				width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cd/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7cd/l/0L0Shurriyet0N0Btr0C0Inp0C78270C157378270I20A0Ax120A0Bjpg/15737827_200x120.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:28:37 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19861135.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7827/15737827_200x120.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7827/15737827_200x120.jpg" />
+		</item>
+		<item>
+			<title>450 milyonluk uyarı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cc/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C198610A990Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19861099.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7779/15737779_200x120.jpg"
+				alt="450 milyonluk uyarı" align="left" style="padding-right:5px;"
+				border="0" width="80" height="80" /&gt;&lt;/a&gt;Kulübün yüksek
+				borçları, ödeme sıkıntısı yaşayan Kartal’ın başına iş açtı.&lt;img
+				width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cc/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7cc/l/0L0Shurriyet0N0Btr0C0Inp0C77790C157377790I20A0Ax120A0Bjpg/15737779_200x120.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:16:27 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19861099.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7779/15737779_200x120.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7779/15737779_200x120.jpg" />
+		</item>
+		<item>
+			<title>AKP modeli tutmadı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cb/l/0L0Shurriyet0N0Btr0Cplanet0C19860A8510Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/planet/19860851.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7474/15737474.jpg" alt="AKP
+				modeli tutmadı" align="left" style="padding-right:5px;" border="0"
+				width="80" height="80" /&gt;&lt;/a&gt;CHP Lideri Kemal Kılıçdaroğlu,
+				Washington Post Gazetesi'ne bir köşe yazısı yazarak hükümeti
+				eleştirdi.&lt;img width='1' height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7cb/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7cb/l/0L0Shurriyet0N0Btr0C0Inp0C74740C157374740Bjpg/15737474.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:11:03 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/planet/19860851.asp</guid>
+			<media:thumbnail url="http://www.hurriyet.com.tr/_np/7474/15737474.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7474/15737474.jpg" />
+		</item>
+		<item>
+			<title>Mehmet Topal kaska karşı</title>
+			<link>http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ca/l/0L0Shurriyet0N0Btr0Cspor0Cfutbol0C198610A750Basp/story01.htm</link>
+			<description>&lt;a
+				href="http://www.hurriyet.com.tr/spor/futbol/19861075.asp"&gt;&lt;img
+				src="http://www.hurriyet.com.tr/_np/7743/15737743_116x70.jpg"
+				alt="Mehmet Topal kaska karşı" align="left"
+				style="padding-right:5px;" border="0" width="80" height="80"
+				/&gt;&lt;/a&gt;Rakibiyle çarpışan ve bilincini kaybeden milli
+				oyuncu, kask takma önerisine olumlu yaklaşmadı.&lt;img width='1'
+				height='1'
+				src='http://rss.feedsportal.com/c/32714/f/507115/s/1c72d7ca/mf.gif'
+				border='0'/&gt;</description>
+			<enclosure
+				url="http://rss.feedsportal.com/c/32714/f/507115/e/1/s/1c72d7ca/l/0L0Shurriyet0N0Btr0C0Inp0C77430C157377430I116x70A0Bjpg/15737743_116x70.jpg"
+				length="50000" type="image/jpeg" />
+			<pubDate>Mon, 06 Feb 2012 23:09:28 GMT</pubDate>
+			<guid isPermaLink="false">http://www.hurriyet.com.tr/spor/futbol/19861075.asp</guid>
+			<media:thumbnail
+				url="http://www.hurriyet.com.tr/_np/7743/15737743_116x70.jpg" />
+			<media:content lang="" type="image/jpeg"
+				url="http://www.hurriyet.com.tr/_np/7743/15737743_116x70.jpg" />
+		</item>
+	</channel>
+</rss>
