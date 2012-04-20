@@ -54,8 +54,13 @@ public class Konsol extends JFrame{
 	public JTextField sureoync2;
 	public JTextField toplamsureoync1;
 	public JTextField toplamsureoync2;
+	public double oync1ToplamSure = 0;
+	public double oync2ToplamSure = 0;
+	public double ilkSure;
 	
 	public static int kontrol = 0;
+	
+	public static String ikiTaneUyariMesaji = "";
 	
 	public Konsol() {
 		setLayout(null);
@@ -96,6 +101,7 @@ public class Konsol extends JFrame{
 	
 	public void paint(final Graphics g) {
 		super.paint(g);
+		ilkSure = System.currentTimeMillis();
 		//////////////////
 		//  TAHTA CIZ   //
 		//////////////////
@@ -191,10 +197,10 @@ public class Konsol extends JFrame{
 		// KOORDINAT    //
 		//////////////////
 		final JTextField xx = new JTextField();
-		xx.setBounds(950,600,111,25);
+		xx.setBounds(1300,633,50,25);
 		add(xx);
 		final JTextField yy = new JTextField();
-		yy.setBounds(950,625,111,25);
+		yy.setBounds(1300,658,50,25);
 		add(yy);
 		
 		addMouseMotionListener(new MouseMotionListener() {
@@ -272,13 +278,13 @@ public class Konsol extends JFrame{
 		// UYARI MESAJI //
 		//////////////////
 		durumlar = new JTextField();
-		durumlar.setBounds(850,500,212,25);
+		durumlar.setBounds(850,630,212,25);
 		add(durumlar);
 		//////////////////
 		//    SURE      //
 		//////////////////
 		JLabel sure = new JLabel("Son hamle süre");
-		sure.setBounds(1080, 520, 100, 20);
+		sure.setBounds(1070, 520, 100, 20);
 		add(sure);
 		JLabel toplamsure = new JLabel("Toplam süre");
 		toplamsure.setBounds(1180, 520, 100, 20);
@@ -289,10 +295,10 @@ public class Konsol extends JFrame{
 		sureoync2 = new JTextField();
 		sureoync2.setBounds(1080, 575, 80, 25);
 		add(sureoync2);
-		toplamsureoync1 = new JTextField();
+		toplamsureoync1 = new JTextField(oync1ToplamSure + " sn");
 		toplamsureoync1.setBounds(1180, 550, 80, 25);
 		add(toplamsureoync1);
-		toplamsureoync2 = new JTextField();
+		toplamsureoync2 = new JTextField(oync2ToplamSure + " sn");
 		toplamsureoync2.setBounds(1180, 575, 80, 25);
 		add(toplamsureoync2);
 		
@@ -305,21 +311,27 @@ public class Konsol extends JFrame{
 		JLabel oync2 = new JLabel("oyuncu2");
 		oync2.setBounds(800, 575, 50, 20);
 		add(oync2);
+		JLabel l1 = new JLabel("tas1 no");
+		l1.setBounds(860, 520, 50, 20);
+		add(l1);
+		JLabel l2 = new JLabel("tas2 no");
+		l2.setBounds(920, 520, 50, 20);
+		add(l2);
 		final JTextField tas1 = new JTextField();
-		tas1.setBounds(850,550,35,25);
+		tas1.setBounds(870,550,35,25);
 		add(tas1);
 		final JTextField zar1 = new JTextField();
-		zar1.setBounds(900,550,35,25);
+		zar1.setBounds(920,550,35,25);
 		add(zar1);
 		final JTextField tas2 = new JTextField();
-		tas2.setBounds(850,575,35,25);
+		tas2.setBounds(870,575,35,25);
 		add(tas2);
 		final JTextField zar2 = new JTextField();
-		zar2.setBounds(900,575,35,25);
+		zar2.setBounds(920,575,35,25);
 		add(zar2);
 		
 		final JButton oynat1 = new JButton("oynat1");
-		oynat1.setBounds(950,550,111,25);
+		oynat1.setBounds(975,550,80,25);
 		add(oynat1);
 		oynat1.addActionListener(new ActionListener() {		
 			@Override
@@ -327,6 +339,11 @@ public class Konsol extends JFrame{
 				int secilen = listedenZarSec(0);
 				oynat(g,Integer.parseInt(tas1.getText()),secilen/10,1);
 				oynat(g,Integer.parseInt(zar1.getText()),secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
+				double l = System.currentTimeMillis()-ilkSure;
+				l /= 1000;
+				sureoync1.setText(l + " sn");
+				oync1ToplamSure += l;
+				toplamsureoync1.setText(oync1ToplamSure + " sn");
 				ts1 = tas1.getText();
 				if (oynamaz1 == 0) {
 					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
@@ -335,14 +352,19 @@ public class Konsol extends JFrame{
 			}
 		});
 		final JButton oynat2 = new JButton("oynat2");
-		oynat2.setBounds(950,575,111,25);
+		oynat2.setBounds(975,575,80,25);
 		add(oynat2);
 		oynat2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-			int secilen = listedenZarSec(0);
-			oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
-			oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
+				int secilen = listedenZarSec(0);			
+				oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
+				oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
+				double l = System.currentTimeMillis()-ilkSure;
+				l /= 1000;
+				sureoync2.setText(l + " sn");
+				oync2ToplamSure += l;
+				toplamsureoync2.setText(oync2ToplamSure + " sn");	
 				if (oynamaz2 == 0) {
 					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
 				}

@@ -1,6 +1,8 @@
 
 public class deneme {
 
+	public long globalTime = System.currentTimeMillis();
+	
 	public  static int zarListesi[][] = new int[20][2];
 	
 	public void randomZar() {
@@ -45,8 +47,10 @@ public class deneme {
 	
 	
 	public static void main(String[] args) {
-		deneme d = new deneme();
 		
+		
+		deneme d = new deneme();
+		/*
 		d.randomZar();
 		yaz();
 		
@@ -54,6 +58,10 @@ public class deneme {
 		yaz();
 		System.out.println(d.listedenZarSec(1));
 		yaz();
+		*/
+		
+		System.out.println(d.globalTime);
+		
 	}
 	
 }
