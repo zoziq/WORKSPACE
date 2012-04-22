@@ -51,7 +51,7 @@ public class AgentManagementSystem implements AmsInterface {
 
 		model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		OntDocumentManager dm = model.getDocumentManager();
-		dm.addAltEntry(NS, "file:\\C:\\Plan\\AgentInd.owl");
+		dm.addAltEntry(NS, "file:\\D:\\Workspaces\\Ontologies\\Plan\\AgentInd.owl");
 		model.read(NS);
 		model.prepare();
 		model.setNsPrefix("Agent", "http://www.semanticweb.org/ontologies/2010/11/Agent.owl#");

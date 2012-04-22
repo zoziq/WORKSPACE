@@ -28,8 +28,6 @@ public class Main {
 			return;
 		}
 		
-		
-		
 		for (int i = 0; i < parent.yollar.size(); i++) {
 			if (parent.yollar.get(i).bitis.equals(parent)) {
 				push(parent.yollar.get(i).baslangic);
@@ -43,9 +41,6 @@ public class Main {
 			}
 			
 		}
-		
-
-		
 		
 		Node gecici = pop();
 		Node n = null;
@@ -66,8 +61,7 @@ public class Main {
 			System.out.println(m2);
 			if (kusUcusu.get(Integer.parseInt(n.ad)-1)+m1<kusUcusu.get(Integer.parseInt(gecici.ad)-1)+m2) {
 				gecici = n;
-			}
-			
+			}	
 		}
 		System.out.println("gecici= " + gecici.ad + " mesafe= " + kusUcusu.get(Integer.parseInt(gecici.ad)-1));
 		

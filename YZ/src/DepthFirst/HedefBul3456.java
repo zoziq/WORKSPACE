@@ -1,11 +1,8 @@
 package DepthFirst;
 
-import java.awt.Container;
-import java.util.Collection;
-
 public class HedefBul3456 {
 
-	static int sayilar[] = {6,3,5,4};
+	static int sayilar[] = {6,5,4,3};
 	static int islemler[] = {1,1,1};
 	static boolean bulunduMu = false;
 	static int sayac = 0;
@@ -65,21 +62,6 @@ public class HedefBul3456 {
 		return "";
 	}
 	
-	public static void yeniSayilarDizisi() {
-		if(sayac==24) {
-			return;
-		}
-		sayac++;
-		
-		test();
-		int []a = {};
-		dizi(sayilar, a);
-		
-		
-		
-		
-	}
-	
 	public static void dizi(int s1[], int s2[])	{
 		if(s1.length == 0)	{
 			for (int i = 0; i < s2.length; i++) {
@@ -87,16 +69,12 @@ public class HedefBul3456 {
 			}
 			System.out.println();
 			
+			for (int i = 0; i < sayilar.length; i++) {
+				sayilar[i]=s2[i];
+			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			islemler[0]=1;islemler[1]=1;islemler[2]=1;
+			test();
 		}
 		for(int i = 0; i < s1.length; i++)	{
 			dizi(diziBirlestir(altDizi(0, i, s1), altDizi(i+1, s1.length, s1)), diziSayiBirlestir(s1[i], s2));
@@ -133,7 +111,7 @@ public class HedefBul3456 {
 	
 	public static void main(String[] args) {
 		
-		yeniSayilarDizisi();
+		dizi(sayilar, new int[0]);
 		
 	}
 	

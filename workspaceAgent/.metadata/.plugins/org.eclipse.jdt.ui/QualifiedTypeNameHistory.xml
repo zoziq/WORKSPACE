@@ -2,6 +2,10 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="service.CompositProcess"/>
 <fullyQualifiedTypeName name="service.QueryOntologyFile"/>
-<fullyQualifiedTypeName name="service.Service"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="task.Behaviour"/>
+<fullyQualifiedTypeName name="task.Action"/>
+<fullyQualifiedTypeName name="test.Act2"/>
+<fullyQualifiedTypeName name="org.apache.log4j.jmx.Agent"/>
+<fullyQualifiedTypeName name="service.Service"/>
 </qualifiedTypeNameHistroy>

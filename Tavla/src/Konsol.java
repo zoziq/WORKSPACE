@@ -59,6 +59,7 @@ public class Konsol extends JFrame{
 	public double ilkSure;
 	
 	public static int kontrol = 0;
+	public int ciftKontrol;
 	
 	public static String ikiTaneUyariMesaji = "";
 	
@@ -85,17 +86,24 @@ public class Konsol extends JFrame{
 				liste[j][i] = zarListesi[j][i];
 			}
 		}
-		for (int j = sira; j < zarListesi.length -1; j++) {
-			for (int i = 0; i < 2; i++) {
-				liste[j][i] = zarListesi[j+1][i];
-			}
+		if (zarListesi[sira][0]==zarListesi[sira][1] && ciftKontrol==0) {
+			ciftKontrol = 1;System.out.println("2---" +ciftKontrol);
 		}
-		zarListesi = new int[zarListesi.length -1][2];
-		for (int j = 0; j < zarListesi.length; j++) {
-			for (int i = 0; i < 2; i++) {
-				zarListesi[j][i] = liste[j][i];
+		else  {
+			for (int j = sira; j < zarListesi.length -1; j++) {
+				for (int i = 0; i < 2; i++) {
+					liste[j][i] = zarListesi[j+1][i];
+				}
 			}
+			zarListesi = new int[zarListesi.length -1][2];
+			for (int j = 0; j < zarListesi.length; j++) {
+				for (int i = 0; i < 2; i++) {
+					zarListesi[j][i] = liste[j][i];
+				}
+			}
+			System.out.println("1---" + ciftKontrol);
 		}
+		
 		return secilenZar;
 	}
 	
@@ -296,10 +304,10 @@ public class Konsol extends JFrame{
 		sureoync2.setBounds(1080, 575, 80, 25);
 		add(sureoync2);
 		toplamsureoync1 = new JTextField(oync1ToplamSure + " sn");
-		toplamsureoync1.setBounds(1180, 550, 80, 25);
+		toplamsureoync1.setBounds(1180, 550, 160, 25);
 		add(toplamsureoync1);
 		toplamsureoync2 = new JTextField(oync2ToplamSure + " sn");
-		toplamsureoync2.setBounds(1180, 575, 80, 25);
+		toplamsureoync2.setBounds(1180, 575, 160, 25);
 		add(toplamsureoync2);
 		
 		//////////////////
@@ -357,7 +365,7 @@ public class Konsol extends JFrame{
 		oynat2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int secilen = listedenZarSec(0);			
+				int secilen = listedenZarSec(0);	
 				oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
 				oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
 				double l = System.currentTimeMillis()-ilkSure;

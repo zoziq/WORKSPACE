@@ -2,6 +2,8 @@ package test;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.jmx.Agent;
+
 import agent.AgentIdentifier;
 import agent.URLSequence;
 import agent.Word;
@@ -11,6 +13,7 @@ import fipa.Content;
 import fipa.Envelope;
 import fipa.FIPARDFContent0;
 import fipa.FipaMessage;
+import service.Service;
 import task.Action;
 import task.Outcome;
 
@@ -70,13 +73,16 @@ public class Act1 extends Action{
 	    Content con = new Content();
 	    aclMessage.setLanguage("fipa-sl0");
 	    FIPARDFContent0 content=new FIPARDFContent0();
-		content.setAct("mesaj");
+		content.setAct("icerik");
 		content.setActor("Test");
 		ArrayList ar=new ArrayList();
 		ar.add("Selam");
 		ar.add("Agent");
+
 		content.setArguments(ar);
 		con.addList(content);
+		con.setText("aaa");
+
 		aclMessage.setContent(con);
 		aclMessage.setConversation_id("1");
 		aclMessage.setReply_with(aclMessage.getConversation_id()+"-"+getId());

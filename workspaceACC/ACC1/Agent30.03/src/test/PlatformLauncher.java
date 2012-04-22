@@ -48,10 +48,10 @@ public class PlatformLauncher {
 		aid.setName(new Word("platformLauncher@mshn.com"));
 
 		URLSequence addrSender = new URLSequence();
-		addrSender.add("rmi://192.168.2.234/Agent");
+		addrSender.add("rmi://192.168.2.183/Agent");
 		aid.setAddresses(addrSender);
 		
-		Agent agent = new Agent(aid, "rmi://192.168.2.234/ACC");
+		Agent agent = new Agent(aid, "rmi://192.168.2.183/ACC");
 		
 		new RemoteMessageServer(agent);
 		

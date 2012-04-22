@@ -55,7 +55,7 @@ public class ACC extends UnicastRemoteObject implements ACCFacade, Serializable 
 		
 		else if (fm.getAcl().getContent().getActions().get(0).getAct().equals("icerik")){
 			System.out.println("Uygun if koþulu ile (icerik) eþleme yapýldý...");
-			System.out.println("Gönderen Etmen: " + fm.getAcl().getContent().getActions().get(0).getArguments().get(1).toString());
+			System.out.println("Gönderen Etmen: " + fm.getAcl().getContent().getActions().get(0).getArguments().get(1));
 			
 			System.out.println("Content yazýdýrýlýyor...");
 			int size = fm.getAcl().getContent().getActions().size();
@@ -74,7 +74,7 @@ public class ACC extends UnicastRemoteObject implements ACCFacade, Serializable 
 		else if (fm.getAcl().getContent().getActions().get(0).getAct().equals("mesaj")){
 			
 			System.out.println("Uygun if koþulu ile (mesaj) eþleme yapýldý...");
-			System.out.println("Gönderen Etmen: " + fm.getAcl().getContent().getActions().get(0).getArguments().get(1).toString());
+			System.out.println("Gönderen Etmen: " + fm.getAcl().getContent().getActions().get(0).getArguments().get(0));
 
 			AgentRMI rm;
 			try {

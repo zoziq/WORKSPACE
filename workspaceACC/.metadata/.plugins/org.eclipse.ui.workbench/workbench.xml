@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="30" version="2.0">
+<workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="728" width="1024" x="166" y="25">
+<window height="728" maximized="true" width="1024" x="166" y="2">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -23,6 +23,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.editor.xml" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -35,26 +37,20 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlatformLauncher.java" partName="PlatformLauncher.java" path="D:/Workspaces/workspaceACC/ACC/src/test/PlatformLauncher.java" title="PlatformLauncher.java" tooltip="ACC/src/test/PlatformLauncher.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PlatformLauncher.java" partName="PlatformLauncher.java" path="D:/Workspaces/workspaceACC/ACC1/Agent30.03/src/test/PlatformLauncher.java" title="PlatformLauncher.java" tooltip="ACC/src/test/PlatformLauncher.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ACC/src/test/PlatformLauncher.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2967" selectionTopPixel="1277"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="804" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AgentManagementSystem.java" partName="AgentManagementSystem.java" path="D:/Workspaces/workspaceACC/ACC/src/ams/AgentManagementSystem.java" title="AgentManagementSystem.java" tooltip="ACC/src/ams/AgentManagementSystem.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ACC/src/ams/AgentManagementSystem.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1267" selectionTopPixel="340"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Service.java" partName="Service.java" path="D:/Workspaces/workspaceACC/ACC/src/service/Service.java" title="Service.java" tooltip="ACC/src/service/Service.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ACC/src/service/Service.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="973" selectionTopPixel="597"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ACC.java" partName="ACC.java" path="D:/Workspaces/workspaceACC/ACC1/Agent30.03/src/rmi/ACC.java" title="ACC.java" tooltip="ACC/src/rmi/ACC.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ACC/src/rmi/ACC.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3026" selectionTopPixel="918"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
@@ -69,13 +65,14 @@
 </viewState>
 </view>
 <view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
-<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Errors"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings (100 of 626 items)"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -83,9 +80,7 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
 <customFilters userDefinedPatternsEnabled="false">
@@ -118,9 +113,12 @@
 </customFilters>
 </viewState>
 </view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
-<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 </views>
 <perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
@@ -362,50 +360,170 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/test/PlatformLauncher.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/ams/AgentManagementSystem.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/test/Beh2.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/ams/AgentManagementSystem.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/service/Service.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/amsPlan/Test.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/agent/OtelOntoloji.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/agent/OtelEkle.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/agent/M.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/fipa/ACLMessage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/start/RunAgent.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/rmi/ACC.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/fipa/FIPARDFContent0.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/fipa/Content.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.xml" path="/ACC/src/test/NewFile.xml"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=ACC/C:\/Program Files\/Java\/jre6\/lib\/rt.jar&lt;java.rmi(Naming.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ACC/src/rmi/AgentRMI.java"/>
 </editors>
-<item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="AgentManagementSystem.java" index="1">
+<position info="not_deleted" x="1608" y="0"/>
 </item>
 <item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="2185" y="0"/>
-</item>
-<item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="2476" y="36"/>
+<position info="not_deleted" x="2048" y="0"/>
 </item>
 <item historyLabel="AgentManagementSystem.java" index="1">
-<position info="not_deleted" x="1267" y="0"/>
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="Beh2.java" index="2">
+<position info="not_deleted" x="348" y="0"/>
 </item>
 <item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="2476" y="36"/>
+<position info="not_deleted" x="1207" y="24"/>
 </item>
-<item historyLabel="AgentManagementSystem.java" index="2">
-<position info="not_deleted" x="1267" y="0"/>
-</item>
-<item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="2835" y="0"/>
-</item>
-<item historyLabel="AgentManagementSystem.java" index="2">
-<position info="not_deleted" x="1267" y="0"/>
+<item historyLabel="AgentManagementSystem.java" index="1">
+<position info="not_deleted" x="1546" y="0"/>
 </item>
 <item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="890" y="0"/>
+<position info="not_deleted" x="1207" y="24"/>
 </item>
-<item historyLabel="AgentManagementSystem.java" index="2">
-<position info="not_deleted" x="1267" y="0"/>
-</item>
-<item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="890" y="0"/>
-</item>
-<item historyLabel="AgentManagementSystem.java" index="2">
-<position info="not_deleted" x="1267" y="0"/>
+<item historyLabel="AgentManagementSystem.java" index="3">
+<position info="not_deleted" x="1588" y="0"/>
 </item>
 <item historyLabel="PlatformLauncher.java" index="0">
-<position info="not_deleted" x="2967" y="0"/>
+<position info="not_deleted" x="2046" y="0"/>
 </item>
-<item active="true" historyLabel="Service.java" index="3">
+<item historyLabel="Test.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="OtelOntoloji.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="OtelEkle.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="M.java" index="7">
+<position info="not_deleted" x="929" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="ACLMessage.java" index="8">
+<position info="not_deleted" x="357" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="RunAgent.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="2046" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1861" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="1862" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1797" y="0"/>
+</item>
+<item historyLabel="FIPARDFContent0.java" index="11">
+<position info="not_deleted" x="784" y="12"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1797" y="0"/>
+</item>
+<item historyLabel="FIPARDFContent0.java" index="11">
+<position info="not_deleted" x="784" y="12"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1815" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="1862" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2545" y="1"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="1715" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2627" y="1"/>
+</item>
+<item historyLabel="FIPARDFContent0.java" index="11">
+<position info="not_deleted" x="784" y="12"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2831" y="0"/>
+</item>
+<item historyLabel="Content.java" index="12">
+<position info="not_deleted" x="773" y="10"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1814" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="1715" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1814" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="642" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2443" y="0"/>
+</item>
+<item historyLabel="NewFile.xml" index="13">
+<position info="not_deleted" x="985" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2797" y="0"/>
+</item>
+<item historyLabel="Naming.class" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2899" y="0"/>
+</item>
+<item historyLabel="AgentRMI.java" index="15">
+<position info="not_deleted" x="232" y="16"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1157" y="0"/>
+</item>
+<item historyLabel="PlatformLauncher.java" index="0">
+<position info="not_deleted" x="804" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="1157" y="0"/>
+</item>
+<item historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="2909" y="0"/>
+</item>
+<item active="true" historyLabel="ACC.java" index="10">
+<position info="not_deleted" x="895" y="2"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -424,8 +542,41 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Service.java" tooltip="ACC/src/service/Service.java">
-<persistable path="/ACC/src/service/Service.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AgentRMI.java" tooltip="ACC/src/rmi/AgentRMI.java">
+<persistable path="/ACC/src/rmi/AgentRMI.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Naming.class" tooltip="java.rmi.Naming">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ACC/C:\/Program Files\/Java\/jre6\/lib\/rt.jar&lt;java.rmi(Naming.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.xml" name="NewFile.xml" tooltip="ACC/src/test/NewFile.xml">
+<persistable path="/ACC/src/test/NewFile.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Content.java" tooltip="ACC/src/fipa/Content.java">
+<persistable path="/ACC/src/fipa/Content.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FIPARDFContent0.java" tooltip="ACC/src/fipa/FIPARDFContent0.java">
+<persistable path="/ACC/src/fipa/FIPARDFContent0.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ACC.java" tooltip="ACC/src/rmi/ACC.java">
+<persistable path="/ACC/src/rmi/ACC.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RunAgent.java" tooltip="ACC/src/start/RunAgent.java">
+<persistable path="/ACC/src/start/RunAgent.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ACLMessage.java" tooltip="ACC/src/fipa/ACLMessage.java">
+<persistable path="/ACC/src/fipa/ACLMessage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="M.java" tooltip="ACC/src/agent/M.java">
+<persistable path="/ACC/src/agent/M.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OtelEkle.java" tooltip="ACC/src/agent/OtelEkle.java">
+<persistable path="/ACC/src/agent/OtelEkle.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OtelOntoloji.java" tooltip="ACC/src/agent/OtelOntoloji.java">
+<persistable path="/ACC/src/agent/OtelOntoloji.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test.java" tooltip="ACC/src/amsPlan/Test.java">
+<persistable path="/ACC/src/amsPlan/Test.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AgentManagementSystem.java" tooltip="ACC/src/ams/AgentManagementSystem.java">
 <persistable path="/ACC/src/ams/AgentManagementSystem.java"/>

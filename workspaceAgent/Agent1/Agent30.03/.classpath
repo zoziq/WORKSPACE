@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/arq-2.8.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/arq-2.8.5-tests.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/icu4j-3.4.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/iri-0.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/iri-0.8-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/jena-2.6.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/jena-2.6.3-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/jena-2.6.3-tests.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/jena-2.6.3-test-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/junit-4.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/lucene-core-2.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/slf4j-api-1.5.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/slf4j-log4j12-1.5.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/stax-api-1.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/wstx-asl-3.2.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mshn/Documents/eclipse_projects/Agent/jena/xercesImpl-2.7.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/arq-2.8.5.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/arq-2.8.5-tests.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/iri-0.8.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/iri-0.8-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/jena-2.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/jena-2.6.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/jena-2.6.3-tests.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/jena-2.6.3-test-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/lucene-core-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/wstx-asl-3.2.9.jar"/>
+	<classpathentry kind="lib" path="D:/Programlar/Eclipse jar dosyaları/jena/ARQ-2.8.5/lib/xercesImpl-2.7.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
