@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 
 public class deneme {
+	
+	public static ArrayList<Integer> oynayaBilirTaslar1 = new ArrayList<Integer>();
 
 	public long globalTime = System.currentTimeMillis();
 	
@@ -61,6 +65,14 @@ public class deneme {
 		*/
 		
 		System.out.println(d.globalTime);
+		
+		
+		
+		oynayaBilirTaslar1.add(9);
+		oynayaBilirTaslar1.add(9);
+		oynayaBilirTaslar1.add(4);
+		oynayaBilirTaslar1.removeAll(oynayaBilirTaslar1);
+		System.out.println(oynayaBilirTaslar1);
 		
 	}
 	

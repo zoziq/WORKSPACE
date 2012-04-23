@@ -17,7 +17,28 @@ import javax.swing.RepaintManager;
 
 public class Konsol extends JFrame{
 	
-	public  static int zarListesi[][] = new int[20][2];
+	public void AI(final Graphics g){
+		ilkSure = System.currentTimeMillis();
+		
+		secilenZar = 0;
+		birinciTasNumarasi = 14;
+		ikinciTasNumarasi = 14;
+		oyuncuSirasi = 1;
+		System.out.println(oynayaBilirTaslar1);
+	}
+	
+	public static int secilenZar = 0; // zar listesindeki ikiliyi belirleyen sira numarasi
+	public static int oyuncuSirasi = 1; // 1. oyuncu, 2. oyuncu
+	public static int birinciTasNumarasi; // oyuncunun hamle yapacagi birinci tas
+	public static int ikinciTasNumarasi; // oyuncunun hamle yapacagi ikinci tas
+	
+	public static int zarSayisi = 3;
+	public static int zarListesi[][] = new int[zarSayisi][2];
+	public static int taslarinKonumu1[] = new int[15];
+	public static int taslarinKonumu2[] = new int[15];
+	public static ArrayList<Integer> oynayaBilirTaslar1 = new ArrayList<Integer>();
+	public static ArrayList<Integer> oynayaBilirTaslar2 = new ArrayList<Integer>();
+	
 	//////////////////
 	//NORMAL DIZILIM//
 	//////////////////
@@ -61,7 +82,7 @@ public class Konsol extends JFrame{
 	public static int kontrol = 0;
 	public int ciftKontrol;
 	
-	public static String ikiTaneUyariMesaji = "";
+	public static int hamle = 0;
 	
 	public Konsol() {
 		setLayout(null);
@@ -71,7 +92,7 @@ public class Konsol extends JFrame{
 	}
 	
 	public void randomZar() {
-		for (int j = 0; j < 20; j++) {
+		for (int j = 0; j < zarListesi.length; j++) {
 			for (int i = 0; i < 2; i++) {
 				zarListesi[j][i] = (int)(Math.random()*6)+1;			
 			}
@@ -80,6 +101,8 @@ public class Konsol extends JFrame{
 	
 	public int listedenZarSec(int sira) {
 		int secilenZar = zarListesi[sira][0]*10+zarListesi[sira][1];
+				
+		
 		int liste[][] = new int[zarListesi.length - 1][2];
 		for (int j = 0; j < zarListesi.length -1; j++) {
 			for (int i = 0; i < 2; i++) {
@@ -87,7 +110,8 @@ public class Konsol extends JFrame{
 			}
 		}
 		if (zarListesi[sira][0]==zarListesi[sira][1] && ciftKontrol==0) {
-			ciftKontrol = 1;System.out.println("2---" +ciftKontrol);
+			ciftKontrol = 1;
+			hamle--;
 		}
 		else  {
 			for (int j = sira; j < zarListesi.length -1; j++) {
@@ -101,7 +125,13 @@ public class Konsol extends JFrame{
 					zarListesi[j][i] = liste[j][i];
 				}
 			}
-			System.out.println("1---" + ciftKontrol);
+		}
+		
+		hamle++;
+		if(hamle==zarSayisi) {
+			hamle=0;
+			zarListesi = new int[zarSayisi][2];
+			randomZar();
 		}
 		
 		return secilenZar;
@@ -109,7 +139,6 @@ public class Konsol extends JFrame{
 	
 	public void paint(final Graphics g) {
 		super.paint(g);
-		ilkSure = System.currentTimeMillis();
 		//////////////////
 		//  TAHTA CIZ   //
 		//////////////////
@@ -231,8 +260,9 @@ public class Konsol extends JFrame{
 		t.setBounds(855,45,180,25);
 		add(t);
 
-		String s1[] = konumHesapla(taslarX1, taslarY1);
-		String s2[] = konumHesapla(taslarX2, taslarY2);
+		String s1[] = konumHesapla(taslarX1, taslarY1, 1);
+		String s2[] = konumHesapla(taslarX2, taslarY2, 2);
+		
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 15; j++) {
 				if (i==1) {
@@ -252,8 +282,8 @@ public class Konsol extends JFrame{
 		JLabel t1 = new JLabel("          tas1    tas2");
 		t1.setBounds(1000,45,180,25);
 		add(t1);
-		String s11[] = oynayabilirTaslariHesapla(taslarX1, taslarY1);
-		String s22[] = oynayabilirTaslariHesapla(taslarX2, taslarY2);
+		String s11[] = oynayabilirTaslariHesapla(taslarX1, taslarY1, 1);
+		String s22[] = oynayabilirTaslariHesapla(taslarX2, taslarY2, 2);
 		
 		for (int j = 0; j < s11.length; j++) {
 			JTextField tt = new JTextField(s11[j]);
@@ -325,6 +355,7 @@ public class Konsol extends JFrame{
 		JLabel l2 = new JLabel("tas2 no");
 		l2.setBounds(920, 520, 50, 20);
 		add(l2);
+		
 		final JTextField tas1 = new JTextField();
 		tas1.setBounds(870,550,35,25);
 		add(tas1);
@@ -341,49 +372,105 @@ public class Konsol extends JFrame{
 		final JButton oynat1 = new JButton("oynat1");
 		oynat1.setBounds(975,550,80,25);
 		add(oynat1);
-		oynat1.addActionListener(new ActionListener() {		
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				int secilen = listedenZarSec(0);
-				oynat(g,Integer.parseInt(tas1.getText()),secilen/10,1);
-				oynat(g,Integer.parseInt(zar1.getText()),secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
-				double l = System.currentTimeMillis()-ilkSure;
-				l /= 1000;
-				sureoync1.setText(l + " sn");
-				oync1ToplamSure += l;
-				toplamsureoync1.setText(oync1ToplamSure + " sn");
-				ts1 = tas1.getText();
-				if (oynamaz1 == 0) {
-					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
-				}
-				oynamaz1 = 0;
-			}
-		});
 		final JButton oynat2 = new JButton("oynat2");
 		oynat2.setBounds(975,575,80,25);
 		add(oynat2);
-		oynat2.addActionListener(new ActionListener() {		
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				int secilen = listedenZarSec(0);	
-				oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
-				oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
-				double l = System.currentTimeMillis()-ilkSure;
-				l /= 1000;
-				sureoync2.setText(l + " sn");
-				oync2ToplamSure += l;
-				toplamsureoync2.setText(oync2ToplamSure + " sn");	
-				if (oynamaz2 == 0) {
-					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
+		
+		AI(g);
+		if (oyuncuSirasi == 1) {
+			double l = System.currentTimeMillis()-ilkSure;
+			l /= 1000;
+			sureoync1.setText(l + " sn");
+			oync1ToplamSure += l;
+			toplamsureoync1.setText(oync1ToplamSure + " sn");
+			oynat1.addActionListener(new ActionListener() {		
+				@Override
+				public void actionPerformed(ActionEvent arg0) {		
+					int sira = secilenZar;
+					int secilen = listedenZarSec(sira);
+					oynat(g,birinciTasNumarasi,secilen/10,1);
+					oynat(g,ikinciTasNumarasi,secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
+					ts1 = tas1.getText();
+					if (oynamaz1 == 0) {
+						durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
+					}
+					oynamaz1 = 0;
 				}
-				oynamaz2 = 0;
-			}
-		});
+			});
+		}
+		else if (oyuncuSirasi == 2) {
+			double l = System.currentTimeMillis()-ilkSure;
+			l /= 1000;
+			sureoync2.setText(l + " sn");
+			oync2ToplamSure += l;
+			toplamsureoync2.setText(oync2ToplamSure + " sn");	
+			oynat2.addActionListener(new ActionListener() {		
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					int sira = secilenZar;
+					int secilen = listedenZarSec(sira);	
+					oynat(g,birinciTasNumarasi,secilen/10,2);
+					oynat(g,ikinciTasNumarasi,secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
+					if (oynamaz2 == 0) {
+						durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
+					}
+					oynamaz2 = 0;
+				}
+			});
+		}
+		
+		
+		
+		
+//		final JButton oynat1 = new JButton("oynat1");
+//		oynat1.setBounds(975,550,80,25);
+//		add(oynat1);
+//		oynat1.addActionListener(new ActionListener() {		
+//			@Override
+//			public void actionPerformed(ActionEvent arg0) {
+////				AI(g);
+//				int sira = secilenZar;
+//				int secilen = listedenZarSec(sira);
+//				oynat(g,Integer.parseInt(tas1.getText()),secilen/10,1);
+//				oynat(g,Integer.parseInt(zar1.getText()),secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
+//				double l = System.currentTimeMillis()-ilkSure;
+//				l /= 1000;
+//				sureoync1.setText(l + " sn");
+//				oync1ToplamSure += l;
+//				toplamsureoync1.setText(oync1ToplamSure + " sn");
+//				ts1 = tas1.getText();
+//				if (oynamaz1 == 0) {
+//					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
+//				}
+//				oynamaz1 = 0;
+//			}
+//		});
+//		final JButton oynat2 = new JButton("oynat2");
+//		oynat2.setBounds(975,575,80,25);
+//		add(oynat2);
+//		oynat2.addActionListener(new ActionListener() {		
+//			@Override
+//			public void actionPerformed(ActionEvent arg0) {
+////				AI(g);
+//				int sira = secilenZar;
+//				int secilen = listedenZarSec(sira);	
+//				oynat(g,Integer.parseInt(tas2.getText()),secilen/10,2);
+//				oynat(g,Integer.parseInt(zar2.getText()),secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
+//				double l = System.currentTimeMillis()-ilkSure;
+//				l /= 1000;
+//				sureoync2.setText(l + " sn");
+//				oync2ToplamSure += l;
+//				toplamsureoync2.setText(oync2ToplamSure + " sn");	
+//				if (oynamaz2 == 0) {
+//					durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
+//				}
+//				oynamaz2 = 0;
+//			}
+//		});
+
+		
 	}
-	
-	
-	
-	
+
 	public void oynat(Graphics g, int tasNumarasi, int zar, int hangiTas) {
 		if (hangiTas==1) {
 			if(taslarX1[tasNumarasi]==375 && taslarY1[tasNumarasi]==300 && kontrol(45, taslarX1[tasNumarasi]+405-zar*60, 1)) {
@@ -680,43 +767,47 @@ public class Konsol extends JFrame{
 		return true;
 	}
 	
-	public String[] konumHesapla(int[] x, int[] y) {
+	public String[] konumHesapla(int[] x, int[] y, int h) {
 		int knm[] = new int[15];
 		String dizi[] = new String[15];
 		String s = "";
 		for (int i = 0; i < x.length; i++) {
-			int konum = konumBul(x, y, i);
-			if (i/10>=1) {
-				s += i + "    -   " + konum + "\n";
+			int konum = 0;
+			if (y[i]%30==15) {
+				konum = (x[i]+30)/60+12;
 			}else {
-				s += i + "     -    " + konum + "\n";;
+				konum = 13-(x[i]+30)/60;
+			}
+			if (x[i]==375 && y[i]==300) {
+				konum = 0;
+			}
+			if (x[i]==375 && y[i]==360) {
+				konum = 25;
+			}
+			
+			if (i/10>=1) {
+				s += i + "    -   " + konum;
+			}else {
+				s += i + "     -    " + konum;;
 			}
 			dizi[i] = s;
 			s = "";
 			knm[i] = konum;
+			if (h == 1) {
+				taslarinKonumu1[i] = konum;
+			}
+			else if (h ==2) {
+				taslarinKonumu2[i] = konum;
+			}
 		}
 		return dizi;
 	}
 
-	private int konumBul(int[] x, int[] y, int i) {
-		int konum = 0;
-		if (y[i]%30==15) {
-			konum = (x[i]+30)/60+12;
-		}else {
-			konum = 13-(x[i]+30)/60;
-		}
-		if (x[i]==375 && y[i]==300) {
-			konum = 0;
-		}
-		if (x[i]==375 && y[i]==360) {
-			konum = 25;
-		}
-		return konum;
-	}
+
 
 	
 	
-	public String[] oynayabilirTaslariHesapla(int[] x, int[] y) {
+	public String[] oynayabilirTaslariHesapla(int[] x, int[] y, int h) {
 		String dizi[] = null;
 		ArrayList<Integer> uygunTasX = new ArrayList<Integer>();
 		ArrayList<Integer> uygunTasY = new ArrayList<Integer>();
@@ -780,44 +871,53 @@ public class Konsol extends JFrame{
 			xx[j] = uygunTasX.get(j);
 			yy[j] = uygunTasY.get(j);
 		}
-/*		for (int i = 0; i < yy.length; i++) {
-			System.out.println(konumBul(xx, yy, i));
-		}
-*/
+		String ss[];
 		dizi = new String[indis.size()];
 		for (int i = 0; i < indis.size(); i++) {
+			if (h==1 && taslarinKonumu1[indis.get(i)]==0) {
+				ss = new String[dizi.length-1];
+				for (int j = 0; j < ss.length; j++) {
+					ss[j] = dizi[j];
+				}
+				dizi = new String[dizi.length-1];
+				for (int j = 0; j < ss.length; j++) {
+					 dizi[j] = ss[j];
+				}
+				continue;
+			}
+			else if (h==2 && taslarinKonumu2[indis.get(i)]==25) {
+				ss = new String[dizi.length-1];
+				for (int j = 0; j < ss.length; j++) {
+					ss[j] = dizi[j];
+				}
+				dizi = new String[dizi.length-1];
+				for (int j = 0; j < ss.length; j++) {
+					 dizi[j] = ss[j];
+				}
+				continue;
+			}
 			dizi[i] = indis.get(i) + "";
 //			System.out.println(dizi[i]);
+		}
+		
+		
+		if (h==1) {
+			oynayaBilirTaslar1 = new ArrayList<Integer>();
+			for (int i = 0; i < dizi.length; i++) {
+				oynayaBilirTaslar1.add(Integer.parseInt(dizi[i]));
+			}
+		}
+		else if (h==2) {
+			oynayaBilirTaslar2 = new ArrayList<Integer>();
+			for (int i = 0; i < dizi.length; i++) {
+				oynayaBilirTaslar2.add(Integer.parseInt(dizi[i]));
+			}
 		}
 
 		return dizi;
 	}
 	
-	public ArrayList<Integer> listeyeEkle (ArrayList<Integer> a, int sayi){
-		int s = 0;
-		if (a.isEmpty()) {
-			a.add(sayi);
-		}
-		else {
-			for (int i = 0; i < a.size(); i++) {
-				if (a.get(i)==sayi) {
-					return a;
-				}
-				else{
-					s = 1;
-				}
-			}
-			if (s==1) {
-				s=0;
-				a.add(sayi);
-				return a;
-			}
-		}
-		return null;
-	}
-	
 
-	
 	public static void main(String[] args) {
 		Konsol k = new Konsol();
 		
