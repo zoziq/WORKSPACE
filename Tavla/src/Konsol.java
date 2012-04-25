@@ -22,8 +22,10 @@ public class Konsol extends JFrame{
 		
 		secilenZar = 0;
 		birinciTasNumarasi = 14;
-		ikinciTasNumarasi = 14;
-		oyuncuSirasi = 1;
+		ikinciTasNumarasi = 13;
+		ucuncuTasNumarasi = 7;
+		dorduncuTasNumarasi = 6;
+		oyuncuSirasi = 2;
 		System.out.println(oynayaBilirTaslar1);
 	}
 	
@@ -31,9 +33,12 @@ public class Konsol extends JFrame{
 	public static int oyuncuSirasi = 1; // 1. oyuncu, 2. oyuncu
 	public static int birinciTasNumarasi; // oyuncunun hamle yapacagi birinci tas
 	public static int ikinciTasNumarasi; // oyuncunun hamle yapacagi ikinci tas
+	public static int ucuncuTasNumarasi; // oyuncunun hamle yapacagi birinci tas
+	public static int dorduncuTasNumarasi; // oyuncunun hamle yapacagi ikinci tas
 	
-	public static int zarSayisi = 3;
-	public static int zarListesi[][] = new int[zarSayisi][2];
+	public static int zarSetiBoyutu = 3;
+	public static int zarSetiSayisi = 5;
+	public static int zarListesi[][] = new int[zarSetiBoyutu][2];
 	public static int taslarinKonumu1[] = new int[15];
 	public static int taslarinKonumu2[] = new int[15];
 	public static ArrayList<Integer> oynayaBilirTaslar1 = new ArrayList<Integer>();
@@ -60,16 +65,13 @@ public class Konsol extends JFrame{
 	public JLabel cikan1 = new JLabel("0");
 	public JLabel cikan2 = new JLabel("0");
 	
-	public int golgeX = -60; 
-	public int golgeY = -60;
 	public int sonOynananTasNumarasi = 0;
 	public int sonOynananHangiTas = 0;
 	
 	public JTextField durumlar;
 	public static String ts1;
 	public static String ts2;
-	public int oynamaz1 = 0;
-	public int oynamaz2 = 0;
+
 	
 	public JTextField sureoync1;
 	public JTextField sureoync2;
@@ -80,7 +82,6 @@ public class Konsol extends JFrame{
 	public double ilkSure;
 	
 	public static int kontrol = 0;
-	public int ciftKontrol;
 	
 	public static int hamle = 0;
 	
@@ -101,36 +102,30 @@ public class Konsol extends JFrame{
 	
 	public int listedenZarSec(int sira) {
 		int secilenZar = zarListesi[sira][0]*10+zarListesi[sira][1];
-				
-		
+					
 		int liste[][] = new int[zarListesi.length - 1][2];
 		for (int j = 0; j < zarListesi.length -1; j++) {
 			for (int i = 0; i < 2; i++) {
 				liste[j][i] = zarListesi[j][i];
 			}
 		}
-		if (zarListesi[sira][0]==zarListesi[sira][1] && ciftKontrol==0) {
-			ciftKontrol = 1;
-			hamle--;
-		}
-		else  {
-			for (int j = sira; j < zarListesi.length -1; j++) {
-				for (int i = 0; i < 2; i++) {
-					liste[j][i] = zarListesi[j+1][i];
-				}
-			}
-			zarListesi = new int[zarListesi.length -1][2];
-			for (int j = 0; j < zarListesi.length; j++) {
-				for (int i = 0; i < 2; i++) {
-					zarListesi[j][i] = liste[j][i];
-				}
+
+		for (int j = sira; j < zarListesi.length -1; j++) {
+			for (int i = 0; i < 2; i++) {
+				liste[j][i] = zarListesi[j+1][i];
 			}
 		}
-		
+		zarListesi = new int[zarListesi.length -1][2];
+		for (int j = 0; j < zarListesi.length; j++) {
+			for (int i = 0; i < 2; i++) {
+				zarListesi[j][i] = liste[j][i];
+			}
+		}	
+
 		hamle++;
-		if(hamle==zarSayisi) {
+		if(hamle==zarSetiBoyutu) {
 			hamle=0;
-			zarListesi = new int[zarSayisi][2];
+			zarListesi = new int[zarSetiBoyutu][2];
 			randomZar();
 		}
 		
@@ -223,12 +218,6 @@ public class Konsol extends JFrame{
 			g.setColor(Color.white);
 			g.drawString(""+(i+19), 443+i*60, 42);
 		}
-		
-		//////////////////
-		//    GOLGE     //
-		//////////////////
-		g.setColor(Color.black);
-		g.drawOval(golgeX, golgeY, 60, 60);
 		
 		//////////////////
 		// KOORDINAT    //
@@ -369,52 +358,47 @@ public class Konsol extends JFrame{
 		zar2.setBounds(920,575,35,25);
 		add(zar2);
 		
-		final JButton oynat1 = new JButton("oynat1");
-		oynat1.setBounds(975,550,80,25);
-		add(oynat1);
-		final JButton oynat2 = new JButton("oynat2");
-		oynat2.setBounds(975,575,80,25);
-		add(oynat2);
 		
 		AI(g);
 		if (oyuncuSirasi == 1) {
+			final JButton oynat1 = new JButton("oynat1");
+			oynat1.setBounds(975,550,80,25);
+			add(oynat1);
 			double l = System.currentTimeMillis()-ilkSure;
 			l /= 1000;
 			sureoync1.setText(l + " sn");
 			oync1ToplamSure += l;
 			toplamsureoync1.setText(oync1ToplamSure + " sn");
 			oynat1.addActionListener(new ActionListener() {		
-				@Override
 				public void actionPerformed(ActionEvent arg0) {		
-					int sira = secilenZar;
-					int secilen = listedenZarSec(sira);
+					int secilen = listedenZarSec(secilenZar);
 					oynat(g,birinciTasNumarasi,secilen/10,1);
-					oynat(g,ikinciTasNumarasi,secilen%10,1);//zar1 den ikinci tas bilgisi aliniyor
-					ts1 = tas1.getText();
-					if (oynamaz1 == 0) {
-						durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar1.getText() + " oynadý");
-					}
-					oynamaz1 = 0;
+					oynat(g,ikinciTasNumarasi,secilen%10,1);
+					if (secilen/10 == secilen%10) {
+						oynat(g,ucuncuTasNumarasi,secilen/10,1);
+						oynat(g,dorduncuTasNumarasi,secilen%10,1);
+					}	
 				}
 			});
 		}
 		else if (oyuncuSirasi == 2) {
+			final JButton oynat2 = new JButton("oynat2");
+			oynat2.setBounds(975,575,80,25);
+			add(oynat2);
 			double l = System.currentTimeMillis()-ilkSure;
 			l /= 1000;
 			sureoync2.setText(l + " sn");
 			oync2ToplamSure += l;
 			toplamsureoync2.setText(oync2ToplamSure + " sn");	
 			oynat2.addActionListener(new ActionListener() {		
-				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					int sira = secilenZar;
-					int secilen = listedenZarSec(sira);	
+					int secilen = listedenZarSec(secilenZar);	
 					oynat(g,birinciTasNumarasi,secilen/10,2);
-					oynat(g,ikinciTasNumarasi,secilen%10,2);//zar1 den ikinci tas bilgisi aliniyorts2 = tas2.getText();
-					if (oynamaz2 == 0) {
-						durumlar.setText(sonOynananHangiTas + " . oyuncu " + sonOynananTasNumarasi + " numaralý taþýný " + zar2.getText() + " oynadý");
-					}
-					oynamaz2 = 0;
+					oynat(g,ikinciTasNumarasi,secilen%10,2);
+					if (secilen/10 == secilen%10) {
+						oynat(g,ucuncuTasNumarasi,secilen/10,2);
+						oynat(g,dorduncuTasNumarasi,secilen%10,2);
+					}	
 				}
 			});
 		}
@@ -475,8 +459,6 @@ public class Konsol extends JFrame{
 		if (hangiTas==1) {
 			if(taslarX1[tasNumarasi]==375 && taslarY1[tasNumarasi]==300 && kontrol(45, taslarX1[tasNumarasi]+405-zar*60, 1)) {
 				System.out.println("kiriktan giris 1");
-				golgeX = taslarX1[tasNumarasi];
-		        golgeY = taslarY1[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				kirikSayisi1--;
@@ -506,8 +488,6 @@ public class Konsol extends JFrame{
 			}
 			else if(taslarX1[tasNumarasi]<=390 && taslarX1[tasNumarasi]>=30 && taslarX1[tasNumarasi]-zar*60<=30 && Math.abs(taslarY1[tasNumarasi]%30)==15 && kontrol(60, -(taslarX1[tasNumarasi]-zar*60), 1)) {
 				System.out.println("sol ustten sol alta 1");
-				golgeX = taslarX1[tasNumarasi];
-		        golgeY = taslarY1[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				int gidecegiYer =  -(taslarX1[tasNumarasi]-zar*60);
@@ -537,8 +517,6 @@ public class Konsol extends JFrame{
 			}
 			else if(taslarX1[tasNumarasi]>=390 && taslarX1[tasNumarasi]<=780 && taslarX1[tasNumarasi]+zar*60>=780 && Math.abs(taslarY1[tasNumarasi]%30)==0) {
 				System.out.println("sag alttan cikis 1");
-				golgeX = taslarX1[tasNumarasi];
-		        golgeY = taslarY1[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				cikanSayisi1++;
@@ -554,8 +532,6 @@ public class Konsol extends JFrame{
 		else if (hangiTas==2) {
 			if(taslarX2[tasNumarasi]==375 && taslarY2[tasNumarasi]==360 && kontrol(60, taslarX2[tasNumarasi]+405-zar*60, 2)) {
 				System.out.println("kiriktan giris 2");
-				golgeX = taslarX2[tasNumarasi];
-		        golgeY = taslarY2[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				kirikSayisi2--;
@@ -585,8 +561,6 @@ public class Konsol extends JFrame{
 			}
 			else if(taslarX2[tasNumarasi]<=390 && taslarX2[tasNumarasi]>=30 && taslarX2[tasNumarasi]-zar*60<30 && taslarY2[tasNumarasi]%30==0 && kontrol(45, -(taslarX2[tasNumarasi]-zar*60), 2)) {
 				System.out.println("sol alttan sol uste 2");
-				golgeX = taslarX2[tasNumarasi];
-		        golgeY = taslarY2[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				int gidecegiYer =  -(taslarX2[tasNumarasi]-zar*60);
@@ -616,8 +590,6 @@ public class Konsol extends JFrame{
 			}
 			else if(taslarX2[tasNumarasi]>=420 && taslarX2[tasNumarasi]<780 && taslarX2[tasNumarasi]+zar*60>=780 && Math.abs(taslarY2[tasNumarasi]%30)==15 && kontrol(45, taslarX2[tasNumarasi]+zar*60, 2)) {
 				System.out.println("sag ustten cikis 2");
-				golgeX = taslarX2[tasNumarasi];
-		        golgeY = taslarY2[tasNumarasi];
 		        sonOynananTasNumarasi = tasNumarasi;
 		        sonOynananHangiTas = hangiTas;
 				cikanSayisi2++;
@@ -634,8 +606,6 @@ public class Konsol extends JFrame{
 	}
 
 	private void haraket11(int tasNumarasi, int gidecegiYer) {
-		golgeX = taslarX1[tasNumarasi];
-        golgeY = taslarY1[tasNumarasi];
         sonOynananTasNumarasi = tasNumarasi;
         sonOynananHangiTas = 1;
 		for (int i = 0; i < 15; i++) {
@@ -653,8 +623,6 @@ public class Konsol extends JFrame{
 	}
 	
 	private void haraket12(int tasNumarasi, int gidecegiYer) {
-		golgeX = taslarX1[tasNumarasi];
-        golgeY = taslarY1[tasNumarasi];
         sonOynananTasNumarasi = tasNumarasi;
         sonOynananHangiTas = 1;
 		for (int i = 0; i < 15; i++) {
@@ -672,8 +640,6 @@ public class Konsol extends JFrame{
 	}
 	
 	private void haraket21(int tasNumarasi, int gidecegiYer) {
-		golgeX = taslarX2[tasNumarasi];
-        golgeY = taslarY2[tasNumarasi];
         sonOynananTasNumarasi = tasNumarasi;
         sonOynananHangiTas = 2;
 		for (int i = 0; i < 15; i++) {
@@ -691,8 +657,6 @@ public class Konsol extends JFrame{
 	}
 	
 	private void haraket22(int tasNumarasi, int gidecegiYer) {
-		golgeX = taslarX2[tasNumarasi];
-        golgeY = taslarY2[tasNumarasi];
         sonOynananTasNumarasi = tasNumarasi;
         sonOynananHangiTas = 2;
 		for (int i = 0; i < 15; i++) {
@@ -718,7 +682,6 @@ public class Konsol extends JFrame{
 				}
 			}
 			if (sayac>1) {
-				oynamaz1 = 1;
 				System.out.println("oynamaz");
 				durumlar = new JTextField(ts1 + " numaralý taþ oynamaz");
 				durumlar.setBounds(850,500,212,25);
@@ -745,7 +708,6 @@ public class Konsol extends JFrame{
 				}
 			}
 			if (sayac>1) {
-				oynamaz2 = 1;
 				System.out.println("oynamaz");
 				durumlar = new JTextField(ts2 + " numaralý taþ oynamaz");
 				durumlar.setBounds(850,500,212,25);
@@ -919,16 +881,8 @@ public class Konsol extends JFrame{
 	
 
 	public static void main(String[] args) {
-		Konsol k = new Konsol();
-		
-	
-			
+		new Konsol();
 	}
 }
-
-
-//Math.abs(taslarY1[i])%30==15 durumuna dikkat et -15 cikabiliyor
-//koseyi donmek icin haraket metotlarini kullanma
-//haraket metotlarini kullanmiyorken repaint fonksiyonunu cagirmayi unutma
 
 	
