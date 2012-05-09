@@ -63,16 +63,29 @@ public class deneme {
 		System.out.println(d.listedenZarSec(1));
 		yaz();
 		*/
+//		
+//		System.out.println(d.globalTime);
+//		
+//		
+//		
+//		oynayaBilirTaslar1.add(9);
+//		oynayaBilirTaslar1.add(9);
+//		oynayaBilirTaslar1.add(4);
+//		oynayaBilirTaslar1.removeAll(oynayaBilirTaslar1);
+//		System.out.println(oynayaBilirTaslar1);
 		
-		System.out.println(d.globalTime);
+//
+//		int a[] = {1,2,3};
+//		int b[] = {4,5,6};
+//		
+//		a=b;
+//		for (int i = 0; i < b.length; i++) {
+//			System.out.println(a[i]);
+//		}
 		
-		
-		
-		oynayaBilirTaslar1.add(9);
-		oynayaBilirTaslar1.add(9);
-		oynayaBilirTaslar1.add(4);
-		oynayaBilirTaslar1.removeAll(oynayaBilirTaslar1);
-		System.out.println(oynayaBilirTaslar1);
+		ArrayList<Integer> A = new ArrayList<Integer>(); 
+		System.out.println(A);
+		System.out.println(A.isEmpty());
 		
 	}
 	

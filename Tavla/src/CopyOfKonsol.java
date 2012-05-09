@@ -15,19 +15,27 @@ import javax.swing.JTextField;
 import javax.swing.RepaintManager;
 
 
-public class Konsol extends JFrame{
+public class CopyOfKonsol extends JFrame{
 	
 	public void AI(final Graphics g){
 		ilkSure = System.currentTimeMillis();
 		
 		listedenSecilenZarinSiraNumarasi = 0;
-		secilenZarIkilisi = listedenZarSec(listedenSecilenZarinSiraNumarasi);
 		oyuncuSirasi = 1;
 		int zar1 = secilenZarIkilisi/10;
 		int zar2 = secilenZarIkilisi%10;
 		System.out.println(uygunTaslar(oyuncuSirasi,zar1,zar2));
 		
 	
+//		zarListesi[0][0][0]=2;
+//		zarListesi[0][0][1]=2;
+//		zarListesi[0][1][0]=2;
+//		zarListesi[0][1][1]=2;
+//		
+//		if(ilkArgumanVerilenTasUstteMi(oyuncuSirasi,13,14)){
+//			birinciTasNumarasi = 13;
+//			ikinciTasNumarasi = 14;
+//		}
 		birinciTasNumarasi = 14;
 		ikinciTasNumarasi = 13;
 		ucuncuTasNumarasi = 7;
@@ -77,7 +85,7 @@ public class Konsol extends JFrame{
 	public static String ts1;
 	public static String ts2;
 
-	
+	public JTextField tt[];
 	public JTextField sureoync1;
 	public JTextField sureoync2;
 	public JTextField toplamsureoync1;
@@ -90,7 +98,7 @@ public class Konsol extends JFrame{
 	
 	public static int hamle = 0;
 	
-	public Konsol() {
+	public CopyOfKonsol() {
 		setLayout(null);
 		setBounds(-7,0,1450,720);
 		setVisible(true);
@@ -284,12 +292,14 @@ public class Konsol extends JFrame{
 		JLabel t1 = new JLabel("  tas1    tas2");
 		t1.setBounds(970,45,180,25);
 		add(t1);
+		
 		ArrayList<Integer> a1 = uygunTaslar(1, secilenZarIkilisi/10, secilenZarIkilisi%10);
 		ArrayList<Integer> a2 = uygunTaslar(2, secilenZarIkilisi/10, secilenZarIkilisi%10);
 		for (int j = 0; j < a1.size(); j++) {
-			JTextField tt = new JTextField(a1.get(j) + "");
-			tt.setBounds(980,75+j*18,30,18);
-			add(tt);
+			tt = new JTextField[a1.size()];
+			tt[j] = new JTextField(a1.get(j) + "");
+			tt[j].setBounds(980,75+j*18,30,18);
+			add(tt[j]);
 		}
 		for (int j = 0; j < a2.size(); j++) {
 			JTextField tt = new JTextField(a2.get(j) + "");
@@ -394,6 +404,7 @@ public class Konsol extends JFrame{
 			toplamsureoync1.setText(oync1ToplamSure + " sn");
 			oynat1.addActionListener(new ActionListener() {		
 				public void actionPerformed(ActionEvent arg0) {		
+					secilenZarIkilisi = listedenZarSec(listedenSecilenZarinSiraNumarasi);
 					oynat(g,birinciTasNumarasi,secilenZarIkilisi/10,1);
 					oynat(g,ikinciTasNumarasi,secilenZarIkilisi%10,1);
 					if (secilenZarIkilisi/10 == secilenZarIkilisi%10) {
@@ -414,6 +425,7 @@ public class Konsol extends JFrame{
 			toplamsureoync2.setText(oync2ToplamSure + " sn");	
 			oynat2.addActionListener(new ActionListener() {		
 				public void actionPerformed(ActionEvent arg0) {	
+					secilenZarIkilisi = listedenZarSec(listedenSecilenZarinSiraNumarasi);
 					oynat(g,birinciTasNumarasi,secilenZarIkilisi/10,2);
 					oynat(g,ikinciTasNumarasi,secilenZarIkilisi%10,2);
 					if (secilenZarIkilisi/10 == secilenZarIkilisi%10) {
@@ -1250,9 +1262,51 @@ public class Konsol extends JFrame{
 		}
 		return A; 	
 	}
+	
+	public boolean ilkArgumanVerilenTasUstteMi(int hangiTaslar, int tas1, int tas2) {
+		if (hangiTaslar == 1) {
+			if(taslarX1[tas1] != taslarX1[tas2]) {
+				return true;
+			}
+			else {
+				if(taslarY1[tas1]%30==15){
+					if (taslarY1[tas1] > taslarY1[tas2]) {
+						return true;
+					}
+				}
+				else if(taslarY1[tas1]%30==0){
+					if (taslarY1[tas1] < taslarY1[tas2]) {
+						return true;
+					}
+				}
+				else
+					return false;
+			}
+		}
+		else if (hangiTaslar == 2) {
+			if(taslarX2[tas1] != taslarX2[tas2]) {
+				return true;
+			}
+			else {
+				if(taslarY2[tas1]%30==15){
+					if (taslarY2[tas1] > taslarY2[tas2]) {
+						return true;
+					}
+				}
+				else if(taslarY2[tas1]%30==0){
+					if (taslarY2[tas1] < taslarY2[tas2]) {
+						return true;
+					}
+				}
+				else
+					return false;
+			}
+		}
+		return false;
+	}
 
 	public static void main(String[] args) {
-		new Konsol();
+		new CopyOfKonsol();
 	}
 }
 
