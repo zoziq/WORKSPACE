@@ -105,7 +105,7 @@ public class FUNC_1 implements YapayZeka {
     }
 
     @Override
-    public int[] kos() {System.out.println("swsws");
+    public int[] kos() {System.out.println("1wqwqw" + diceNodeList.size());
              
         int taslarToplamayaHazir = 1;//toplanmaya hazir mi
     	for (int i = 0; i < 19; i++) {
@@ -119,7 +119,7 @@ public class FUNC_1 implements YapayZeka {
     	int kontrol = -1;
     	int zarID = 0;
     	
-    	if (taslarToplamayaHazir == 1) {
+    	if (taslarToplamayaHazir == 1) {System.out.println("taslariToplamaGirdi");
     		while(zarID != diceNodeList.size()-1) {
     			if (diceNodeList.get(zarID).getDice1() == diceNodeList.get(zarID).getDice2()) {
         			if (benim_pullar[25 - diceNodeList.get(zarID).getDice1()] == 1) {
@@ -178,6 +178,7 @@ public class FUNC_1 implements YapayZeka {
         	zarID = 0;
         	
         	if (benim_pullar[25] == 1) {//tek kirigi sokabiliyor muyum
+        		System.out.println("tekKirigiSokGirdi");
         		kontrol = 1;
         		while(zarID != diceNodeList.size()-1) {
         			if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
@@ -205,10 +206,14 @@ public class FUNC_1 implements YapayZeka {
         				zarID = 0;
         				konum ++;
         			}
+            		if (diceNodeList.size() == 1) {
+            			break;
+					}
         		}
         	}
         	
         	if (benim_pullar[25] >= 2) {//cift kirigi sokabiliyor muyum
+        		System.out.println("ciftKirigiSokGirdi");
     			kontrol = 1;
         		while(zarID != diceNodeList.size()-1) {
         			if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
@@ -228,7 +233,7 @@ public class FUNC_1 implements YapayZeka {
         	}
         	
         	if (kontrol == 0) {//kirma
-        		
+        		System.out.println("kirmaGirdi");
         		int kiranKonum = 0;
         		int kiranZarID = 0;
         		int kiranZar = 0;
@@ -271,13 +276,16 @@ public class FUNC_1 implements YapayZeka {
             				zarID = 0;
             				i++;
             			}
+                		if (diceNodeList.size() == 1) {
+                			break;
+						}
         			}
         		}
             	
             	if (kiranKonum != 0 && diceNodeList.get(kiranZarID).getDice1() != diceNodeList.get(kiranZarID).getDice2()) {
             		    	
     				konum = 1;
-                	while(konum<25) {//rasgele sec
+                	while(konum<25 && zarID <= diceNodeList.size()-1) {//rasgele sec
                 		if (konum==kiranKonum && benim_pullar[konum] == 1) {
                 			konum++;
 						}
@@ -316,7 +324,8 @@ public class FUNC_1 implements YapayZeka {
             	zarID = 0;
             	kontrol = 0;
 
-            	while(konum<25) {//cift 1. oncelik
+            	while(konum<25 && zarID <= diceNodeList.size()-1) {//cift 1. oncelik
+            		System.out.println("ciftOynaGirdi");
                 	if (diceNodeList.size() == 1) {
         				zarID = 0;
         			}
@@ -350,6 +359,9 @@ public class FUNC_1 implements YapayZeka {
             				zarID = 0;
             				konum ++;
             			}
+                		if (diceNodeList.size() == 1) {
+                			break;
+    					}
         			}  		
             	}//while
             	
@@ -357,6 +369,7 @@ public class FUNC_1 implements YapayZeka {
             		
                 	int hamleTamam = 0;
                 	for (int i = 1; i < 20; i++) {//kapi ikinci oncelik
+                		System.out.println("kapiYapGirdi");
             			if (benim_pullar[i] > 0) {
             				for (int j = i+1; j < i+6 && j < 20; j++) {
             					for (int k = 0; k < diceNodeList.size(); k++) {
@@ -394,7 +407,8 @@ public class FUNC_1 implements YapayZeka {
                 		
                 		konum = 1;
                     	zarID = 0;
-                		while(konum<25) {//tekten oyna
+                		while(konum<25 && zarID <= diceNodeList.size()-1) {//tekten oyna
+                			System.out.println("tektenOynaGirdi");
                 			if (benim_pullar[konum] == 1) {
                 				if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && rakip_pullar[konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2()] < 2) {
                 					zar1 = diceNodeList.get(zarID).getDice1();
@@ -412,6 +426,9 @@ public class FUNC_1 implements YapayZeka {
                 				zarID = 0;
                 				konum ++;
                 			}
+                    		if (diceNodeList.size() == 1) {
+                    			break;
+        					}
                 		}
                 		
                 		
@@ -421,7 +438,8 @@ public class FUNC_1 implements YapayZeka {
                 			konum = 1;
                 	    	zarID = 0;
                         	int tempKonum = 0;
-                    		while(konum<25) {//tek taslar
+                    		while(konum<25 && zarID <= diceNodeList.size()-1) {//tek taslar
+                    			System.out.println("tekTaslarGirdi");
                     			if (benim_pullar[konum] != 3 && tempKonum == 0 && benim_pullar[konum] == 1) {
                     				if(buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())){
                     					tempKonum = konum;
@@ -445,23 +463,39 @@ public class FUNC_1 implements YapayZeka {
                     				zarID = 0;
                     				konum ++;
                     			}
+                        		if (diceNodeList.size() == 1) {
+                        			break;
+            					}
                     		}
                     		
                     		
                     		
                     		if (kontrol != 5) {
+                    			kontrol = 7;
                     			konum = 1;
                     	    	zarID = 0;
-                            	while(konum<25) {//rasgele sec
+                            	while(konum<25 && zarID <= diceNodeList.size()-1) {//rasgele sec
+                            		System.out.println("rasgeleSecGirdi");
                             		if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
-                            			if (benim_pullar[konum] >= 2) {
-                            				zar1 = diceNodeList.get(zarID).getDice1();
-                            				zar2 = diceNodeList.get(zarID).getDice2();
-                            				calculate();
+                            			if (benim_pullar[konum] >= 2 && benim_pullar[konum] != 3) {                            				
                             				if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2())) {
+                            					zar1 = diceNodeList.get(zarID).getDice1();
+                                				zar2 = diceNodeList.get(zarID).getDice2();
+                                				calculate();
                             					Play1(konum, diceNodeList.get(zarID).getDice1());
                                 				Play2(konum, diceNodeList.get(zarID).getDice2());
                                 				System.out.println("rasgele secti");
+                                				kontrol=6;
+                                				break;
+                            				}
+                            				else if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2()) && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())) {
+                            					zar1 = diceNodeList.get(zarID).getDice2();
+                                				zar2 = diceNodeList.get(zarID).getDice1();
+                                				calculate();
+                            					Play1(konum, diceNodeList.get(zarID).getDice2());
+                                				Play2(konum, diceNodeList.get(zarID).getDice1());
+                                				System.out.println("rasgele secti");
+                                				kontrol=6;
                                 				break;
                             				}
 
@@ -472,6 +506,9 @@ public class FUNC_1 implements YapayZeka {
                         				zarID = 0;
                         				konum ++;
                         			}
+                            		if (diceNodeList.size() == 1) {
+                            			break;
+                					}
                             	}//while
                 			}
                 		}
@@ -482,7 +519,69 @@ public class FUNC_1 implements YapayZeka {
     		
     	}
     	
+    	if (kontrol == 7) {
+    		
+    		konum = 1;
+    		
+    		int z1 = diceNodeList.get(0).getDice1();
+    		int z2 = diceNodeList.get(0).getDice2();
+    		
+    		while(konum<25){//son zar sec
+    			System.out.println("sonZarSecGirdi");
+    			if (benim_pullar[konum] >= 2 && z1 != z2) {
+    				if (buHamleOlurmu(konum, z1) && buHamleOlurmu(konum, z2)) {
+    					zar1 = z1;
+        				zar2 = z2;
+        				calculate();
+    					Play1(konum, z1);
+        				Play2(konum, z2);
+        				System.out.println("son zar sec");
+        				break;
+    				}
+    				else if (buHamleOlurmu(konum, z2) && buHamleOlurmu(konum, z1)) {
+    					zar1 = z2;
+        				zar2 = z1;
+        				calculate();
+    					Play1(konum, z2);
+        				Play2(konum, z1);
+        				System.out.println("son zar sec");
+        				break;
+    				}
+    			}
+    			
+    			else if (benim_pullar[konum] >= 2 && z1 == z2) {
+    				zar1 = z1;
+    				zar2 = z2;	
+    				calculate();
+    				if (kontrol == 0 && buHamleOlurmu(konum, z1) && benim_pullar[konum + z1] < 2 && benim_pullar[konum] != 3) {            					
+    					Play1(konum, z1);
+    					Play2(konum, z2);
+        				kontrol = 1;
+        				konum ++;
+     				}
+    				if (kontrol == 1 && buHamleOlurmu(konum, z1) && benim_pullar[konum + z1] < 2 && benim_pullar[konum] != 3) {
+    					Play3(konum, z1);
+        				Play4(konum, z1);
+        				kontrol = 2;
+        				System.out.println("cift zar oynadi");
+        				
+					}	
+
+    				
+        		}//1. if  
+        		   			
+    			
+    			konum++;
+    			
+    		}
+    		
+    		
     	
+        		
+        	
+    		
+    		
+		}
     	
     	
    	
