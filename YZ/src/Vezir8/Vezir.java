@@ -55,5 +55,9 @@ public class Vezir {
 	            tablo[i][j] = 0;
 	        }
 	    }
+	    
+	    public static void main(String[] args) {
+			vezir(0);
+		}
 	
 }

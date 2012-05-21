@@ -18,13 +18,15 @@ import javax.swing.JOptionPane;
  * @author Dogru
  */
 public class FUNC_1 implements YapayZeka {
+	
+	private int zar1;
+	private int zar2;
+	
     Arayuz arayuz;
     LinkedList<DiceNode> diceNodeList = new LinkedList<DiceNode>();
     LinkedList<DiceNode> secondDiceList = new LinkedList<DiceNode>();
     int benim_pullar[];  //board üzerindeki sütunlarda kaç pul bulunduğu tutulmaktadır.
     int rakip_pullar[];
-	private int zar1;
-	private int zar2;
     static int dice1;
     static int dice2;
     static int diceID;
@@ -59,11 +61,28 @@ public class FUNC_1 implements YapayZeka {
                 return node;
             }
         }
-        System.out.println("Zar listesi boş zar seçilemedi!");
         return node;
     }
 
-    
+    @Override
+    public void calculate() {
+        DiceNode secilenZar;
+        System.out.println("dices");
+        DiceNode avantajliZar = new DiceNode(zar1, zar2, -1);
+        int ID=0;
+        for (Iterator it = diceNodeList.iterator(); it.hasNext();) {
+            secilenZar = (DiceNode) it.next();
+            if (secilenZar.getDice1() == avantajliZar.getDice1() && secilenZar.getDice2() == avantajliZar.getDice2()) {
+                avantajliZar.setDiceID(secilenZar.getDiceID());
+            }
+        }
+        
+     
+
+        diceID = avantajliZar.getDiceID();
+        dice1 = avantajliZar.getDice1();
+        dice2 = avantajliZar.getDice2();
+    }
 
     public void Play1(int baseSpike, int dice) {
         veri[0] = baseSpike;
@@ -86,222 +105,116 @@ public class FUNC_1 implements YapayZeka {
     }
 
     @Override
-    public int[] kos() {
-//        calculate();
-//        System.out.println("dice1:" + dice1 + "dice2" + dice2);
-//        
-//        System.out.println("Play1 için:");
-//        Play1(KullanicidanDegerOku(), KullanicidanDegerOku());
-//        System.out.println("Play2 için:");
-//        Play2(KullanicidanDegerOku(), KullanicidanDegerOku());
-//
-//        System.out.println("Play3 için:");
-//        Play3(KullanicidanDegerOku(), KullanicidanDegerOku());
-//        System.out.println("Play4 için:");
-//        Play4(KullanicidanDegerOku(), KullanicidanDegerOku());
-        
-//        int buyuk = 0;
-//        
-//        for (int i = 0; i < diceNodeList.size(); i++) {
-//      	  int toplam = diceNodeList.get(i).getDice1() + diceNodeList.get(i).getDice2();
-//          
-//      	  if (toplam > buyuk) {
-//      		buyuk = toplam;
-//      		diceID = diceNodeList.get(i).getDiceID();
-//      	  }  
-//      	  
-//        }  
-//
-//        Play1(1, diceNodeList.get(diceID).getDice1());
-//        Play2(12, diceNodeList.get(diceID).getDice2());
-//        Play3(1, diceNodeList.get(diceID).getDice1());
-//        Play4(12, diceNodeList.get(diceID).getDice2());
-    	
-    
-//    	
-    	
-    	
-    	
-
-//		else if (j-i == diceNodeList.get(k).getDice2() - diceNodeList.get(k).getDice1()) {
-//			if (buHamleOlurmu(j, diceNodeList.get(k).getDice2()) && buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(j+diceNodeList.get(k).getDice1(), diceNodeList.get(k).getDice2()) && buHamleOlurmu(i+diceNodeList.get(k).getDice1(), diceNodeList.get(k).getDice1())) {
-//				diceID = k;
-//				Play1(j, diceNodeList.get(k).getDice2());
-//				Play2(i, diceNodeList.get(k).getDice1());
-//				Play3(i, diceNodeList.get(k).getDice2());
-//				Play4(j, diceNodeList.get(k).getDice1());
-//				return veri;
-//			}
-//			
-//		}
-    	
- 
-    	
-    	
-//    	for (int i = 1; i < 25; i++) {
-//			if (benim_pullar[i] > 0) {
-//				for (int j = i+1; j < i+6; j++) {
-//					if (j < 25 && benim_pullar[j] > 0) {
-//						for (int k = 0; k < diceNodeList.size(); k++) {
-//					    	if (j-i == diceNodeList.get(k).getDice1() - diceNodeList.get(k).getDice2()) {
-//					    		if (i > 11 && benim_pullar[i] > 2 && benim_pullar[j] > 2) {
-//					    			if (buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(j, diceNodeList.get(k).getDice2())) {
-//										diceID = k;
-//										System.out.println(diceID);
-//										System.out.println(diceNodeList.get(k).getDice1());
-//										System.out.println(diceNodeList.get(k).getDice2());
-//										Play1(i, diceNodeList.get(k).getDice1());
-//										Play2(j, diceNodeList.get(k).getDice2());
-//										return veri;
-//									}
-//								}	
-//							}
-//						}
-//					}
-//				}
-//			}
-//    	}
-        
-//        int sayac = 0;
-//        while(sayac < 4) {
-//        	for (int i = 1; i < 25; i++) {
-//        		for (int k = 0; k < diceNodeList.size(); k++) {   
-//        			if (diceNodeList.get(k).getDice1() != diceNodeList.get(k).getDice2()) {
-//        				if (benim_pullar[i] == 2 && buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(i, diceNodeList.get(k).getDice2())) {
-//        					diceID = k;
-//        					System.out.println(diceID);
-//        					Play1(i, diceNodeList.get(k).getDice1());
-//                			Play2(i, diceNodeList.get(k).getDice2());
-//                			Play3(i, diceNodeList.get(k).getDice1());
-//                			Play4(i, diceNodeList.get(k).getDice1());
-//                			sayac += 4;
-//                			break;
-//                		}
-//					}
-//            		
-//            	}
-//			}
-//        	
-//        }
-//    	
-//    	int i = 0;
-//    	while(i<25) {
-//        	for (int k = 0; k < diceNodeList.size(); k++) {   
-//    			if (diceNodeList.get(k).getDice1() != diceNodeList.get(k).getDice2()) {
-//    				System.out.println("zar id = " + k);
-//    				if (benim_pullar[i] == 2 && buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(i, diceNodeList.get(k).getDice2())) {
-//    					diceID = k;
-//    					System.out.println(i + " . tas " + diceNodeList.get(k).getDice1() + " ileri");
-//    					System.out.println(i + " . tas " + diceNodeList.get(k).getDice2() + " ileri");
-//    					Play1(i, diceNodeList.get(k).getDice1());
-//    					Play2(i, diceNodeList.get(k).getDice2());
-//    					return veri;
-//    				}
-//    			}
-//    			i++;
-//    		}
-//    	}
-//    	
-    	
-   
-    	
-    	
-    	
-    	int zarID = 0;
-    	int konum = 1;
-    	int kontrol = 0;
-    	
-    		
-    	while(konum<25) {
-    		if (diceNodeList.get(zarID).getDice1() == diceNodeList.get(zarID).getDice2()) {
-    			if (benim_pullar[konum] >= 2) {
-    				zar1 = diceNodeList.get(zarID).getDice1();
-    				zar2 = diceNodeList.get(zarID).getDice2();
-    				calculate();
-    				if (kontrol == 0 && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())) {
-    					Play1(konum, diceNodeList.get(zarID).getDice1());
-        				Play2(konum, diceNodeList.get(zarID).getDice1());
-        				kontrol = 1;
-        				konum ++;
-     				}
-    				if (kontrol == 1 && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())) {
-    					Play3(konum, diceNodeList.get(zarID).getDice1());
-        				Play4(konum, diceNodeList.get(zarID).getDice1());
-        				kontrol = 2;
-        				break;
-					}
-
-				}//2. if
-    		}//1. if  
-    		if (kontrol == 1) {
-				konum ++;
-			}
-    		else {
-    			zarID ++;
-        		if (zarID == diceNodeList.size() - 1) {
-    				zarID = 0;
-    				konum ++;
-    			}
-			}  		
-    	}//while
-    	
-    	if (kontrol != 2) {
-    		
-    	 	
-        	int hamleTamam = 0;
-        	for (int i = 1; i < 20; i++) {
-    			if (benim_pullar[i] > 0) {
-    				for (int j = i+1; j < i+6 && j < 20; j++) {
-    					for (int k = 0; k < diceNodeList.size(); k++) {
-    						if (j-i == diceNodeList.get(k).getDice1() - diceNodeList.get(k).getDice2()) {
-    							if (buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(j, diceNodeList.get(k).getDice2())) {
-    								zar1 = diceNodeList.get(k).getDice1();
-    								zar2 = diceNodeList.get(k).getDice2();
-    								calculate();
-    								Play1(i, diceNodeList.get(k).getDice1());
-    								Play2(j, diceNodeList.get(k).getDice2());
-    								hamleTamam = 1;
-    							}
-    						}
-    						else if (j-i == diceNodeList.get(k).getDice2() - diceNodeList.get(k).getDice1()) {
-    							if (buHamleOlurmu(i, diceNodeList.get(k).getDice2())  && buHamleOlurmu(j, diceNodeList.get(k).getDice1())) {
-    								zar1 = diceNodeList.get(k).getDice1();
-    								zar2 = diceNodeList.get(k).getDice2();
-    								calculate();
-    								Play1(i, diceNodeList.get(k).getDice2());
-    								Play2(j, diceNodeList.get(k).getDice1());
-    								hamleTamam = 1;
-    							}
-    						}
-    						if (hamleTamam == 1) {
-    							kontrol = 3;
-    							break;
-    						}
-    					}
-    				}
-    			}
+    public int[] kos() {System.out.println("1wqwqw" + diceNodeList.size());
+             
+        int taslarToplamayaHazir = 1;//toplanmaya hazir mi
+    	for (int i = 0; i < 19; i++) {
+    		if (benim_pullar[i] > 0) {
+    			taslarToplamayaHazir = 0;
+    			break;
     		}
+		}
+  
+    	int konum = 1;
+    	int kontrol = -1;
+    	int zarID = 0;
+    	
+    	if (taslarToplamayaHazir == 1) {System.out.println("taslariToplamaGirdi");
+    		while(zarID != diceNodeList.size()-1) {
+    			if (diceNodeList.get(zarID).getDice1() == diceNodeList.get(zarID).getDice2()) {
+        			if (benim_pullar[25 - diceNodeList.get(zarID).getDice1()] == 1) {
+        				zar1 = diceNodeList.get(zarID).getDice1();
+        				zar2 = diceNodeList.get(zarID).getDice2();	
+        				calculate();        
+        				int i2=0,i3=0,i4=0;
+        				Play1(25 - diceNodeList.get(zarID).getDice1(), diceNodeList.get(zarID).getDice1());
+    					int i = 23;
+    					while(i > 18) {
+    						if (benim_pullar[i] == 1) {
+    							i2 = 1;
+    							if (benim_pullar[i - 1] == 1) {
+    								i3 = 1;
+    								if (benim_pullar[i - 2] == 1) {
+    									i4 = 1;
+        								kontrol = 0;
+        								break;
+        							}
+    							}
+    							else if (benim_pullar[i - 1] == 2) {
+    								i4 = 1;
+    								kontrol = 0;
+    								break;
+    							}
+							}
+    						else if (benim_pullar[i] == 2) {
+    							i2 = 1;
+    							i3 = 1;
+    							if (benim_pullar[i - 1] == 1) {
+    								i4 = 1;    							
+    								kontrol = 0;
+    								break;
+    							}
+							}
+    						else if (benim_pullar[i] == 3) {
+    							i2 = 1;
+    							i3 = 1;
+    							i4 = 1;
+    							kontrol = 0;
+								break;
+							}
+    						if (i2==1 && i3==1 && i4==1) {
+    							Play2(i, diceNodeList.get(zarID).getDice1());
+    							Play3(i, diceNodeList.get(zarID).getDice1());
+    							Play4(i, diceNodeList.get(zarID).getDice1());
+							}
+    						else {
+    							i2=0;
+    							i3=0;
+    							i4=0;
+    						}
+    							
+    						i--;
+    					}
+					}
+        		}
+    			zarID ++;
+    		}	
+    		    		
+		}
+    	
+    	
+    	
+    	if (kontrol == -1) {
+    		
+    		konum = 1;
+        	kontrol = 0;
+        	zarID = 0;
         	
-        	
-        	if (kontrol != 3) {
-				
-            	zarID = 0;
-            	konum = 1;
-            	int tempKonum = 0;
-        		while(konum<25) {
-        			if (tempKonum == 0 && benim_pullar[konum] == 1) {
-        				if(buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())){
-        					tempKonum = konum;
-        					konum++;
-        				}
-        			}
-        			if (tempKonum != 0 && benim_pullar[konum] == 1) {
-        				if(buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2())){
+        	if (benim_pullar[25] == 1) {//tek kirigi sokabiliyor muyum
+        		System.out.println("tekKirigiSokGirdi");
+        		kontrol = 1;
+        		while(zarID != diceNodeList.size()-1) {
+        			if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
+        				if (buHamleOlurmu(25, diceNodeList.get(zarID).getDice1())  && benim_pullar[konum] > 0 &&
+        						rakip_pullar[konum + diceNodeList.get(zarID).getDice2()] < 2 &&
+        						rakip_pullar[diceNodeList.get(zarID).getDice2() + diceNodeList.get(zarID).getDice1()] < 2) {
         					zar1 = diceNodeList.get(zarID).getDice1();
-        					zar2 = diceNodeList.get(zarID).getDice2();
-        					calculate();
-        					Play1(tempKonum, diceNodeList.get(zarID).getDice1());
+            				zar2 = diceNodeList.get(zarID).getDice2();	
+            				calculate();
+        					Play1(25, diceNodeList.get(zarID).getDice1());
+        					Play2(konum, diceNodeList.get(zarID).getDice2());
+        					kontrol = 1;
+        					break;
+        				}
+        				else if(buHamleOlurmu(25, diceNodeList.get(zarID).getDice2()) && benim_pullar[konum] > 0 &&
+        						rakip_pullar[konum + diceNodeList.get(zarID).getDice1()] < 2 &&
+        						rakip_pullar[diceNodeList.get(zarID).getDice2() + diceNodeList.get(zarID).getDice1()] < 2) {
+        					zar1 = diceNodeList.get(zarID).getDice2();
+            				zar2 = diceNodeList.get(zarID).getDice1();	
+            				calculate();
+        					Play1(25, diceNodeList.get(zarID).getDice2());
         					Play2(konum, diceNodeList.get(zarID).getDice1());
+        					kontrol = 1;
         					break;
         				}
         			}
@@ -310,65 +223,427 @@ public class FUNC_1 implements YapayZeka {
         				zarID = 0;
         				konum ++;
         			}
+            		if (diceNodeList.size() == 1) {
+            			break;
+					}
+        		}
+        	}
+        	
+        	if (benim_pullar[25] >= 2) {//cift kirigi sokabiliyor muyum
+        		System.out.println("ciftKirigiSokGirdi");
+    			kontrol = 1;
+        		while(zarID != diceNodeList.size()-1) {
+        			if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
+        				if (buHamleOlurmu(25, diceNodeList.get(zarID).getDice1()) && buHamleOlurmu(25, diceNodeList.get(zarID).getDice2())) {
+        					zar1 = diceNodeList.get(zarID).getDice1();
+            				zar2 = diceNodeList.get(zarID).getDice2();	
+            				calculate();
+        					Play1(25, diceNodeList.get(zarID).getDice1());
+        					Play2(25, diceNodeList.get(zarID).getDice2());
+        					kontrol = 1;
+        					break;
+        				}	
+        			}
+        			zarID ++;
         		}
         		
+        	}
+        	
+        	if (kontrol == 0) {//kirma
+        		System.out.println("kirmaGirdi");
+        		int kiranKonum = 0;
+        		int kiranZarID = 0;
+        		int kiranZar = 0;
+        		int kiranBirinciMi = 0;
         		
+        		konum = 1;
+            	kontrol = 0;
+            	zarID = 0;
+            	
+            	int breakKontrol = 0;
+            	for (int i = 1; i < 18; i++) {
+        			if (benim_pullar[i] > 0) {
+        				for (int j = i+1; j < i+7; j++) {
+        					if (rakip_pullar[j] == 1) {
+        						if ((diceNodeList.get(zarID).getDice1() == j-i)) {
+        							kiranZar = diceNodeList.get(zarID).getDice1();
+        							kiranZarID = zarID;
+        							kiranKonum = i;
+        							breakKontrol = 1;
+        							kiranBirinciMi = 1;
+        							break;
+        						}
+        						else if ((diceNodeList.get(zarID).getDice2() == j-i)) {
+        							kiranZar = diceNodeList.get(zarID).getDice2();
+        							kiranZarID = zarID;
+        							kiranKonum = i;
+        							breakKontrol = 1;
+        							kiranBirinciMi = 0;
+        							break;
+        						}
+        					}
+        				}
+        				if (breakKontrol == 1) {
+        					breakKontrol = 0;
+        					break;
+        				}
+        				zarID ++;
+        				i--;
+                		if (zarID == diceNodeList.size() - 1) {
+            				zarID = 0;
+            				i++;
+            			}
+                		if (diceNodeList.size() == 1) {
+                			break;
+						}
+        			}
+        		}
+            	
+            	if (kiranKonum != 0 && diceNodeList.get(kiranZarID).getDice1() != diceNodeList.get(kiranZarID).getDice2()) {
+            		    	
+    				konum = 1;
+                	while(konum<25 && zarID <= diceNodeList.size()-1) {//rasgele sec
+                		if (konum==kiranKonum && benim_pullar[konum] == 1) {
+                			konum++;
+						}
+                		 if(kiranBirinciMi == 1 && buHamleOlurmu(konum, diceNodeList.get(kiranZarID).getDice2())){
+                			 zar1 = diceNodeList.get(kiranZarID).getDice1();
+             				 zar2 = diceNodeList.get(kiranZarID).getDice2();	
+             				 calculate();
+                			 Play1(kiranKonum, diceNodeList.get(kiranZarID).getDice1());
+                			 Play2(konum, diceNodeList.get(kiranZarID).getDice2());
+                			 System.out.println("kirdi1");
+                			 kontrol = 1;
+                			 break;
+                		 }
+                		 else if(kiranBirinciMi == 0 && buHamleOlurmu(konum, diceNodeList.get(kiranZarID).getDice1())){
+                			 zar2 = diceNodeList.get(kiranZarID).getDice2();
+             				 zar1 = diceNodeList.get(kiranZarID).getDice1();	
+             				 calculate();
+                			 Play1(kiranKonum, diceNodeList.get(kiranZarID).getDice2());
+                			 Play2(konum, diceNodeList.get(kiranZarID).getDice1());
+                			 System.out.println("kirdi2");
+                			 kontrol = 1;
+                			 break;
+                		 }
+                		 
+                		 konum ++;
+                	}
+            	}
+            	
+        	}
+        	
+        	
+        
+        	if (kontrol == 0) {
         		
-        		if (kontrol != 4) {
-        			zarID = 0;
-                	konum = 1;
-                	while(konum<25) {
-                		if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
-                			if (benim_pullar[konum] >= 2) {
-                				zar1 = diceNodeList.get(zarID).getDice1();
-                				zar2 = diceNodeList.get(zarID).getDice2();
-                				calculate();
-                				if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2())) {
-                					Play1(konum, diceNodeList.get(zarID).getDice1());
-                    				Play2(konum, diceNodeList.get(zarID).getDice2());
-                    				break;
-                				}
+            	konum = 1;
+            	zarID = 0;
+            	kontrol = 0;
 
-            				}//2. if
-                		}//1. if  
-                		zarID ++;
+            	while(konum<25 && zarID <= diceNodeList.size()-1) {//cift 1. oncelik
+            		System.out.println("ciftOynaGirdi");
+                	if (diceNodeList.size() == 1) {
+        				zarID = 0;
+        			}
+            		if (diceNodeList.get(zarID).getDice1() == diceNodeList.get(zarID).getDice2()) {
+            			if (benim_pullar[konum] >= 2) {
+            				zar1 = diceNodeList.get(zarID).getDice1();
+            				zar2 = diceNodeList.get(zarID).getDice2();	
+            				calculate();
+            				if (kontrol == 0 && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && 
+            						konum + diceNodeList.get(zarID).getDice1() < 25 &&
+            						benim_pullar[konum + diceNodeList.get(zarID).getDice1()] < 2 && benim_pullar[konum] != 3) {            					
+            					Play1(konum, diceNodeList.get(zarID).getDice1());
+            					Play2(konum, diceNodeList.get(zarID).getDice1());
+                				kontrol = 1;
+                				konum ++;
+             				}
+            				if (kontrol == 1 && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) &&
+            						konum + diceNodeList.get(zarID).getDice1() < 25 &&
+            						benim_pullar[konum + diceNodeList.get(zarID).getDice1()] < 2 && benim_pullar[konum] != 3) {
+            					Play3(konum, diceNodeList.get(zarID).getDice1());
+                				Play4(konum, diceNodeList.get(zarID).getDice1());
+                				kontrol = 2;
+                				System.out.println("cift zar oynadi");
+                				break;
+        					}
+
+        				}//2. if
+            		}//1. if  
+            		if (kontrol == 1) {
+        				konum ++;
+        			}
+            		else {
+            			zarID ++;
                 		if (zarID == diceNodeList.size() - 1) {
             				zarID = 0;
             				konum ++;
             			}
-                	}//while
-    			}
+                		if (diceNodeList.size() == 1) {
+                			break;
+    					}
+        			}  		
+            	}//while
+            	
+            	if (kontrol != 2) {
+            		
+                	int hamleTamam = 0;
+                	for (int i = 1; i < 20; i++) {//kapi ikinci oncelik
+                		System.out.println("kapiYapGirdi");
+            			if (benim_pullar[i] > 0) {
+            				for (int j = i+1; j < i+6 && j < 20; j++) {
+            					for (int k = 0; k < diceNodeList.size(); k++) {
+            						if (j-i == diceNodeList.get(k).getDice1() - diceNodeList.get(k).getDice2() && 
+            								i + diceNodeList.get(k).getDice1() < 25 &&
+            								benim_pullar[i + diceNodeList.get(k).getDice1()] < 2 && benim_pullar[i] != 2 && 
+            								benim_pullar[j] != 2) {
+            							if (buHamleOlurmu(i, diceNodeList.get(k).getDice1()) && buHamleOlurmu(j, diceNodeList.get(k).getDice2())) {
+            								zar1 = diceNodeList.get(k).getDice1();
+            								zar2 = diceNodeList.get(k).getDice2();
+            								calculate();
+            								Play1(i, diceNodeList.get(k).getDice1());
+            								Play2(j, diceNodeList.get(k).getDice2());
+            								hamleTamam = 1;
+            							}
+            						}
+            						else if (j-i == diceNodeList.get(k).getDice2() - diceNodeList.get(k).getDice1()  && 
+            								i + diceNodeList.get(k).getDice2() < 25 &&
+            								benim_pullar[i + diceNodeList.get(k).getDice2()] < 2 && 
+            								benim_pullar[i] != 2 && benim_pullar[j] != 2) {
+            							if (buHamleOlurmu(i, diceNodeList.get(k).getDice2())  && buHamleOlurmu(j, diceNodeList.get(k).getDice1())) {
+            								zar1 = diceNodeList.get(k).getDice1();
+            								zar2 = diceNodeList.get(k).getDice2();
+            								calculate();
+            								Play1(i, diceNodeList.get(k).getDice2());
+            								Play2(j, diceNodeList.get(k).getDice1());
+            								hamleTamam = 1;
+            							}
+            						}
+            						if (hamleTamam == 1) {
+            							kontrol = 3;
+            							System.out.println("kapi yapti");
+            							break;
+            						}
+            					}
+            				}
+            			}
+            		}
+                	
+                	if (kontrol != 3) {
+                		
+                		konum = 1;
+                    	zarID = 0;
+                		while(konum<25 && zarID <= diceNodeList.size()-1) {//tekten oyna
+                			System.out.println("tektenOynaGirdi");
+                			if (benim_pullar[konum] != 2 && diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
+                				if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && 
+                						konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2() < 25 &&
+                						rakip_pullar[konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2()] < 2 && 
+                						benim_pullar[konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2()] != 0) {
+                					zar1 = diceNodeList.get(zarID).getDice1();
+                					zar2 = diceNodeList.get(zarID).getDice2();
+                					calculate();
+                					Play1(konum, diceNodeList.get(zarID).getDice1());
+                					Play2(konum + diceNodeList.get(zarID).getDice1(), diceNodeList.get(zarID).getDice2());
+                					kontrol = 4;
+                					System.out.println("tekten oynadi");
+                					break;
+        						}
+                				else if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2()) && 
+                						konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2() < 25 &&
+                						rakip_pullar[konum + diceNodeList.get(zarID).getDice2() + diceNodeList.get(zarID).getDice1()] < 2 && 
+                						benim_pullar[konum + diceNodeList.get(zarID).getDice1() + diceNodeList.get(zarID).getDice2()] != 0) {
+                					zar1 = diceNodeList.get(zarID).getDice2();
+                					zar2 = diceNodeList.get(zarID).getDice1();
+                					calculate();
+                					Play1(konum, diceNodeList.get(zarID).getDice2());
+                					Play2(konum + diceNodeList.get(zarID).getDice2(), diceNodeList.get(zarID).getDice1());
+                					kontrol = 4;
+                					System.out.println("tekten oynadi");
+                					break;
+        						}
+                			}
+                			zarID ++;
+                    		if (zarID == diceNodeList.size() - 1) {
+                				zarID = 0;
+                				konum ++;
+                			}
+                    		if (diceNodeList.size() == 1) {
+                    			break;
+        					}
+                		}
+                		
+                		
+                		
+                		if (kontrol != 4) {
+            				
+                			konum = 1;
+                	    	zarID = 0;
+                        	int tempKonum = 0;
+                    		while(konum<25 && zarID <= diceNodeList.size()-1) {//tek taslar
+                    			System.out.println("tekTaslarGirdi");
+                    			if (benim_pullar[konum] != 3 && tempKonum == 0 && benim_pullar[konum] == 1) {
+                    				if(buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1())  && 
+                    						konum + diceNodeList.get(zarID).getDice1() < 25 &&
+                    						benim_pullar[konum + diceNodeList.get(zarID).getDice1()] != 0){
+                    					tempKonum = konum;
+                    					konum++;
+                    				}
+                    			}
+                    			if (benim_pullar[konum] != 3 && tempKonum != 0 && benim_pullar[konum] == 1) {
+                    				if(buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2()) && 
+                    						konum + diceNodeList.get(zarID).getDice2() < 25 &&
+                    						benim_pullar[konum + diceNodeList.get(zarID).getDice2()] != 0){
+                    					zar1 = diceNodeList.get(zarID).getDice1();
+                    					zar2 = diceNodeList.get(zarID).getDice2();
+                    					calculate();
+                    					Play1(tempKonum, diceNodeList.get(zarID).getDice1());
+                    					Play2(konum, diceNodeList.get(zarID).getDice2());
+                    					kontrol = 5;
+                    					System.out.println("tek taslardan");
+                    					break;
+                    				}
+                    			}
+                    			zarID ++;
+                        		if (zarID == diceNodeList.size() - 1) {
+                    				zarID = 0;
+                    				konum ++;
+                    			}
+                        		if (diceNodeList.size() == 1) {
+                        			break;
+            					}
+                    		}
+                    		
+                    		
+                    		
+                    		if (kontrol != 5) {
+                    			kontrol = 7;
+                    			konum = 1;
+                    	    	zarID = 0;
+                            	while(konum<25 && zarID <= diceNodeList.size()-1) {//rasgele sec
+                            		System.out.println("rasgeleSecGirdi");
+                            		if (diceNodeList.get(zarID).getDice1() != diceNodeList.get(zarID).getDice2()) {
+                            			if (benim_pullar[konum] >= 2 && benim_pullar[konum] != 3) {                            				
+                            				if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2()) && 
+                            						konum + diceNodeList.get(zarID).getDice2() < 25 &&
+                            						benim_pullar[konum + diceNodeList.get(zarID).getDice2()] != 0 &&
+                            						konum + diceNodeList.get(zarID).getDice1() < 25 &&
+                            						benim_pullar[konum + diceNodeList.get(zarID).getDice1()] != 0) {
+                            					zar1 = diceNodeList.get(zarID).getDice1();
+                                				zar2 = diceNodeList.get(zarID).getDice2();
+                                				calculate();
+                            					Play1(konum, diceNodeList.get(zarID).getDice1());
+                                				Play2(konum, diceNodeList.get(zarID).getDice2());
+                                				System.out.println("rasgele secti");
+                                				kontrol=6;
+                                				break;
+                            				}
+                            				else if (buHamleOlurmu(konum, diceNodeList.get(zarID).getDice2()) && buHamleOlurmu(konum, diceNodeList.get(zarID).getDice1()) && 
+                            						konum + diceNodeList.get(zarID).getDice1() < 25 &&
+                            						benim_pullar[konum + diceNodeList.get(zarID).getDice1()] != 0 &&
+                            						konum + diceNodeList.get(zarID).getDice2() < 25 &&
+                            						benim_pullar[konum + diceNodeList.get(zarID).getDice2()] != 0) {
+                            					zar1 = diceNodeList.get(zarID).getDice2();
+                                				zar2 = diceNodeList.get(zarID).getDice1();
+                                				calculate();
+                            					Play1(konum, diceNodeList.get(zarID).getDice2());
+                                				Play2(konum, diceNodeList.get(zarID).getDice1());
+                                				System.out.println("rasgele secti");
+                                				kontrol=6;
+                                				break;
+                            				}
 
-        		
-			}
+                        				}//2. if
+                            		}//1. if  
+                            		zarID ++;
+                            		if (zarID == diceNodeList.size() - 1) {
+                        				zarID = 0;
+                        				konum ++;
+                        			}
+                            		if (diceNodeList.size() == 1) {
+                            			break;
+                					}
+                            	}//while
+                			}
+                		}
+        			}
+         		
+        		}
+    		}
     		
+    	}
+    	
+    	if (kontrol == 7) {
+    		
+    		konum = 1;
+    		
+    		int z1 = diceNodeList.get(0).getDice1();
+    		int z2 = diceNodeList.get(0).getDice2();
+    		
+    		while(konum<25){//son zar sec
+    			System.out.println("sonZarSecGirdi");
+    			if (benim_pullar[konum] >= 2 && z1 != z2) {
+    				if (buHamleOlurmu(konum, z1) && buHamleOlurmu(konum, z2)) {
+    					zar1 = z1;
+        				zar2 = z2;
+        				calculate();
+    					Play1(konum, z1);
+        				Play2(konum, z2);
+        				System.out.println("son zar sec");
+        				break;
+    				}
+    				else if (buHamleOlurmu(konum, z2) && buHamleOlurmu(konum, z1)) {
+    					zar1 = z2;
+        				zar2 = z1;
+        				calculate();
+    					Play1(konum, z2);
+        				Play2(konum, z1);
+        				System.out.println("son zar sec");
+        				break;
+    				}
+    			}
+    			
+    			else if (benim_pullar[konum] >= 2 && z1 == z2) {
+    				zar1 = z1;
+    				zar2 = z2;	
+    				calculate();
+    				if (kontrol == 0 && buHamleOlurmu(konum, z1) && benim_pullar[konum + z1] < 2 && benim_pullar[konum] != 3) {            					
+    					Play1(konum, z1);
+    					Play2(konum, z2);
+        				kontrol = 1;
+        				konum ++;
+     				}
+    				if (kontrol == 1 && buHamleOlurmu(konum, z1) && benim_pullar[konum + z1] < 2 && benim_pullar[konum] != 3) {
+    					Play3(konum, z1);
+        				Play4(konum, z1);
+        				kontrol = 2;
+        				System.out.println("cift zar oynadi");
+        				
+					}	
+
+    				
+        		}//1. if  
+        		   			
+    			
+    			konum++;
+    			
+    		}
+    		
+    		
+    	
+        		
         	
+    		
     		
 		}
     	
-//    	
+    	
+   	
     	return veri;
     	
     	
-    }
-    
-    @Override
-    public void calculate() {
-        DiceNode secilenZar;
-        DiceNode avantajliZar = new DiceNode(zar1, zar2, -1);
-        int ID=0;
-        for (Iterator it = diceNodeList.iterator(); it.hasNext();) {
-            secilenZar = (DiceNode) it.next();
-            if (secilenZar.getDice1() == avantajliZar.getDice1() && secilenZar.getDice2() == avantajliZar.getDice2()) {
-                avantajliZar.setDiceID(secilenZar.getDiceID());
-            }
-        }
         
-     
-
-        diceID = avantajliZar.getDiceID();
-        dice1 = avantajliZar.getDice1();
-        dice2 = avantajliZar.getDice2();
     }
 
     public int KullanicidanDegerOku() {  //klavyerden int değer almak için tanımalnmış oyunun işleyişini etkileyen bir metod değil

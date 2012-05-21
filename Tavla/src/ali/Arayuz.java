@@ -60,7 +60,7 @@ public class Arayuz {
         this.white_bear = white_bear;
     }
 
-    public int[] setBenimPullar() {
+    public int[] setBenimPullar(int zeka) {
         int[] benim_pullar = new int[27];
         if (current_player == white) {
             for (int i = 1; i < 25; i++) {
@@ -71,10 +71,12 @@ public class Arayuz {
             benim_pullar[25] = white_bar;
             benim_pullar[26] = white_bear;
         } else {
+            int j=24;
             for (int i = 1; i < 25; i++) {
-                if (type[i] == white) {
-                    benim_pullar[i] = count[i];
+                if (type[i] == black) {
+                    benim_pullar[j] = count[i];
                 }
+                j--;
             }
             benim_pullar[25] = black_bar;
             benim_pullar[26] = black_bear;
@@ -82,21 +84,25 @@ public class Arayuz {
         return benim_pullar;
     }
 
-    public int[] setRakipPullar() {
+    public int[] setRakipPullar(int zeka) {
         int[] rakip_pullar = new int[27];
         if (current_player == white) {
+            
             for (int i = 1; i < 25; i++) {
-                if (type[i] != black) {
+                if (type[i] == black) {
                     rakip_pullar[i] = count[i];
                 }
+                
             }
             rakip_pullar[25] = black_bar;
             rakip_pullar[26] = black_bear;
         } else {
+            int j=24;
             for (int i = 1; i < 25; i++) {
-                if (type[i] != white) {
-                    rakip_pullar[i] = count[i];
+                if (type[i] == white) {
+                    rakip_pullar[j] = count[i];
                 }
+                j--;
             }
             rakip_pullar[25] = white_bar;
             rakip_pullar[26] = white_bear;
@@ -105,6 +111,9 @@ public class Arayuz {
     }
 
     public boolean buHamleOlurmu(int spike, int dice){
+        if(current_player==black){
+            spike=25-spike;
+        }
         return game.buHamleOlurmu(spike,dice);
     }
 
@@ -113,9 +122,9 @@ public class Arayuz {
     }
 
     public void zekaSec(int zeka) {
-        benim_pullar = setBenimPullar();
-        rakip_pullar = setRakipPullar();
-        setRakipPullar();
+        benim_pullar = setBenimPullar(zeka);
+        rakip_pullar = setRakipPullar(zeka);
+        
         if (zeka == 1) {
             araZeka = new FUNC_1(this);
             araZeka.setDiceNodeList(diceNodeList, secondDiceList,benim_pullar, rakip_pullar);
@@ -125,14 +134,5 @@ public class Arayuz {
         }
     }
 
-//    public void yaz() {
-//        DiceNode node;
-//        System.out.println("Zar değerleri");
-//        for (Iterator it = diceNodeList.iterator(); it.hasNext();) {
-//            node = (DiceNode) it.next();
-//            System.out.println(node.getDice1() + " " + node.getDice2());
-//
-//        }
-//
-//    }
+
 }

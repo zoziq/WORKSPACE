@@ -5,6 +5,8 @@ import java.util.Vector;
 
 public class fibonacci {
 	
+	static int n0 = 1, n1 = 1, n2;
+	
 	private static int fib(int n) {
 		
 		if (n==0) {
@@ -74,18 +76,37 @@ public class fibonacci {
 	 return (long) ((Math.pow(p, n) + Math.pow(q, n)) / Math.sqrt(5));
 	}
 	
+	private static void FIBONNACCI(int X) {
+		for (int i = 0; i < X; i++) { // Loop for the next 18 terms
+	      n2 = n1 + n0; // Next term is sum of previous two
+	      System.out.print(n2 + " "); // Print it out
+	      n0 = n1; // First previous becomes 2nd previous
+	      n1 = n2; // And current number becomes previous
+	    }
+	    System.out.println(); // Terminate the line
+	}
+	
 	public static void main(String[] args) {
 	
-		int k = 40;
-		long i = System.nanoTime();
-		fib3(k);
-		System.out.println(f2);
-		System.out.println("==" + (System.nanoTime()-i));
-		i = System.nanoTime();
-		System.out.println(fib(k));
-		System.out.println("==" + (System.nanoTime()-i));
-		i = System.nanoTime();
-		System.out.println(anFibN(k+1));
-		System.out.println("==" + (System.nanoTime()-i));
+//		int k = 40;
+//		long i = System.nanoTime();
+//		fib3(k);
+//		System.out.println(f2);
+//		System.out.println("==" + (System.nanoTime()-i));
+//		i = System.nanoTime();
+//		System.out.println(fib(k));
+//		System.out.println("==" + (System.nanoTime()-i));
+//		i = System.nanoTime();
+//		System.out.println(anFibN(k+1));
+//		System.out.println("==" + (System.nanoTime()-i));
+		
+		
+		 // Initialize variables
+	    System.out.print(n0 + " " + // Print first and second terms
+	        n1 + " "); // of the series
+
+	    FIBONNACCI(18);
 	}
+
+	
 }

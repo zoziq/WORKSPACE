@@ -10,58 +10,102 @@ public class board {
     boolean rolled = false; //zar att� true hamle yapt� false
     int dice1; //zar
     int dice2;
-    int white_bar = 0;
+    int white_bar = 1;
     int black_bar = 0;
     int white_bear = 0;
     int black_bear = 0;
+    int current_player;
 
-    public board() {
+    public board(JBackgammon game) {
+        
         count = new int[25];
         type = new int[25];
-
+        current_player=game.current_player;
 
         for (int i = 0; i < 25; i++) {
             count[i] = 0;
             type[i] = neutral;
         }
         //tahtaya ba�lang��ta ta�lar diziliyor.
-                setColumn(1, 2, white);
-                
-                setColumn(6, 2, black);
-                setColumn(5, 2, black);
-                setColumn(4, 1, black);
-                
-                setColumn(8, 3, black);
-                setColumn(12, 5, white);
-                setColumn(13, 5, black);
-                setColumn(17, 3, white);
-                setColumn(19, 5, white);
-                setColumn(24, 2, black);
+//                setColumn(3, 2, white);
+//                setColumn(6, 4, black);
+//                setColumn(10, 1, black);
+//                setColumn(8, 3, black);
+//                setColumn(12, 5, white);
+//                setColumn(16, 1, black);
+//                setColumn(13, 5, black);
+//                setColumn(17, 3, white);
+//                setColumn(19, 5, white);
+//                setColumn(24, 2, black);
 
 
 //        setColumn(19, 2, white);
-//        setColumn(6, 4, black);
+//        //setColumn(6, 4, black);
 //        setColumn(18, 1, black);
 //        setColumn(8, 3, black);
 //        setColumn(20, 4, white);
 //        setColumn(13, 5, black);
-//        setColumn(21, 2, white);
+//        setColumn(21, 3, white);
+        
+        
+      //toplama durumu  
+//        setColumn(19, 4, white);
+//        setColumn(20, 2, white);
+//        setColumn(21, 3, white);
 //        setColumn(22, 2, white);
+//        setColumn(23, 4, white);
+//        setColumn(1, 1, black);
+
+
+//        setColumn(6, 4, white);
+//        setColumn(18, 1, white);
+//        setColumn(19, 2, white);
+//
+//        setColumn(13, 5, black);
 //        setColumn(15, 2, black);
-//        setColumn(23, 2, white);
-//        setColumn(24, 2, white);
-//        setColumn(16, 1, white);
+//
+//        setColumn(7, 3, black);
+//        setColumn(5, 4, black);
+//        setColumn(4, 3, black);
+//        setColumn(3, 2, black);
+//        setColumn(2, 2, black);
+//        setColumn(1, 2, black);
 
-
-
+//        setColumn(6, 5, black);
+//        setColumn(3, 3, black);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        
+//        setColumn(7, 1, black);
+//        //setColumn(2, 7, black);
+//        
+//        setColumn(18, 1, white);
+//        setColumn(19, 1, white);
+//        setColumn(20, 2, white);
+//        setColumn(21, 1, white);
+//        setColumn(22, 5, white);
+//        setColumn(23, 5, white);
+        
     }
 
     public int getColor(int col) {
-        return type[col];
+        if(col==25){
+            return current_player;
+        }else return type[col];
     }
 
     public int getCount(int col) {
-        return count[col];
+        if(col==25){
+            System.out.println("Hata b.getCount() içerisinde!");
+            return 1;
+        }else return count[col];
     }
 
     public void setColumn(int col, int num, int clr) {

@@ -1,6 +1,5 @@
 package ali;
-//423 black yap
-//1291 ac 1292 sil
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,8 +31,10 @@ public class JBackgammon extends JFrame implements ActionListener {
     private static int diceID;
     private static int dice1;
     private static int dice2;
+    private static boolean used_move_sifirla = false;
+    private static int used_move_sifirla_sayac = 0;
     //10 zar durumlarını saklar eğer zar oynanmışsa false olur
-    private static boolean diceSelectionState[]; 
+    private static boolean diceSelectionState[];
     //oynanan hamlelerin ne olduğu ile ilgili bilginin tutulduğu alan
     private JTextArea area;
     //Color to be used when drawing a white checker
@@ -218,10 +219,19 @@ public class JBackgammon extends JFrame implements ActionListener {
                 //send on bar send move gönderiliyordu.
             }
         }
+        if (used_move_sifirla == true && used_move_sifirla_sayac < 2) {
+            used_move_sifirla_sayac++;
+        }
+        if (used_move_sifirla == true && used_move_sifirla_sayac == 2) {
+            used_move = 0;
+            used_move_sifirla_sayac = 0;
+            used_move_sifirla = false;
+        }
         if (!status.doublets) {
             //If a move has been made previously,
             //this is the second move, end the player's turn
-            if (used_move == 1 || used_move == 2) {
+            if (hamleSayici == 2) {
+                hamleSayici = 4;
                 EndTurn();
             } else {
                 switchedplayers = false;
@@ -272,9 +282,19 @@ public class JBackgammon extends JFrame implements ActionListener {
             return;//Do nothing if there's a winner
         }
         //Remove the dice we used
-        if (!status.doublets) {
+        if (used_move_sifirla == true && used_move_sifirla_sayac < 2) {
+            used_move_sifirla_sayac++;
+        }
+        if (used_move_sifirla == true && used_move_sifirla_sayac == 2) {
+            used_move = 0;
+            used_move_sifirla_sayac = 0;
+            used_move_sifirla = false;
+        }
+        if (!(dice1 == dice2)) {
             //Since a previous move has already occured, we are done
-            if (used_move == 1 || used_move == 2) {
+
+            if (hamleSayici == 2) {
+                hamleSayici = 4;
                 EndTurn();
             } else {
                 //if you can bear off with both, use smaller dice
@@ -290,7 +310,7 @@ public class JBackgammon extends JFrame implements ActionListener {
                     used_move = 2;
                 }
             }
-        } else if (status.doublets) {
+        } else if (dice1 == dice2) {
             doublet_moves--;
             if (doublet_moves == 0) {
                 EndTurn();
@@ -505,7 +525,7 @@ public class JBackgammon extends JFrame implements ActionListener {
         for (int spike = 1; spike <= 24; spike++) {
             //Only check spikes which contain the player's pieces
 
-            if (b.getColor(spike) == current_player) {
+            if (b.getColor(spike) == current_player || b.getColor(spike) == neutral || (b.getColor(spike) != current_player && b.getCount(spike) == 1)) {
                 if (current_player == white) {
                     move1 = spike + b.getDice1();
                     move2 = spike + b.getDice2();
@@ -638,7 +658,7 @@ public class JBackgammon extends JFrame implements ActionListener {
         setTitle("Tavla");
         setResizable(false);
         status = new Status();
-        b = new board();
+        b = new board(this);
         arayuz = new Arayuz(this);
         diceSelectionState = new boolean[10];
         for (int i = 0; i < 10; i++) {
@@ -681,7 +701,25 @@ public class JBackgammon extends JFrame implements ActionListener {
                 int veri[] = new int[8];
 
                 long start = System.nanoTime();
+
                 veri = arayuz.araZeka.kos();
+                diceID = arayuz.araZeka.getDice().getDiceID();
+                dice1 = arayuz.araZeka.getDice().getDice1();
+                dice2 = arayuz.araZeka.getDice().getDice2();
+                if (current_player == black) {
+                    if (!(veri[0] == 25)) {
+                        veri[0] = 25 - veri[0];
+                    }
+                    if (!(veri[2] == 25)) {
+                        veri[2] = 25 - veri[2];
+                    }
+                    if (!(veri[4] == 25)) {
+                        veri[4] = 25 - veri[4];
+                    }
+                    if (!(veri[6] == 25)) {
+                        veri[6] = 25 - veri[6];
+                    }
+                }
                 long elapsed = System.nanoTime() - start;
 
                 String msg = "Oynanacak hamleler:\n"
@@ -692,10 +730,8 @@ public class JBackgammon extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(this, msg);
 
                 EkleInfArea("Süre:" + elapsed + " ns\n");
+//                secilenzaribul(veri);
 
-                diceID = arayuz.araZeka.getDice().getDiceID();
-                dice1 = arayuz.araZeka.getDice().getDice1();
-                dice2 = arayuz.araZeka.getDice().getDice2();
 
                 EkleInfArea("1. Zar:" + dice1 + "\n" + "2. Zar:" + dice2 + "\n");
                 DoRoll(dice1, dice2);
@@ -713,7 +749,7 @@ public class JBackgammon extends JFrame implements ActionListener {
                 while ((hamleSayici < 4 && status.doublets && !diskalifiye) || (hamleSayici < 2 && !status.doublets && !diskalifiye)) {
                     hamleSayici++;
 
-                    //arayuz.araZeka.HamleleriAl();
+
                     try {
                         if (hamleSayici == 1) {
                             old_dice = veri[1];
@@ -747,26 +783,42 @@ public class JBackgammon extends JFrame implements ActionListener {
                                 if (current_player == white) {
                                     if (kullanilan == 1) {
                                         if ((b.getColor(dice1) != current_player) && (b.getCount(dice1) > 1)) {
-                                            throw new moveException("Hedef hatalı seçilmiş:" + (dice1));
+                                            if (hamleSayici > 0 && kiriksonrakihamlesivarmi(dice1)) {
+                                                throw new moveException("Hedef hatalı seçilmiş:" + (dice1));
+                                            } else {
+                                                used_move_sifirla = true;
+                                            }
                                         }
                                     } else {
                                         if ((b.getColor(dice2) != current_player) && (b.getCount(dice2) > 1)) {
-                                            throw new moveException("Hedef hatalı seçilmiş:" + (dice2));
+                                            if (hamleSayici > 0 && kiriksonrakihamlesivarmi(dice2)) {
+                                                throw new moveException("Hedef hatalı seçilmiş:" + (dice2));
+                                            } else {
+                                                used_move_sifirla = true;
+                                            }
                                         }
                                     }
                                 } else {
                                     if (kullanilan == 1) {
                                         if ((b.getColor(25 - dice1) != current_player) && (b.getCount(25 - dice1) > 1)) {
-                                            throw new moveException("Hedef hatalı seçilmiş:" + (dice1));
+                                            if (hamleSayici > 0 && kiriksonrakihamlesivarmi(dice1)) {
+                                                throw new moveException("Hedef hatalı seçilmiş:" + (dice1));
+                                            } else {
+                                                used_move_sifirla = true;
+                                            }
                                         }
                                     } else {
                                         if ((b.getColor(25 - dice2) != current_player) && (b.getCount(25 - dice2) > 1)) {
-                                            throw new moveException("Hedef hatalı seçilmiş:" + (25 - dice2));
+                                            if (hamleSayici > 0 && kiriksonrakihamlesivarmi(dice2)) {
+                                                throw new moveException("Hedef hatalı seçilmiş:" + (dice2));
+                                            } else {
+                                                used_move_sifirla = true;
+                                            }
                                         }
                                     }
                                 }
 
-                                System.out.println("Kırık var.");
+
                                 HandleBar();
                                 if (kullanilan == 1) {
                                     kirikOynandimi = true;
@@ -797,7 +849,8 @@ public class JBackgammon extends JFrame implements ActionListener {
 
                             throw new moveException("Geçersiz taş alanı:" + spike);
 
-                        } else if (stuckFlag == false && !kirikOynandimi) {
+                        } //else if (stuckFlag == false && !kirikOynandimi) {
+                        else {
 
                             if (hamleSayici < 5 && moveisBearOff(spike, kullanilan)) {
                                 System.out.println("Bearoff için");
@@ -807,19 +860,19 @@ public class JBackgammon extends JFrame implements ActionListener {
                                 HamleyiYapan(spike, kullanilan);
 
                             } else if (hamleSayici == 2) {
-                                if ((b.white_bear < 12 && current_player == 1) || (b.black_bear < 12 && current_player == 2)) {
+                                //if ((b.white_bear < 12 && current_player == 1) || (b.black_bear < 12 && current_player == 2)) {
                                     HamleyiYapan(spike, kullanilan);
-                                }
+                                //}
 
                             } else if (hamleSayici == 3 && status.doublets) {
-                                if ((b.white_bear < 11 && current_player == 1) || (b.black_bear < 11 && current_player == 2)) {
+                                //if ((b.white_bear < 11 && current_player == 1) || (b.black_bear < 11 && current_player == 2)) {
                                     HamleyiYapan(spike, kullanilan);
-                                }
+                                //}
 
                             } else if (hamleSayici == 4 && status.doublets) {
-                                if ((b.white_bear < 10 && current_player == 1) || (b.black_bear < 10 && current_player == 2)) {
+                                //if ((b.white_bear < 10 && current_player == 1) || (b.black_bear < 10 && current_player == 2)) {
                                     HamleyiYapan(spike, kullanilan);
-                                }
+                                //}
                             }
                         }
                     } catch (moveException e1) {
@@ -836,7 +889,7 @@ public class JBackgammon extends JFrame implements ActionListener {
                 EndTurn();
             }
         } else if (e.getActionCommand().equals(FUNC_1)) {
-            
+
             area.setText(null);
             hamleSayici = 0;
 
@@ -1255,9 +1308,7 @@ public class JBackgammon extends JFrame implements ActionListener {
         LinkedList<DiceNode> secondDiceList = new LinkedList<DiceNode>();
         for (int i = 0; i < 10; i++) {
             if (DiceButton[i][rolledDiceCounter / 10].isEnabled()) {
-                Character a = DiceButton[i][rolledDiceCounter / 10].getText().charAt(0);
-                Character c = DiceButton[i][rolledDiceCounter / 10].getText().charAt(2);
-                DiceNode node = new DiceNode(Integer.parseInt(a.toString()), Integer.parseInt(c.toString()), DiceButton[i][rolledDiceCounter / 10].diceID);
+                DiceNode node = new DiceNode(DiceButton[i][rolledDiceCounter / 10].dice1, DiceButton[i][rolledDiceCounter / 10].dice2, DiceButton[i][rolledDiceCounter / 10].diceID);
                 diceNodeList.add(node);
             }
         }
@@ -1265,14 +1316,10 @@ public class JBackgammon extends JFrame implements ActionListener {
         for (int i = 0; i < 10; i++) {
 
             if ((rolledDiceCounter / 10) + 1 < 10) {
-                Character a = DiceButton[i][(rolledDiceCounter / 10) + 1].getText().charAt(0);
-                Character c = DiceButton[i][(rolledDiceCounter / 10) + 1].getText().charAt(2);
-                DiceNode node = new DiceNode(Integer.parseInt(a.toString()), Integer.parseInt(c.toString()), DiceButton[i][(rolledDiceCounter / 10) + 1].diceID);
+                DiceNode node = new DiceNode(DiceButton[i][(rolledDiceCounter / 10) + 1].dice1, DiceButton[i][(rolledDiceCounter / 10) + 1].dice2, DiceButton[i][(rolledDiceCounter / 10) + 1].diceID);
                 secondDiceList.add(node);
             } else {
-                Character a = yedekDiceButton[i][0].getText().charAt(0);
-                Character c = yedekDiceButton[i][0].getText().charAt(2);
-                DiceNode node = new DiceNode(Integer.parseInt(a.toString()), Integer.parseInt(c.toString()), yedekDiceButton[i][0].diceID);
+                DiceNode node = new DiceNode(yedekDiceButton[i][0].dice1, yedekDiceButton[i][0].dice2, yedekDiceButton[i][0].diceID);
                 secondDiceList.add(node);
             }
         }
@@ -1282,15 +1329,16 @@ public class JBackgammon extends JFrame implements ActionListener {
         arayuz.setType(b.type);
         arayuz.setCurrent_player(current_player);
         arayuz.setWhite_bar_bearoff(b.white_bar, b.white_bear);
-        arayuz.setBlack_bar_bearoff(b.black_bar, b.white_bear);
+        arayuz.setBlack_bar_bearoff(b.black_bar, b.black_bear);
     }
 
     private void resetGame() { //yeni oyun başlatılacağı zaman componentleri reset eder.
         // Reset JBackgammon data/
         used_move = 0;
         old_spike = 0;
- //       current_player = rdice.nextInt(2) + 1;  //youna ilk başlayacak tarafı seçer.
-current_player = 1;
+        current_player = rdice.nextInt(2) + 1;  //youna ilk başlayacak tarafı seçer.
+        current_player = white;
+
         doublet_moves = 0;
 
         FButton[2].setEnabled(false);
@@ -1308,7 +1356,7 @@ current_player = 1;
         }
 
         // Re-create the board
-        b = new board();
+        b = new board(this);
         int dicea;
         int diceb;
         for (int i = 0; i < 10; i++) {
@@ -1316,6 +1364,8 @@ current_player = 1;
                 dicea = rdice.nextInt(6) + 1;
                 diceb = rdice.nextInt(6) + 1;
                 DiceButton[i][j].setText("" + dicea + "," + diceb);
+                DiceButton[i][j].dice1 = dicea;
+                DiceButton[i][j].dice2 = diceb;
                 DiceButton[i][j].setEnabled(false);
             }
             FPanel[i].setVisible(true);
@@ -1523,9 +1573,7 @@ current_player = 1;
         LinkedList<DiceNode> diceNodeList = new LinkedList<DiceNode>();
         for (int i = 0; i < 10; i++) {
             if (DiceButton[i][rolledDiceCounter / 10].isEnabled()) {
-                Character a = DiceButton[i][rolledDiceCounter / 10].getText().charAt(0);
-                Character c = DiceButton[i][rolledDiceCounter / 10].getText().charAt(2);
-                DiceNode node = new DiceNode(Integer.parseInt(a.toString()), Integer.parseInt(c.toString()), DiceButton[i][rolledDiceCounter / 10].diceID);
+                DiceNode node = new DiceNode(DiceButton[i][rolledDiceCounter / 10].dice1, DiceButton[i][rolledDiceCounter / 10].dice2, DiceButton[i][rolledDiceCounter / 10].diceID);
                 diceNodeList.add(node);
             }
         }
@@ -1555,8 +1603,8 @@ current_player = 1;
 
             } else if (current_player == white) {  //oyuncu beyaz //bulunduuğu yer beyaz
                 for (int spike = 1; spike < 25; spike++) {
-                    if (b.canBearOff(white)) {
-                        return (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar));
+                    if (b.canBearOff(white) && (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar))) {
+                        return true;
                     }
                     if ((spike + birincizar < 25) && b.getColor(spike) == white) {            //hedef tahtanın içerisinde
                         if ((b.getColor(spike + birincizar) == current_player) || (b.getCount(spike + birincizar) < 2)) {
@@ -1574,8 +1622,8 @@ current_player = 1;
             } else if (current_player == black) {  //oyuncu beyaz //bulunduuğu yer beyaz
 
                 for (int spike = 1; spike < 25; spike++) {
-                    if (b.canBearOff(black)) {
-                        return (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar));
+                    if (b.canBearOff(black) && (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar))) {
+                        return true;
                     }
                     if ((spike + birincizar < 25 && b.getColor(spike) == black)) {            //hedef tahtanın içerisinde
                         if ((b.getColor(spike + birincizar) == current_player) || (b.getCount(spike + birincizar) < 2)) {
@@ -1606,7 +1654,9 @@ current_player = 1;
                     return true;
                 } else if (dice + spike > 24) {
                     for (int i = 19; i < spike; i++) {
-                        toplam += b.getCount(i);
+                        if (b.getColor(i) == white) {
+                            toplam += b.getCount(i);
+                        }
                     }
                     if (toplam > 0) {
                         return false;
@@ -1619,7 +1669,9 @@ current_player = 1;
                     return true;
                 } else if (spike - dice < 0) {
                     for (int i = 6; i > spike; i--) {
-                        toplam += b.getCount(i);
+                        if (b.getColor(i) == black) {
+                            toplam += b.getCount(i);
+                        }
                     }
                     if (toplam > 0) {
                         return false;
@@ -1665,4 +1717,102 @@ current_player = 1;
         }
         return false;
     }
+
+    private boolean kiriksonrakihamlesivarmi(int dice) {
+        LinkedList<DiceNode> diceNodeList = new LinkedList<DiceNode>();
+        for (int i = 0; i < 10; i++) {
+            if (DiceButton[i][rolledDiceCounter / 10].isEnabled()) {
+                DiceNode node = new DiceNode(DiceButton[i][rolledDiceCounter / 10].dice1, DiceButton[i][rolledDiceCounter / 10].dice2, DiceButton[i][rolledDiceCounter / 10].diceID);
+                if (node.getDice1() != dice && node.getDice2() != dice) {
+                    diceNodeList.add(node);
+                }
+            }
+        }
+        DiceNode diceNode;
+        for (Iterator it = diceNodeList.iterator(); it.hasNext();) {
+            diceNode = (DiceNode) it.next();
+            int birincizar = diceNode.getDice1();
+            int ikincizar = diceNode.getDice2();
+
+
+            if (b.onBar(current_player)) {
+                if (current_player == white) {
+                    if ((b.getColor(birincizar) == current_player) || (b.getCount(birincizar) < 2)) {
+                        return true;
+                    }
+                    if ((b.getColor(ikincizar) == current_player) || (b.getCount(ikincizar) < 2)) {
+                        return true;
+                    }
+                } else if (current_player == black) {
+                    if ((b.getColor(25 - birincizar) == current_player) || (b.getCount(25 - birincizar) < 2)) {
+                        return true;
+                    }
+                    if ((b.getColor(25 - ikincizar) == current_player) || (b.getCount(25 - ikincizar) < 2)) {
+                        return true;
+                    }
+                }
+            }
+//                else if (current_player == white) {  //oyuncu beyaz //bulunduuğu yer beyaz
+//                for (int spike = 1; spike < 25; spike++) {
+//                    if (b.canBearOff(white) && (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar))) {
+//                        return true;
+//                    }
+//                    if ((spike + birincizar < 25) && b.getColor(spike) == white) {            //hedef tahtanın içerisinde
+//                        if ((b.getColor(spike + birincizar) == current_player) || (b.getCount(spike + birincizar) < 2)) {
+//                            return true;
+//                        }
+//
+//                    } else if ((spike + ikincizar < 25) && b.getColor(spike) == white) {
+//                        if ((b.getColor(spike + ikincizar) == current_player) || (b.getCount(spike + ikincizar) < 2)) {
+//                            return true;
+//                        }
+//
+//                    }
+//                }
+//
+//            } else if (current_player == black) {  //oyuncu beyaz //bulunduuğu yer beyaz
+//
+//                for (int spike = 1; spike < 25; spike++) {
+//                    if (b.canBearOff(black) && (hamleBearOffMu(spike, birincizar) || hamleBearOffMu(spike, ikincizar))) {
+//                        return true;
+//                    }
+//                    if ((spike + birincizar < 25 && b.getColor(spike) == black)) {            //hedef tahtanın içerisinde
+//                        if ((b.getColor(spike + birincizar) == current_player) || (b.getCount(spike + birincizar) < 2)) {
+//                            return true;
+//                        }
+//
+//                    } else if (spike + ikincizar < 25 && b.getColor(spike) == black) {
+//                        if ((b.getColor(spike + ikincizar) == current_player) || (b.getCount(spike + ikincizar) < 2)) {
+//                            return true;
+//                        }
+//
+//                    }
+//
+//                }
+//
+//
+//            }
+        }
+        return false;
+    }
+//    private void secilenzaribul(int[] veri) {
+//        LinkedList<DiceNode> diceNodeList = new LinkedList<DiceNode>();
+//        for (int i = 0; i < 10; i++) {
+//            if (DiceButton[i][rolledDiceCounter / 10].isEnabled()) {
+//                Character a = DiceButton[i][rolledDiceCounter / 10].getText().charAt(0);
+//                Character c = DiceButton[i][rolledDiceCounter / 10].getText().charAt(2);
+//                DiceNode node = new DiceNode(Integer.parseInt(a.toString()), Integer.parseInt(c.toString()), DiceButton[i][rolledDiceCounter / 10].diceID);
+//                diceNodeList.add(node);
+//            }
+//        }
+//        DiceNode diceNode;
+//        for (Iterator it = diceNodeList.iterator(); it.hasNext();) {
+//            diceNode = (DiceNode) it.next();
+//            if (diceNode.getDice1() == veri[1] && diceNode.getDice2() == veri[3]) {
+//                dice1 = diceNode.getDice1();
+//                dice2 = diceNode.getDice2();
+//                diceID = diceNode.getDiceID();
+//            }
+//        }
+//    }
 }

@@ -13,6 +13,8 @@ public class FixedDiceButton  extends JButton
         JBackgammon parent;
         int row;
         int col;
+        int dice1;
+        int dice2;
         int diceID;
         public FixedDiceButton(Container c, JBackgammon p)
         {
